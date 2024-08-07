@@ -1,0 +1,135 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "MATH 246"
+  description: "Homepage for MATH 246 - Intermediate Statistics, Fall 2024."
+  site-url: "https://math246-f24.github.io/"
+
+  repo-url: https://github.com/intermediate-stats/math-246.github.io/
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  twitter-card:
+    creator: "@jmochogi"
+    image: "img/twitter-card.png"
+
+  sidebar:
+    background: "#3A5883" # Pantone Chambray Blue - Spring 2024, darkened to pass contrast checks
+    logo: "img/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/sta199-s24
+        text: "GitHub organization"
+      #- icon: code-square
+       # href: https://cmgr.oit.duke.edu/containers
+        #text: "RStudio containers"
+      - icon: life-preserver
+        href: https://calendly.com/jmochogi
+        text: "Office hours"
+      - icon: chat-dots-fill
+        href: https://canvas.ithaca.edu/
+        text: "Canvas Discussions"
+      - icon: camera-reels-fill
+        href: https://ithaca.zoom.us/j/3364817575?pwd=WlA1S3hJWWZNTTFoWUVaZlA1clhtdz09
+        text: "Zoom link"
+      - icon: check-square-fill
+        href: https://canvas.ithaca.edu/
+        text: "Canvas"
+        menu:
+          - text: Gradescope
+            url: https://canvas.duke.edu/courses/26106/external_tools/181
+          - text: Gradebook
+            url: https://canvas.duke.edu/courses/26106/gradebook
+
+    style: docked
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-overview.qmd
+            text: Overview
+          - href: course-syllabus.qmd
+            text: Syllabus
+          - href: course-support.qmd
+            text: Support
+         # - href: course-team.qmd
+          #  text: Teaching team
+          - href: index.qmd
+            text: Schedule
+          - href: course-links.qmd
+            text: Useful links
+          - href: course-faq.qmd
+            text: FAQ
+      
+      - section: "Labs"
+        contents:
+          - href: labs/Lab_0.qmd
+            text: Lab 0
+          - href: labs/Lab_1.qmd
+            text: Lab 1
+          - href: labs/Lab_2.qmd
+            text: Lab 2
+          - href: labs/Lab_3.qmd
+            text: Lab 3            
+          - href: labs/lab-4.qmd
+            text: Lab 4
+          - href: labs/lab-5.qmd
+            text: Lab 5 
+          - href: labs/lab-6.qmd
+            text: Lab 6             
+          - href: labs/lab-7.qmd
+            text: Lab 7
+            
+      - section: "Projects"
+        contents:
+          - href: project/first_project.qmd
+            text: Project 1
+          - href: project/final_project.qmd
+            text: Project 2
+            
+      - section: "Problem Sets"
+        contents:
+          - href: problem-sets/ps-1.qmd
+            text: Problem Set 1
+          - href: problem-sets/ps-2.qmd
+            text: Problem Set 2
+          - href: problem-sets/ps-3.qmd
+            text: Problem Set 3
+          - href: problem-sets/ps-4.qmd
+            text: Problem Set 4 
+            
+            
+      - section: "Exam review"
+        contents:
+          - href: exam-review/exam-1-review.qmd
+            text: Exam 1
+          - href: exam-review/exam-2-review.qmd
+            text: Exam 2
+      
+            
+  page-footer:
+    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    left: "&copy; Copyright 2024, Joash Geteregechi"
+    background: "#3A5883" # Pantone Chambray Blue - Spring 2024, darkened to pass contrast checks
+
+format:
+  html:
+    theme:
+      light: [cosmo, style/sta199.scss]
+      dark: [cosmo, style/sta199.scss, style/dark.scss]
+    linkcolor: "#3A5883" # Pantone Chambray Blue - Spring 2024, darkened to pass contrast checks
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Atkinson Hyperlegible"
+    highlight-style: a11y-dark
+
+execute:
+  freeze: auto
+
+editor: visual
