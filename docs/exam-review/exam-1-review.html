@@ -331,9 +331,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exam-1-review.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -360,13 +360,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-::: {.cell}
 
-:::
 
 ::: {.cell}
 
 :::
+
+::: {.cell}
+
+:::
+
+
 
 
 
@@ -388,6 +392,8 @@ The name of the data frame used for this analysis is `blizzard_salary` and the v
 -   `performance_rating`: Most recent review performance rating, with levels `Poor`, `Successful`, `High`, and `Top`. The `Poor` level is the lowest rating and the `Top` level is the highest rating.
 
 The top ten rows of `blizzard_salary` are shown below:
+
+
 
 
 
@@ -415,6 +421,8 @@ The top ten rows of `blizzard_salary` are shown below:
 
 :::
 :::
+
+
 
 
 
@@ -449,6 +457,8 @@ $\vspace{1cm}$
 
 
 
+
+
 ::: {.cell}
 ::: {.cell-output-display}
 ![Option 1](exam-1-review_files/figure-html/fig-blizzard-hist-1-1.png){#fig-blizzard-hist-1 width=768}
@@ -464,8 +474,16 @@ $\vspace{1cm}$
 
 
 
+
+
 Distribution of annual salaries of Blizzard employees
 :::
+
+
+
+
+
+
 
 
 
@@ -487,9 +505,13 @@ Suppose your teammate wrote the following code as part of their analysis of the 
 
 
 
+
+
 ::: {.cell}
 
 :::
+
+
 
 
 
@@ -537,6 +559,12 @@ c.  Roughly the same
 
 
 
+
+
+
+
+
+
 ## Question 5
 
 Which of the following alternate plots would also be useful for visualizing the distributions of annual salaries of hourly and salaried workers? Choose all that apply.
@@ -566,9 +594,17 @@ f\. Scatterplots
 
 
 
+
+
+
+
+
+
 ## Questions 6 and 7
 
 Suppose you made the bar plot shown in @fig-performance-rating-1 to visualize the distribution of `performance_rating` and your teammate made the bar plot shown in @fig-performance-rating-2.
+
+
 
 
 
@@ -588,7 +624,11 @@ Distribution of performance rating
 
 
 
+
+
 You made your bar plot without transforming the data in any way, while your friend did first transform the data with code like the following:
+
+
 
 
 
@@ -600,6 +640,8 @@ blizzard_salary <- blizzard_salary |>
   _(1)_(performance_rating = fct_relevel(performance_rating, _(2)_))
 ```
 :::
+
+
 
 
 
@@ -637,9 +679,17 @@ d.  `Poor, Successful, High, Top`
 
 
 
+
+
+
+
+
+
 ## Questions 8 - 10
 
 Finally, another teammate creates the following two plots.
+
+
 
 
 
@@ -655,6 +705,8 @@ Finally, another teammate creates the following two plots.
 
 Distribution of salary type by performance rating
 :::
+
+
 
 
 
@@ -682,9 +734,17 @@ $\vspace{2cm}$
 
 
 
+
+
+
+
+
+
 :::
 
 **Question 10:** Below are the proportions of performance ratings for hourly and salaried workers. Place these values in the corresponding segments in @fig-salary-performance-rating-2.
+
+
 
 
 
@@ -709,7 +769,15 @@ $\vspace{2cm}$
 
 
 
+
+
 ::: {.content-visible when-format="pdf"}
+
+
+
+
+
+
 
 
 
@@ -727,6 +795,8 @@ $\vspace{2cm}$
 ## Questions 11 and 12
 
 The table below shows the distribution of `salary_type` and `performance_rating`.
+
+
 
 
 
@@ -749,7 +819,11 @@ The table below shows the distribution of `salary_type` and `performance_rating`
 
 
 
+
+
 The pipeline below produces a data frame with a fewer number of rows than `blizzard_salary`.
+
+
 
 
 
@@ -780,6 +854,8 @@ blizzard_salary |>
 
 :::
 :::
+
+
 
 
 
@@ -818,11 +894,15 @@ You're reviewing another team's work and they made the following visualization:
 
 
 
+
+
 ::: {.cell}
 ::: {.cell-output-display}
 ![](exam-1-review_files/figure-html/unnamed-chunk-14-1.png){width=960}
 :::
 :::
+
+
 
 
 
@@ -860,18 +940,26 @@ $\vspace{2cm}$
 
 
 
+
+
+
+
+
+
 :::
 
 ## Question 14
 
 Below is some code and its output.
 
-```obpgj
+```jdmdb
 # label=plot blizzard
 
 ggplot(blizzard_salary,aes(x=performance_rating,y=percent_incr))+geom_boxplot()
 labs(x="Performance rating", y = "Percent increase")
 ```
+
+
 
 
 
@@ -911,6 +999,8 @@ attr(,"class")
 
 
 
+
+
 Part 1: List at least 5 things that should be fixed or improved in the code.
 
 ::: {.content-visible when-format="pdf"}
@@ -918,6 +1008,12 @@ $\vspace{5cm}$
 :::
 
 Part 2: What is the cause of the warning and what does it mean?
+
+
+
+
+
+
 
 
 

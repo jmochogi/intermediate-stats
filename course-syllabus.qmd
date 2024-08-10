@@ -3,7 +3,7 @@ title: "MATH 246 - Intermediate Statistics"
 subtitle: "Fall 2024"
 format:
   html: default
- # pdf: default
+  pdf: default
 ---
 
 ## Course Format and Philosophy
