@@ -1,6 +1,0 @@
-categories: "Lab"
-execute:
-  eval: false
-format:
-  html:
-    code-link: true
