@@ -1,0 +1,359 @@
+---
+title: "MATH 246 - Intermediate Statistics"
+subtitle: "Fall 2024"
+author: "Dr. Joash Geteregechi <br> Office: Williams Hall 311E <br> Hours: Mon, Fri 12.00 - 01.00 pm, or by appointment."
+format:
+  html: default
+  pdf: default
+---
+
+## About the Course
+
+### Format and Philosophy
+
+This class will mostly be taught using a Flipped Model. A flipped classroom is aimed at increasing your engagement and learning by having you complete some activities (readings and/or videos) ahead of class. At the end of each pre-class activity, you will complete a short quiz that we will call class preparation assignment (CPA). In most cases, these CPAs will be graded only for effort and completion. When doing CPAs, you should write down your notes and any questions that you have so we can address it in class or during open hours. More information about the CPA is provided under Assessment section of this syllabus. Here are some benefits associated with using Flipped Classroom Models:
+
+-   ***Independent Learning Skills:*** not everything you learn in school will be applicable **directly** in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.
+
+-   ***Active Learning:*** In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.
+
+-   ***Catching up:*** If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier.
+
+![Flipped Classroom Model](flip.jpeg)
+
+### Catalogue Description
+
+Covers statistical methods not typically covered in introductory statistics courses. Topics include multivariate analysis and nonparametric techniques, bootstrapping and jackknife methods, and two-way ANOVA. Emphasis will be placed on working with data sets from a broad variety of disciplines with an exploratory data analysis approach. The statistical software environment R will be used in analyzing data.
+
+### Prerequisites and Credits
+
+[MATH 14400](https://catalog.ithaca.edu/undergrad/coursesaz/math/), [MATH 14500](https://catalog.ithaca.edu/undergrad/coursesaz/math/), [MATH 21600](https://catalog.ithaca.edu/undergrad/coursesaz/math/), or [PSYC 20700](https://catalog.ithaca.edu/undergrad/coursesaz/psyc/) with a grade of C- or better. (S,Y)<br> **Attributes:** NS, QL <br> **Number of Credits:** 3 Credits
+
+**Workload Expectation:**
+
+This is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).
+
+### Meeting Times
+
+| Day       | Room/Hall         | Time               |
+|-----------|-------------------|--------------------|
+| Monday    | Williams Hall 202 | 11:45 am - 1:00 pm |
+| Wednesday | Williams Hall 202 | 8:30 - 9:45 am     |
+| Friday    | Williams Hall 202 | 10:05 - 11:20 am   |
+
+### Student Learning Objectives
+
+Upon successful completion of this course, students will be able to:
+
+-   Implement the model-simulate-evaluate process to address data-driven questions on real-world topics.
+
+-   Choose and use various statistical analysis techniques (exploratory and inferential) in a variety of “real life” contexts including study design.
+
+-   Critically analyze the use of statistics in research, in the media, and in various day-to-day life situations.
+
+-   Communicate statistical ideas effectively and in context without relying on statistical jargon.
+
+-   Use technology (e.g., R) to perform statistical explorations and manipulations.
+
+-   Effectively collaborate with peers on projects and presentations.
+
+## Course Resources
+
+### Textbooks
+
+For most of our readings, we shall use the following open-source textbooks:
+
+-   [Introduction to Modern Statistics](https://openintro-ims.netlify.app/), Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy of the book available [on Amazon](https://www.amazon.com/dp/1943450277?ref=cm_sw_r_cp_ud_dp_84X75NFMXXJ0N6NTJAEF&ref_=cm_sw_r_cp_ud_dp_84X75NFMXXJ0N6NTJAEF&social_share=cm_sw_r_cp_ud_dp_84X75NFMXXJ0N6NTJAEF&skipTwisterOG=2).
+
+-   [R for Data Science, 2e](https://r4ds.hadley.nz/), Wickham, Çetinkaya-Rundel, Grolemund. O'Reilly, 2nd edition, 2023. Hard copy available [on Amazon](https://www.amazon.com/dp/1492097403?&tag=hadlwick-20).
+
+-   Intermediate Statistics with R by Greenwood, Mark. The book can be found freely on [this link](https://open.umn.edu/opentextbooks/textbooks/1078).
+
+### Computing:
+
+-   **R:** We will use R statistical environment with the RStudio interface. You’ll be using R primarily through a version of RStudio accessible on [posit cloud](https://posit.cloud/). Once you are on this page, sign in or click on **sign up** to create a new account in case you don't already have an account.
+
+-   **GitHub Copilot:** GitHub is a web-based platform that allows people to store, share, and manage versions of their code. For example, a team of programmers working on different parts of a certain project may use GitHub for collaboration. We shall use these features only sparingly in this course. Copilot, on the other hand, is a popular AI-powered tool used for a vast range of purposes including code generation. Copilot is a paid service but college students can access and use it for free via GitHub (GitHub Copilot). To use GitHub copilot and use it within RStudio, there are three steps involved:
+
+    -   **Step 1:** Sign up for a free GitHub account at [GitHub](https://github.com).
+
+    -   **Step 2:** Sign up for a free GitHub Student Developer Pack account at [GitHub Student Developer Pack](https://education.github.com/pack).
+
+    -   **Step 3:** Install the GitHub Copilot extension in RStudio. To do this,
+
+-   **Optional:** You may want to have a scientific calculator (one that has the ability to compute powers–e.g., $(1.675)^3)$ to use when you want to do quick calculations. You may also use online calculator tools such as [desmos](https://www.desmos.com).
+
+## Assessment
+
+Your learning will be assessed in a variety of ways including Attendance and Participation (AP), CPA's, Labs, Problem Sets (PS), Projects, Exams, and a final Portfolio (takes the place of a final exam). Below are the details on these components.
+
+### Attendance and Participation (AP)
+
+You’re expected to attend all classes and participate during class discussions. Consistent attendance and participation are strong indicators of success in MAT 246. You will be responsible for all course material, announcements, quizzes, and exams made in class, whether you attended that day’s class or not. I may post the announcements and materials on Canvas and/or send them out as emails. If you anticipate needing to miss more than **four class sessions**, please make an [appointment](https://calendly.com/jmochogi/20min?back=1&month=2024-08) with me to discuss any restrictions on your availability early in the semester so we can find ways for you to participate and be successful in the course. Your attendance & participation will be gauged based on the following metrics:
+
+-   Punctuality to class and number of classes attended
+-   Preparedness for class (you will generally be considered prepared if you do the CPAs)
+-   Level of engagement: Includes working collaboratively with others, sharing your thoughts during class discussions, and asking/answering questions.
+-   Contributing to online collaboration work and discussion forums.
+
+For a more detailed rubric on how attendance and participation will be graded, click on [this link](https://docs.google.com/document/d/1za7s6xJWr5EWzF3-LlHHL8Vyn2_dcfIa/edit).
+
+For more details about the college attendance policy, see the [college-wide policies](#attendance-policy) section.
+
+### Class Preparation Assignments (CPAs)
+
+CPAs are done ***prior*** to class. They involve completing short readings or activities and/or watching videos then answering a few questions based on the covered material. CPA's are meant to get you prepared for the material of the week/day so that you can contribute meaningfully during class discussions. For this reason, deadlines for CPAs cannot be extended.
+
+***Note:*** CPAs will generally be graded for completion and effort. From time to time, there will be one question on the CPA that will be graded for accuracy. This question is meant to gauge the extent to which you understood the material on your own and answers may be discussed in class.
+
+### Problem sets (PSs)
+
+Problem sets will be assigned after every three to four weeks or after completion of a major topic. Unlike the CPAs, the problem sets will be more open-ended, non-routine, and with a heavy emphasis on real life applications of the material learned. You are encouraged to consult with your classmates on the problems but write your own solutions. You may also come in for Student hours for further help if you need it. Do not wait until the deadline day to start your problem set.
+
+### Labs
+
+In labs, you will apply what you’ve learned in during class to complete data analysis tasks. You may discuss lab assignments with other students; however, lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be rendered to pdf format and must be submitted on Canvas by the deadline.
+
+Labs are due at 8 am ET on the indicated due date (generally the Tuesday after the lab).
+
+The lowest lab grade will be dropped at the end of the semester.
+
+### Quizzes
+
+There will be a short quiz in class almost every week (Fridays). The quiz will be based mainly on material learned in the CPA and/or discussed in class for the current or previous week. To do well in these quizzes, you should complete your CPAs accurately, and attend class. If there are concepts you have questions about, be sure to ask. All Quizzes will be closed book and closed notes.
+
+### Projects
+
+There will be two group projects for this class. For every project, a short proposal will be due roughly a week after the project is assigned. Your group will have 10-15 minutes to present your work in class and then submit the project report a day after presentation. Detailed information about the project, including a grading rubric, will be provided.
+
+### Midterm Exams
+
+There will be two mid-term exams during the semester. Each midterm exam will have an in class component and a take-home component.
+
+-   **In-class component:** The in-class component will be closed-book and closed notes but calculators will be allowed (not on devices like cellphones and computers). You will be allowed to bring a 2-sided A4 size cheatsheet paper for the in-person component. These will be submitted alongside the exam.
+
+-   **The take-home component** May require use of RStudio and will be availed in quarto (qmd) format. You will need to type in your answers into the quarto document and perform the analyses accordingly. You should submit a pdf format but if you face errors rendering due to errors in your code, you may submit the .qmd file.
+
+The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The content of the exam will be related to the content in CPAs, problem sets, quizzes, among others.
+
+### Final Portfolio
+
+The final portfolio will consist of the following:
+
+-   Revised work (if necessary) on both mid-term exams. Again, you should point out the errors on every problem and explain how the revisions address the errors.
+-   Revised work (if necessary) on 2 problem sets with the lowest grades. Again, you need to have reflective statements on each problem.
+-   A reflective essay on your main takeaways from the course and how you may implement that knowledge in your field or other real-life situations.
+
+The final portfolio will be due on the day at time of your final exam for this course.
+
+### Grading Policy
+
+Your final letter grade in the course will be weighted by category as follows:
+
+| Category                      | Percentage |
+|-------------------------------|------------|
+| Attendance and Participation  | \_\_       |
+| Class Preparation Assignments | 10%        |
+| Problem Sets                  | 15%        |
+| Labs                          | 15%        |
+| Quizzes                       | 10%        |
+| Midterm Exams                 | 20%        |
+| Projects                      | 15%        |
+| Final Portfolio               | 15%        |
+
+The final letter grade will be determined based on the following thresholds:
+
+| Letter Grade | Final Course Grade |
+|--------------|--------------------|
+| A            | $\ge$ 93           |
+| A-           | 90 - 92.99         |
+| B+           | 87 - 89.99         |
+| B            | 83 - 86.99         |
+| B-           | 80 - 82.99         |
+| C+           | 77 - 79.99         |
+| C            | 73 - 76.99         |
+| C-           | 70 - 72.99         |
+| D+           | 67 - 69.99         |
+| D            | 63 - 66.99         |
+| D-           | 60 - 62.99         |
+| F            | $<$ 60             |
+
+## Course policies
+
+### Academic honesty
+
+The point is very simple - [you should not cheat]{style="color:red"}. You should not present "someone" else’s work as your own.
+
+Abide by the following guidelines:
+
+-   **Collaboration:**
+
+    -   Work that is not assigned as a collaborative assignment should not be completed collaboratively. This does not mean you should not seek support from peers. If you seek help from your peers, be sure that you write your own solutions, otherwise the work will be similar and flagged for cheating. Submitting similar work will be considered a violation of the academic integrity policy by all students involved.
+    -   For team assignments, you may collaborate freely within your team. Each group will submit one document contained agreed upon responses. No multiple file submissions.\
+    -   On individual assignments you may not directly share work with another student in this class, and on team assignments you may not directly share work with another team in this class.
+
+-   **Online resources:** In this century, the internet is a go to place for many things. While much of the information on the internet is useful, I expect that you will use it responsibly. The course policy is that you may use online resources (e.g., [StackOverflow](https://stackoverflow.com/), [Wolfram Alpha](https://www.wolframalpha.com/), etc.) but you must explicitly cite where you obtained any solutions you directly use (or use as inspiration).
+
+-   **Use of generative artificial intelligence (AI)**: Generative AI tools such as ChatGPT should be treated as other online resources. There are two guiding principles that govern how you can use AI in this course:
+
+    -   *Cognitive dimension:* Using AI tools should make you more efficient and productive rather than hampering your ability to think clearly and critically.
+
+    -   *Ethical dimension:* Students using AI should be transparent about their use and make sure it aligns with academic integrity. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. AI is an integral part of this course and we will practice using generative AI tools responsibly without losing sight of the learning objectives.
+
+    -   **✅ AI tools for code:** We will use GitHub Copilot for code generation in this course. However, we will only start using this tool after you have gained a basic understanding of the coding and syntax. While coding uses highly specified formats and even minor errors can cause problems, using github copilot can be thought of as "coding in English". You will just need to prompt the tool effectively. You should also examine the code output as much as possible. One way to do this is to look at the output (if available) and work backwards. More details on this to follow.
+
+    You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) for citing AI-generated content.
+
+    -   **❌ AI tools for narrative:** You may not use generative AI tools such as ChatGPT to write narrative on assignments. Interpretation of software output, writing up the project report, among others should be written by a human (YOU). If you want to use these tools to check your grammar, you should feel free to do so but be sure to disclose and cite it accordingly.
+
+If you are unsure if the use of a particular resource complies with the academic honesty policy, please contact your instructor.
+
+### Late Work
+
+The due date & time for all assignments will be posted on Canvas and/or emailed out and/or announced in class. To enable me to prepare for class meetings and give you feedback, [I will not accept late work]{style="color:red"} except under extreme circumstances. If you know that you won’t be able to turn in an assignment on time, reach out to me in writing (email) at least one day before the due date to discuss your options. Note that there will be [no extensions on CPA's]{style="color:red"}.
+
+### Mobile devices & Other Technologies
+
+This class allows use of technology devices (e.g., computers, tablets, etc.) only for purposes of the course. Such purpose involves data analysis, writing reports, completing OneNote collaborative activities, among others. However, there will be moments (e.g., brief interactive discussion, completing paper activities,) when I require that students put away (or turn off) their technology devices. Use of these devices for purposes other than the one for the course is prohibited. Research on this matter shows that it distracts you as well as other students in class. Two violations per week will result in a 0 score on the next attendance and participation grade. Persistent violation may necessitate further action to prevent you from distracting other students.
+
+### Teams
+
+This class will mostly run through small group work (teams). You will be randomly assigned to a team at the start of the semester. About midway into the semester, I will switch people teams based partly on my professional judgement. I will allow you to suggest members you would like to work with but there are no guarantees that you will get grouped with all members of your choice. I generally seek to have mixed ability teams and to ensure that everyone has a chance to work with different people.
+
+## Getting Support
+
+There are various resources available to help you succeed in this course. Should you feel like you are struggling too much, please don’t hesitate to reach out to me so we can discuss possible ways forward. Below are some academic support services available to you.
+
+### Open Hours
+
+I will be available during open hours (Mon 12.00 - 01.00 pm) to answer questions or concerns that you may have in the course. You can simply walk in during the stated time above. More times may be available but you will need to check my schedule on [this link](https://calendly.com/jmochogi/20min?month=2024-08). Open hours may be held in-person or virtually depending on circumstances of the day. Below are the zoom link and passcode for virtual meetings:
+
+**Zoom Link:** [click here](https://ithaca.zoom.us/j/3364817575?pwd=WlA1S3hJWWZNTTFoWUVaZlA1clhtdz09)
+
+**Passcode:** 850 424
+
+### Math Tutoring Sessions
+
+The mathematics department is committed to the success of all students enrolled in mathematics courses. Free one-on-one support for your mathematics coursework is available during select daytime and evening hours Monday-Friday at the Mathematics Room (Williams Hall 209). The Mathematics Room is staffed by mathematics faculty and vetted students. Student tutors offer support to fellow students in courses numbered 200 and below while math faculty offer support in any of the math courses. For more information and the schedule, please visit the [Math Support Center](https://www.ithaca.edu/academics/school-humanities-and-sciences/mathematics/courses-placement-resources/mathematics-support-center).
+
+### Tutoring and Academic Enrichment Services
+
+As a supplement to faculty advising and office hours, Tutoring and Academic Enrichment Services offers exceptional peer resources free of charge. Learning Coaches provide content-specific peer tutoring in a variety of courses. Peer Success Coaches mentor students who wish to develop collegiate-level academic and social engagement skills. To access these courses and for more information, please visit the [Center for Student Success](https://www.ithaca.edu/tutoring-services).
+
+### Writing Center
+
+The Writing Center aims to help students from all disciplines, backgrounds, and experiences to develop greater independence as writers. We are committed to helping students see writing as central to critical and creative thinking. The physical location in Smiddy 107 will not be open to clients. For more information and scheduling appointments please visit the [writing center website](https://ithaca.mywconline.com).
+
+## Tips for Success
+
+Here are a few basic suggestions for how to succeed in this course:
+
+### Keep up with Homework
+
+It is absolutely essential that you understand how to solve the assigned homework problems/exercises and, more importantly, how and why the skills and techniques presented in the course are used in solving the problems/exercises. I suggest that you begin working on the how as soon as possible. Do not pile your haw or work near the deadline. The advantage of getting the homework done on time is that you will get timely feedback that will help you understand the material better and hence do well in other assessment categories such as exams.
+
+### Attend Class
+
+As noted earlier, attendance is a critical part of your success in this course. You should try to attend every class because it is during class time that we will delve deeper into the course material and practice with applications.
+
+### Stay Caught Up
+
+Most concepts in this course build on each other cumulatively and you need to stay on top of the material at every stage. If you are having difficulty, don’t expect that the problem will take care of itself and disappear later. Contact me immediately and discuss the problem.
+
+### Collaborate with Peers
+
+Many students benefit from sharing their work with others or by having their work questioned by their peers. You should attempt homework problems ahead of time by yourself and then note down any difficulties/questions that you can discuss with your peers. Even if you have no difficulties, you may still learn different and perhaps more efficient ways of solving the same problem during collaborative work. Below are some of the ways through which you can do this: - **Canvas Discussion Forums & One Note Collaboration Space** - You can post questions and answer others' questions here. I encourage you to scan hand-written work (if necessary) and upload it alongside your question so people can see how you are thinking.
+
+-   **Zoom sessions** – If you cannot meet in person, you can initiate Zoom sessions for collaborating. Zoom whiteboards are available to write on or you may simply have discussions. You can record these for later playback. If you want to invite me to your Zoom session, please send me an email with the link ahead of time and I will let you know if I am available to join.
+
+## College-wide Policies
+
+### Attendance Policy
+Students at Ithaca College are expected to attend all classes, and they are responsible for work missed during any absence from class. At the beginning of each semester, instructors must provide the students in their courses with written guidelines regarding possible penalties for failure to attend class. These guidelines may vary from course to course but are subject to the following conditions: 
+
+- In accordance with Federal Law, students with a disability documented through Student Accessibility Services (SAS) may require reasonable accommodations to ensure equitable access. A student with an attendance accommodation, who misses a scheduled course time due to a documented disability, must be provided an equivalent opportunity to make up missed time and/or coursework within a reasonable time-frame. An accommodation that affects attendance is not an attendance waiver and no accommodation can fundamentally alter a course requirement. If a faculty member thinks an attendance-related accommodation would result in a fundamental alteration, concerns and potential alternatives should be discussed with SAS. 
+- In accordance with New York State law, students who miss class due to their religious beliefs shall be excused from class or examinations on that day. The faculty member is responsible for providing the student with an equivalent opportunity to make up any examination, study, or work requirement that the student may have missed. Any such work is to be completed within a reasonable time frame, as determined by the faculty member.
+- Any student who misses class due to a family or individual health emergency or to a required appearance in a court of law shall be excused. If the emergency is prolonged or if the student is incapacitated, the student or a family member/legal guardian should report the absence to the Dean of Students or the Dean of the academic school where the student’s program is housed. Students may consider a leave of absence, medical leave of absence, selected course withdrawals, etc., if they miss a significant portion of classwork. (Note: Graduate students may not take a leave of absence.)
+- A student may be excused to participate in local, state, or federal elections. The student is responsible to make up any work that is missed due to the absence. Any such work is to be completed within a reasonable time frame, as determined by the faculty member.
+
+A student may be excused for participation in College-authorized co-curricular and extracurricular activities if, in the instructor’s judgment, this does not impair the specific student’s or the other students’ ability to succeed in the course. 
+For all absences except those due to religious beliefs, the course instructor has the right to determine if the number of absences has been excessive in view of the nature of the class that was missed and the stated attendance policy.
+
+Students should notify their instructors as soon as possible of any anticipated absences.
+
+### Student Accessibility Services
+
+In compliance with Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act, reasonable accommodation will be provided to students with documented disabilities on a case-by-case basis. Students must register with [Student Accessibility Services](https://elbert.accessiblelearning.com/Ithaca/ApplicationStudent.aspx) and provide appropriate documentation to Ithaca College before any academic adjustment will be provided. Please note that accommodations are not retroactive, so timely contact with Student Accessibility Services is encouraged. To discuss accommodations or the accommodation process, students should schedule to meet with a SAS specialist. 607-274-1005 \| sas\@ithaca.edu.
+
+### Mental Health statement
+
+The Ithaca College [Center for Counseling and Psychological Services](https://www.ithaca.edu/center-counseling-psychological-services) (CAPS) promotes and fosters the academic, personal, and interpersonal development of Ithaca College students by providing short-term individual, group, and relationship counseling, crisis intervention, educational programs to the campus community, and consultation for faculty, staff, parents, and students. Their team of licensed and licensed-eligible professionals value inclusivity, and they are dedicated to creating a diverse, accessible, and welcoming environment that is safe and comfortable for all those they serve and with whom they interact. CAPS sees students in-person at their offices in the Hammond Health building (side entrance), but Telehealth meetings through Zoom can be arranged in some circumstances. Staff in the office will answer questions by phone at 607-274-3136; please leave a voicemail if you do not reach a live person. You can also reach the office via email at counseling\@ithaca.edu. CAPS hours remain Monday-Friday 8:30 a.m. to 5:00 p.m. After-hours connections to a live counselor are available by calling the CAPS number and following the prompts.
+
+In the event I suspect you need additional support, expect that I will express to you my concerns. It is not my intent to know the details of what might be troubling you, but simply to let you know I am concerned and that help, if needed, is available. Remember, getting help is a smart and courageous thing to do.
+
+### Academic Integrity
+
+The College is an academic community, which values academic integrity and takes seriously its responsibility for upholding academic honesty. All members of the academic community have an obligation to uphold high intellectual and ethical standards. All forms of dishonesty including cheating and plagiarism are unacceptable. Failure to appropriately cite material used in a paper is plagiarism. The minimum penalty for cheating or plagiarism is a zero for the test or paper in question. Referral to college judiciaries is also possible. For more information on academic integrity and academic dishonesty, please refer to the [Student Handbook](https://www.ithaca.edu/student-affairs-and-campus-life/student-handbook), the College Catalog and the [Code of Student Conduct](https://www.ithaca.edu/policy-manual/volume-vii-students/71-general-student-policies/712-student-conduct-code) and Related Policies or ask your instructor.
+
+### Title IX
+
+At Ithaca College, we believe that every individual has the right to be treated with respect and dignity and we support the creation and maintenance of a safe and positive living and learning environment. Students who experience sexual violence (including dating violence, stalking and sexual assault), sexual harassment, or discrimination based on gender or sexual identity) are encouraged to report their experience to the Title IX Coordinator, lkoenig\@ithaca.edu to explore formal and informal reporting options, and explore the support and resources available. The Title IX Coordinator will work with you to determine the best way to proceed and enhance the safety of our community. For more information go to: <https://www.ithaca.edu/share>.
+
+Information shared in class assignments, class discussions, and at public events do not constitute an official disclosure, and faculty and staff do not have to report these to the Title IX Coordinator. Faculty and staff should be sure that access to campus and community resources related to sexual misconduct are available to students in the case these subjects do arise. Any other disclosure to faculty and staff can be reported to the Title IX Coordinator.
+
+### Academic Advising Center
+
+Students are asked to consult with their faculty advisor, or the advising contact within their school, for all advising matters. Faculty advisors will be able to assist students with most advising questions, or they may collaborate with the dean's office for more complicated matters.
+Students can find the name of their assigned faculty advisor in Homer or in Degree Works.
+
+
+### Diversity and Inclusion
+
+Ithaca College values diversity because it enriches our community and the myriad experiences that characterize an Ithaca College education. Diversity encompasses multiple dimensions, including but not limited to race, culture, nationality, ethnicity, religion, ideas, beliefs, geographic origin, class, sexual orientation, gender, gender identity and expression, disability, and age. We are dedicated to addressing current and past injustices and promoting excellence and equity. Ithaca College continually strives to build an inclusive and welcoming community of individuals with diverse talents and skills from a multitude of backgrounds who are committed to civility, mutual respect, social justice, and the free and open exchange of ideas. We commit ourselves to change, growth, and actions that embrace diversity as an integral part of the educational experience and of the community we create.Please learn more about Ithaca College’s commitment to diversity, equity and inclusion: <https://www.ithaca.edu/diversity-and-inclusion/diversity-statement>.
+
+
+::: {.callout-note collapse="true"}
+## Click here for syllabus bounty!
+
+If you've read this far in the syllabus, please email me a picture of your favorite scene in Ithaca or its environs if you have one. If not, just describe the place. I will include you on my special list of most serious students.
+:::
+
+## Important dates
+
+-   **Aug 26:** Classes begin, Request S/D/F Option
+
+-   **Sep 01:** Last day to Drop/add a course
+
+-   **Sep 02:** No classes (Labor Day)
+
+-   **Sep 13:** Last day to request S/D/F Option
+
+-   **Sep 27:** Last Day to Withdraw with "W", Revoke S/D/F Option
+
+-   **Oct 08:** Project 1 Presentations
+
+-   **Oct 09:** Exam 1 (in-class)
+
+-   **Oct 10:** Exam 1 take-home due
+
+-   **Oct 13:** Midterm grades available online
+
+-   **Oct 17-18:** Fall break - No classes
+
+-   **Nov 01:** Last Day to Withdraw with "W"
+
+-   **Nov 15:** Exam 2 (in-class)
+
+-   **Nov 16:** Exam 2 take-home due
+
+-   **Nov 23-Dec 1:** Thanksgiving Break - No classes
+
+-   **Dec 06:** Project 2 presentations
+
+-   **Dec 11:** Last day of classes
+
+-   **Dec 11:** Final portfolio due
+
+Assignment deadlines are listed on the course schedule and in Canvas. Class ends on April 24, there is no final exam.
+
+For more important dates, see the full [Ithaca College Calendar](https://www.ithaca.edu/academics/registrar/academic-calendars).
