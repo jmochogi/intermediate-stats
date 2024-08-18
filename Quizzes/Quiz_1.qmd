@@ -1,0 +1,39 @@
+---
+title: "Quiz 1: Syllabus Quiz"
+author: "Add Your Name"
+format:
+  html: default
+  pdf: default
+---
+
+1. What is the attendance policy for this class? Under what circumstances may an absence be excused? State at least 2.<br><br><br>
+
+
+2. Under what circumstances may an assignment be submitted late? Are there some assignments that cannot be submitted late?<br><br><br>
+
+\vspace{4cm}
+
+
+3. What is the policy on academic integrity for this class? What are the consequences of academic dishonesty?<br><br><br>
+
+
+
+
+
+4. What is the policy on electronic devices in class?<br><br><br>
+
+
+
+
+5. Where would a student find course materials, and assignment deadlines?<br><br><br>
+
+
+
+
+6. What support resources are available to help a student who is struggling with course material?<br><br><br>
+
+
+
+
+7. Student X gets a cumulative numerical grade of 82.99 what would the student's final letter grade?
+
