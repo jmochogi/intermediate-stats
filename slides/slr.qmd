@@ -4,8 +4,8 @@ title: "Simple Linear Regression"
 date: "Aug 26, 2024"
 format: 
   revealjs: 
-    slideNumber: c/t
-    theme: serif
+    #slideNumber: c/t
+    #theme: serif
     transition: slide
    # width: 1600
     #height: 900
