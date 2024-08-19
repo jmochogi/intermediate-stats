@@ -25,7 +25,7 @@ library(readxl)
 
 Due to COVID-19 pandemic, many states made alternatives in voting, such as voting by mail, more widely available for the 2020 U.S. election. The general consensus was that voters who were more Democratic leaning would be more likely to vote by mail, while more Republican leaning voters would largely vote in-person. This was supported by multiple surveys, including this survey conducted by Pew Research.
 
-The goal of this analysis is to use regression analysis to explore the relationship between a county’s political leanings and the proportion of votes cast in-person in 2020. The ultimate question we want to answer is **“Did counties with more Republican leanings have a larger proportion of votes cast in-person in the 2020 election?”**
+The goal of this analysis is to use regression analysis to explore the relationship between a county’s political leanings and the proportion of votes cast in-person in 2020. The ultimate question we want to answer is **Did counties with more Republican leanings have a larger proportion of votes cast in-person in the 2020 election?**
 
 We will use the proportion of votes cast for Donald Trump in 2016 (pctTrump_2016) as a measure of a county’s political leaning. Counties with a higher proportion of votes for Trump in 2016 are considered to have more Republican leanings.
 
