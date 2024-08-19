@@ -99,7 +99,7 @@ website:
             text: Problem Set 1
           - href: problem-sets/ps-2.qmd
             text: Problem Set 2
-          - href: problem-sets/ps-3.qmd
+          - href: problem-sets/ps_3.qmd
             text: Problem Set 3
           - href: problem-sets/ps-4.qmd
             text: Problem Set 4 

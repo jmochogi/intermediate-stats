@@ -47,7 +47,7 @@ Scatterplots are great visualization tools for showing the relationship between 
 
 -   When we suspect one variable might causally affect another, we label the first variable the **explanatory variable** and the second the **response variable**. If education level **causes** poverty rate to change, then education level is the explanatory variable and poverty rate is the response variable.
 
--   We also use the terms **explanatory ** and **response** variables to describe situations where the response variable might be predicted using the explanatory variable even if there is no causal relationship.
+-   We also use the terms **explanatory** and **response** variables to describe situations where the response variable might be predicted using the explanatory variable even if there is no causal relationship.
 
 -   In the earlier scatterplot for HS graduation and percentage poverty, **HS grad** can be considered **explanatory variable** and **poverty** the **response variable**.
 
@@ -57,7 +57,7 @@ Scatterplots are great visualization tools for showing the relationship between 
 -   The values of $r$ ranges anywhere from -1 to 1.
 -   When $r$ is near 0, this indicates no relationship while values near 1 indicate strong positive linear relationship. If the relationship is negative, $r$ will be negative and the strength increases as you approach -1.
 -   The closer the points are to a straight line, the stronger the correlation. See the scatterplots on the next slide and their correlation values.
-- If the points make an horizontal line, the correlation is 0.
+-   If the points make an horizontal line, the correlation is 0.
 
 ## Correlation {.smaller}
 
@@ -149,8 +149,8 @@ Here, the model ***underestimates*** the poverty rate for this city by 3.85%.
 > > \- The point $(\bar{x},\bar{y})$ is known as the **centroid** and always falls on the regression line. Here, $\bar{x}$ is the average of the X variable and $\bar{y}$ is the average of the Y variable.
 > >
 > > \- There is a relationship between the slope of regression line, $b_1$ and the correlation coefficient, $r$: $$b_1 = r\times\frac{s_y}{s_x}$$ where, <br> $s_x$ and $s_y$ are the standard deviations of the two variables.
->>
->> \- The intercept of the line, $b_0$ is given by $$b_0 = \bar{y} - b_1\bar{x}$$
+> >
+> > \- The intercept of the line, $b_0$ is given by $$b_0 = \bar{y} - b_1\bar{x}$$
 
 ## Example {.smaller}
 
@@ -178,26 +178,23 @@ First, we create a scatterplot to visualize the relationship.
 :::
 
 ::: {.column width="50%"}
-
 ```{r, echo=FALSE}
 x<- c(5,6,7,8,9,10,11,12,13)
 y<- c(10,13,11,12,15,17,16,17,18)
 plot(x,y, xlim=c(6,15), ylim=c(10,20), xlab="Head length", ylab="Total length", main="Scatterplot of head length vs total length")
 abline(lm(y~x), col="red")
 ```
-
 :::
 :::
 
 ::: incremental
+-   We see that the relationship is linear and strong. Now, calculate the means of the two variables. $\bar{x} = 9$ and $\bar{y} = 14.33$.
 
-- We see that the relationship is linear and strong. Now, calculate the means of the two variables. $\bar{x} = 9$ and $\bar{y} = 14.33$.
+-   Next, calculate the correlation coefficient: $r = 0.92$.
 
-- Next, calculate the correlation coefficient: $r = 0.92$. 
+-   Using the formula $b_1 = r\frac{s_y}{s_x}$, we get $b_1 = 0.92\times \frac{2.92}{2.74} = 0.98$.
 
-- Using the formula $b_1 = r\frac{s_y}{s_x}$, we get $b_1 = 0.92\times \frac{2.92}{2.74} = 0.98$.
-
-- Finally, using the formula $b_0 = \bar{y}-b_1\bar{x}$, we get $b_0 = 14.33-0.98(9)=5.51$. Thus, the equation is $\hat{y} = 5.51 + 0.98x$.
+-   Finally, using the formula $b_0 = \bar{y}-b_1\bar{x}$, we get $b_0 = 14.33-0.98(9)=5.51$. Thus, the equation is $\hat{y} = 5.51 + 0.98x$.
 :::
 
 ## Interpreting SLR model parameters {.smaller}
@@ -207,29 +204,26 @@ Sometimes we use the term **linear model** to refer to a linear regression equat
 ::: incremental
 -   ***Slope:*** the slope of the line is 0.98, and is usually interpreted as, for every one unit increase in head length (the explanatory variable), the total length(response variable) increases by 0.98 units.
 
--  ***Intercept:*** the intercept of the line is 5.51. This is the value of the response variable when the explanatory variable is 0. In this case, the intercept does not make sense because we can't have a head length of 0.
-
+-   ***Intercept:*** the intercept of the line is 5.51. This is the value of the response variable when the explanatory variable is 0. In this case, the intercept does not make sense because we can't have a head length of 0.
 :::
 
 ## Strength of Fit (R-squared) {.smaller}
 
 The coefficient of determination (abbreviated as $R^2$) of a linear model describes the amount of variation in the response variable that is explained by the least squares regression line (the model). $R^2$ is computed as follows:
 
-- Compute the squared residuals (i.e., $(y_i-\hat{y}_i)^2$), and sum them up (we call these sum of square errors or SSE).
-- Compute the deviation of each value of the response variable ($y_i$) from the mean ($\bar{y}$). Square these deviations and add the squares up. This is called the sum of squares total (SST). This is a measure of the total variation in the response variable.
-- Compute the difference between SST and SSE. Divide the difference by the SST to get the $R^2$. Mathematically, $$R^2 = \frac{SST-SSE}{SST}=1 - \frac{SSE}{SST}$$
-
+-   Compute the squared residuals (i.e., $(y_i-\hat{y}_i)^2$), and sum them up (we call these sum of square errors or SSE).
+-   Compute the deviation of each value of the response variable ($y_i$) from the mean ($\bar{y}$). Square these deviations and add the squares up. This is called the sum of squares total (SST). This is a measure of the total variation in the response variable.
+-   Compute the difference between SST and SSE. Divide the difference by the SST to get the $R^2$. Mathematically, $$R^2 = \frac{SST-SSE}{SST}=1 - \frac{SSE}{SST}$$
 
 ## Example {.smaller}
 
 Using the data from the previous example, we found the equation of the linear regression model to be $\hat{y} = 5.51 + 0.98x$. Calculate the $R^2$ for this model, and interpret it in context.
 
-- First, we calculate the SST: $SST = \sum(y_i-\bar{y})^2 = (10-14.33)^2+...+ (18-14.33)^2 \approx 68$.
+-   First, we calculate the SST: $SST = \sum(y_i-\bar{y})^2 = (10-14.33)^2+...+ (18-14.33)^2 \approx 68$.
 
-- Next, we calculate the SSE: $SSE = \sum(y_i-\hat{y}_i)^2 = (10-10.41)^2+...+ 0.2518-18.25^2 \approx 9.98$. <br> 
-Note that $\hat{y}_1=10.41=5.51+0.98\times 5$
+-   Next, we calculate the SSE: $SSE = \sum(y_i-\hat{y}_i)^2 = (10-10.41)^2+...+ 0.2518-18.25^2 \approx 9.98$. <br> Note that $\hat{y}_1=10.41=5.51+0.98\times 5$
 
-- Finally, we calculate the $R^2$: $R^2 = 1 - \frac{9.98}{68} = 0.8532$.
+-   Finally, we calculate the $R^2$: $R^2 = 1 - \frac{9.98}{68} = 0.8532$.
 
 **Interpretation:** 85.32% of the variation in the total length of the fish (response variable) is explained by the head length (predictor variable). This is a strong fit.
 
@@ -237,16 +231,20 @@ Notice that the square root of $R^2$ is approximately equal to the correlation c
 
 ## Outliers in Linear Regression {.smaller}
 
-- Outliers in regression are observations that tend to fall far from the cloud of points in a scatterplot.
-- Outlying can happen in the x-direction, y-direction, or both. 
-- Outliers that fall horizontally away from the center of the cloud of points are called **leverage points**.  
-- Outlying point(s) may or may not have an impact on the regression line. Whenever the points influence the slope of the line, they are called **influential points** (see next slide).
-- It can be very tempting to remove outliers from the data. However, this should be done with caution. Models that ignore exceptional points often perform poorly.
+-   Outliers in regression are observations that tend to fall far from the cloud of points in a scatterplot.
 
-- One way to deal with outliers is to perform two separate analyses - one with the outliers and one without. This will give a more holistic picture.
+-   Outlying can happen in the x-direction, y-direction, or both.
 
+-   Outliers that fall horizontally away from the center of the cloud of points are called **leverage points**.\
+
+-   Outlying point(s) may or may not have an impact on the regression line. Whenever the points influence the slope of the line, they are called **influential points** (see next slide).
+
+-   It can be very tempting to remove outliers from the data. However, this should be done with caution. Models that ignore exceptional points often perform poorly.
+
+-   One way to deal with outliers is to perform two separate analyses - one with the outliers and one without. This will give a more holistic picture.
 
 ## Cont ... {.smaller}
+
 ::: columns
 ::: {.column width="45%"}
 ***A:*** <br> The circled point is an outlier in the y direction and from the model. The point appears to have only a minimal influence on the line.
@@ -257,11 +255,10 @@ Notice that the square root of $R^2$ is approximately equal to the correlation c
 :::
 
 ::: {.column width="55%"}
-
 ![](images/scatter6.jpeg){fig-alt="Outliers in regression" fig-align="center"}
+:::
+:::
 
-:::
-:::
 If a point(s) is both horizontally far from the cloud and the line, then, it is an influential point.
 
 ## Categorical variables in SLR {.smaller}
@@ -269,10 +266,9 @@ If a point(s) is both horizontally far from the cloud and the line, then, it is 
 ::: columns
 ::: {.column width="50%"}
 ::: demo
-
 -   So far, we have been dealing with numerical variables. But what if we have a categorical predictor variable?
 -   We can still use linear regression, but we have to convert the categorical variable into a numerical variable using **dummy coding**. A categorical variable with 2 levels (e.g., used or new) can be converted to numerical by assigning a 0 to one of the levels and a 1 to the other (e.g., new=1).
-- The scatterplot to the right shows the relationship between **total price** of a game and the game **condition** (dummy coded as 0 for **used** and 1 for **new**).
+-   The scatterplot to the right shows the relationship between **total price** of a game and the game **condition** (dummy coded as 0 for **used** and 1 for **new**).
 :::
 :::
 
@@ -281,37 +277,34 @@ If a point(s) is both horizontally far from the cloud and the line, then, it is 
 **Game total price vs condition**
 
 ![](images/scatter7.jpeg){fig-alt="Outliers in regression" fig-align="center"}
-
 :::
 :::
 :::
 
 ## Cont ... {.smaller}
 
-- The linear model for the scatterplot can be written as
- $$\widehat{price} = b_0 + b_1\times cond_{new}.$$
-- Notice that, in the model equation, we use the level that was assigned 1, while the level that was assigned 0 is dropped. We call the level that was dropped a **reference level** (more on this later).
--  When you use software, the model turns out to be, $$\widehat{price} = 42.87 + 10.9 \times cond_{new}.$$
-- **Interpretation:** The intercept (\$42.9) is the estimated average price for used games. The slope indicates that, on average, new games sell for about \$10.9 more than used games. Here, `one unit increase` represents change from used to new.
- 
-::: {.callout-caution}
+-   The linear model for the scatterplot can be written as $$\widehat{price} = b_0 + b_1\times cond_{new}.$$
+-   Notice that, in the model equation, we use the level that was assigned 1, while the level that was assigned 0 is dropped. We call the level that was dropped a **reference level** (more on this later).
+-   When you use software, the model turns out to be, $$\widehat{price} = 42.87 + 10.9 \times cond_{new}.$$
+-   **Interpretation:** The intercept (\$42.9) is the estimated average price for used games. The slope indicates that, on average, new games sell for about \$10.9 more than used games. Here, `one unit increase` represents change from used to new.
+
+::: callout-caution
 ## Caution
+
 The interpretation of the slope compares used and new games. A common error is to say that new games cost \$10.9. This is incorrect. The slope (\$10.9) is the average price difference between new and used games.
 :::
-
 
 ## Conditions/Assumptions for running SLR {.smaller}
 
 Before running a linear regression model, certain conditions/assumptions must be met:
 
-- **Linearity:** The relationship between the (numerical) predictor and response variable is linear. To check this, you can use a scatterplot.
-- **Independence:** The observations/cases are independent of each other. This is often a matter of study design.
-- **Normality:** The residuals are normally distributed. This can be checked using a histogram of the residuals.
-- **Equal variance:** The variance of the residuals is constant across all levels of the predictor variable. This is also called ***homoscedasticity***. This can be checked using a residual plot.
+-   **Linearity:** The relationship between the (numerical) predictor and response variable is linear. To check this, you can use a scatterplot.
+-   **Independence:** The observations/cases are independent of each other. This is often a matter of study design.
+-   **Normality:** The residuals are normally distributed. This can be checked using a histogram of the residuals.
+-   **Equal variance:** The variance of the residuals is constant across all levels of the predictor variable. This is also called ***homoscedasticity***. This can be checked using a residual plot.
 
->> To remember these conditions/assumptions, think of the acronym **LINE**.
+> > To remember these conditions/assumptions, think of the acronym **LINE**.
 
 ## A Final Note {.smaller}
 
->> Extrapolation can be dangerous. This is the practice of using a regression line to make predictions for values of the explanatory variable that are outside the range of the data. This is risky because the relationship between the variables may not be linear outside the range of the data.
-
+> > Extrapolation can be dangerous. This is the practice of using a regression line to make predictions for values of the explanatory variable that are outside the range of the data. This is risky because the relationship between the variables may not be linear outside the range of the data.

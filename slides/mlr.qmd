@@ -1,0 +1,163 @@
+---
+title: "Multiple Linear Regression"
+subtitle: "Chapter 8"
+date: "Sep 18, 2024"
+format: revealjs
+---
+
+# Multiple Linear Linear Regression (MLR)
+
+Introducing Multiple Linear Regression (MLR)!
+
+
+## But, why MLR?? {.smaller}
+
+- In the previous chapter, we learned about the techniques for modeling the relationship between two variables (a predictor and an outcome variable).
+- Specifically, we saw that linear regression provides powerful tools for predicting the values of an outcome variable given one predictor variable (numerical or categorical).
+- In real life situations, however, variables are related in a much more complex manner.
+- For example, assuming that the price of a house depends on the school district only may mask the influence of other variables such as the size of the house, the number of bedrooms, the location, and the year it was built, among others.
+
+## Structure of MLR models {.smaller}
+
+-   When you are modelling connection between one predictor variable and one outcome variable, the equation takes the form of a line: $\widehat{Outcome} = \beta_0 + \beta_1\times predictor$.
+-   This can also be written as $\widehat{y} = \beta_0 + \beta_1x$.
+-  In MLR, the equation takes the form of a plane: $$\widehat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2+ ... \beta_n x_n.$$
+
+- Unlike the SLR model (single predictor variable), this one has $n$ variables and $n$ slopes ($n$ can be any whole number greater than 1). Each of these slopes represent the weights of the corresponding variables. 
+- While it was possible to draw a scatterplot to visualize the relationship in the case of a single variable, doing so for multiple regression is often complicated due to the many variables (requires 3 or more dimensions). 
+- Like the SLR models, MLR models have one intercept. 
+
+## Example {.smaller}
+
+When you apply for a loan, the bank determines your interest rate based on several factors such as credit score, loan_type, credit checks previous default rate, credit utility, bankruptcy records, income, length of the loan, among others. You can think of these factors as predictor variables and the interest rate as an outcome variable.
+
+- Note that in MLR, the outcome variable must be numerical but the predictor variables do not have to be. In fact, you can have a mix of numerical and categorical variables in the same multiple regression model.
+
+- For simplicity, let's consider a model with two predictor variables- default rate, and credit score. 
+
+- Given data from several individuals on the above variables, we can use software to generate the multiple regression model (the equation) >> 
+
+
+## Cont... {.smaller}
+Suppose we come up with the following model:
+
+$$ \widehat{Rate} = 12.1+2.34\times \text{default_Rate}-.00013\times\text{Credit_Score}$$
+
+**Interpretation**
+
+- The intercept (12.1) represents the base interest rate. On average, individuals with no default rate and no credit score would get an interest rate of 12.1%. 
+
+- The slope for `Credit_Score`(-0.00013) indicates that for individuals with the same default rate (i.e., default rate kept constant), interest rate ***decreases*** by 0.00013% on average for every additional unit in default rate.
+
+- The slope for `Default_Rate` (2.34) indicates that for individuals with the same credit score (i.e., credit score kept constant), interest rate ***increases*** by 2.34% on average for every additional unit in default rate.
+
+## Cont... {.smaller}
+
+We want to use the above model to predict the interest rate for an individual with a default rate of 0.5 and a credit score of 714.
+
+- Plug in the values of the predictor variables into the equation and solve for the outcome variable (interest rate).
+
+\begin{aligned}
+\widehat{Rate} &= 12.1 - (.00013\times 714)+(2.34\times 0.5)\\
+               &= 12.1+ .09282 - 1.17\\
+               &= 13.18\%
+\end{aligned}
+
+
+## Categorical Variables in MLR {.smaller}
+
+- We saw in the case of regression with a single predictor that when you have a categorical variable with two levels (e.g., yes and no) we convert the variable into indicator variable by assigning one level a 1 and the other a 0. These numerical values are then used to compute the regression model.
+- In the case of a categorical variable with, say, 3 levels, one of the levels is chosen and is assigned zero while the other two are treated as separate predictor variables. 
+- The level that is assigned a zero is called the reference level.
+- 	Generally, if a categorical variable has p levels, the model shows p−1 indicator variables. 
+
+## Example {.smaller}
+
+Suppose we decide to add the categorical variable loan_type into our model in the previous example. Suppose also that loan_type has three levels (i.e., personal, auto, home). If the level "personal" is chosen as the reference level, the new model would look something like this:
+
+\begin{aligned}
+\widehat{Rate} &= 11.2 - .00019\times \text{Credit_Score}\\
+                  & +(2.09\times \text{Default_Rate})\\
+                  & + 0.511\times \text{Loan_type}\hspace{.1cm}_{Auto}\\
+                  & + 2.3\times \text{Loan_type}\hspace{.1cm}_{Home}\\
+\end{aligned}
+
+::: callout-caution
+## Warning
+
+- The intercept and the slope in the SLR model may change upon adding a new variable(s) to get a MLR model. This should be expected!<br>
+- The level "personal" is not included in the model.
+
+:::
+
+## Interpreting categorical variables {.smaller}
+
+- The model intercept and slopes for the numerical variables are interpreted as before.
+- The slope for `loan_type_auto`  means that when all other variables are held constant, the average interest rate for ***auto loans*** is 0.511% higher on average than the interest rate for personal loans.
+- The slope for `loan_type_home`  means that when all other variables are held constant, the interest rate for an ***home loans*** is 2.34% lower on average than the interest rate for personal loans.
+
+## Describing the Strength of Fit in MLR {.smaller}
+
+- In SLR, we used the coefficient of determination ($R^2$) to describe the strength of the relationship between the predictor and the outcome variable.
+
+- In MLR, we use the adjusted $R^2$ which is a modified version of $R^2$ that has been adjusted for the number of predictors in the model. We use the formula:
+
+$$Adjusted\hspace{.1cm}R^2 = 1 - \frac{s^2_{residuals}}{s^2_{outcome}}\times\frac{n-1}{n-k}$$
+
+Where $n$ is the number of observations and $k$ is the number of predictor variables ***in the model***.
+
+::: callout-caution
+## Caution!!
+
+Recall that a categorical variable with $p$ levels is represented by $p-1$ indicator variables.
+- A deeper discussion of the reasoning behind the formula will be done in class.
+:::
+
+## Model Selection in MLR {.smaller}
+
+- The best model is not always the most complicated. Sometimes including variables that are ***not evidently important*** can actually reduce the accuracy of predictions. 
+
+- A model with all potential predictors of a given outcome variable is called a ***full model***.
+
+- A ***parsimonious model*** is one that has undergone a "screening" process (model selection) that drops unimportant predictors.
+
+- 	There are two main types of model screening to obtain a parsimonious model. These are:
+    - Forward selection
+    - Backward elimination
+
+
+## Cont . . . {.smaller}
+- **Backward elimination:** starts with the full model (the model that includes all potential predictor variables and then eliminates predictors one-at-a-time from the model until we cannot improve the model any further. 
+
+- **Forward selection:** the opposite of the backward elimination. It starts with the model that includes no predictors and then adds predictors one-at-a-time to the model until we cannot improve the model any further.
+
+
+>>
+If your goal for model selection is to find a model with the best fit, you may want to choose a model with the highest adjusted $R^2$.<br>
+Other criteria that are commonly used include relying on expert opinion or using P-values (will be discussd in later sections). 
+
+## Conditions/Assumptions for MLR {.smaller}
+
+- Before running an analysis to create a multiple regression model, certain conditions and assumptions need to be met. We often use computer software to run most of these checks. These checks are the same as those fro SLR but with a few additions.
+
+- The assumptions are:
+    - ***Linearity:*** The relationship between the predictor variables and the outcome variable is linear.
+    - ***Independence:*** of observations (usually a matter of study design)
+    - ***Normality*** of residuals
+    - ***Equal Variance:*** aka homoscedasticity - the variance of the residuals is constant across all levels of the predictor variables.
+    - ***Multicollinearity:*** The predictor variables should not be highly correlated with each other.
+
+
+## Cont . . . {.smaller}
+
+Some of these conditions (e.g., multicollinearity) are often difficult to prevent in practice especially when doing observational studies. It is possible, however, to control these when doing an experimental study.
+
+- To check for nearly normal residuals, we usually create a histogram of the residuals.
+- To check for homoscedasticity, we create plot for residual vs fitted/predicted values. A plot of residuals vs one variable doesn’t give a full picture.
+- To check normality of residuals, we may use residuals vs each predictor variable.
+- To check for multicollinearity, we may use a scatterplot/correlation matrix.
+
+
+
+
+
