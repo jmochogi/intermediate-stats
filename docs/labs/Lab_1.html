@@ -320,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#reproducuble-reports" id="toc-reproducuble-reports" class="nav-link active" data-scroll-target="#reproducuble-reports">Reproducuble Reports</a>
+<a href="#reproducible-reports" id="toc-reproducible-reports" class="nav-link active" data-scroll-target="#reproducible-reports">Reproducible Reports</a>
   <ul class="collapse">
 <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#installing-a-new-package" id="toc-installing-a-new-package" class="nav-link" data-scroll-target="#installing-a-new-package">Installing a new package</a></li>
@@ -364,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="reproducuble-reports" class="level1 unnumbered"><h1 class="unnumbered">Reproducuble Reports</h1>
+</header><section id="reproducible-reports" class="level1 unnumbered"><h1 class="unnumbered">Reproducible Reports</h1>
 <section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In today’s lab, we introduce an interface known as quarto that is helpful in creating reproducible reports. One of the most powerful features of quarto is the fact that you can write code (in code chunks) and plain text in the same document. You can generate (render) your work into formats such as pdf, word, html, etc that can be shared easily. If you are using the desktop version of quarto, you need to download quarto from <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a> before you proceed.</p>
 </section><section id="installing-a-new-package" class="level2"><h2 class="anchored" data-anchor-id="installing-a-new-package">Installing a new package</h2>
@@ -590,45 +590,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>
 <strong><em>(2 pts)</em></strong> There is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space. <!--
-                                        data(loan50)
-                                        -->
+                                                data(loan50)
+                                                -->
 </li>
 <li>
 <strong><em>(2 pts)</em></strong> Give a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have? <!--
-                                        ?loan50
-                                        -->
+                                                ?loan50
+                                                -->
 </li>
 <li>
 <strong><em>(4 pts)</em></strong> Do people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables <code>emp_length</code> and <code>interest_rate</code>. <!--
 
 
 
-                                        ::: {.cell}
-                                        
-                                        ```{.r .cell-code}
-                                        ggplot(
-                                        data=loan50, aes(x=emp_length, y=interest_rate)) +
-                                        geom_point()
-                                        ```
-                                        
-                                        ::: {.cell-output .cell-output-stderr}
-                                        
-                                        ```
-                                        Warning: Removed 2 rows containing missing values or values outside the scale range
-                                        (`geom_point()`).
-                                        ```
-                                        
-                                        
-                                        :::
-                                        
-                                        ::: {.cell-output-display}
-                                        ![](Lab_1_files/figure-html/unnamed-chunk-14-1.png){width=672}
-                                        :::
-                                        :::
+                                                ::: {.cell}
+                                                
+                                                ```{.r .cell-code}
+                                                ggplot(
+                                                data=loan50, aes(x=emp_length, y=interest_rate)) +
+                                                geom_point()
+                                                ```
+                                                
+                                                ::: {.cell-output .cell-output-stderr}
+                                                
+                                                ```
+                                                Warning: Removed 2 rows containing missing values or values outside the scale range
+                                                (`geom_point()`).
+                                                ```
+                                                
+                                                
+                                                :::
+                                                
+                                                ::: {.cell-output-display}
+                                                ![](Lab_1_files/figure-html/unnamed-chunk-14-1.png){width=672}
+                                                :::
+                                                :::
 
 
 
-                                        -->
+                                                -->
 </li>
 <li>
 <strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</li>
@@ -646,22 +646,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-                                        ::: {.cell}
-                                        
-                                        ```{.r .cell-code}
-                                        ggplot(
-                                        data=loan50, aes(x=homeownership, fill=homeownership)) +
-                                        geom_bar()
-                                        ```
-                                        
-                                        ::: {.cell-output-display}
-                                        ![](Lab_1_files/figure-html/unnamed-chunk-16-1.png){width=672}
-                                        :::
-                                        :::
+                                                ::: {.cell}
+                                                
+                                                ```{.r .cell-code}
+                                                ggplot(
+                                                data=loan50, aes(x=homeownership, fill=homeownership)) +
+                                                geom_bar()
+                                                ```
+                                                
+                                                ::: {.cell-output-display}
+                                                ![](Lab_1_files/figure-html/unnamed-chunk-16-1.png){width=672}
+                                                :::
+                                                :::
 
 
 
-                                        --></p></li>
+                                                --></p></li>
 <li><p><strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</p></li>
 </ol>
 <div class="cell">
