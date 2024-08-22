@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="MATH 246 - Problem Set 3: Linear &amp; Logistic Regression">
 <meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
@@ -294,14 +323,45 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Downloads</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-downloads/templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Templates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ps_3.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#importing-the-data" id="toc-importing-the-data" class="nav-link active" data-scroll-target="#importing-the-data">Importing the Data</a></li>
+  <li><a href="#problem-1-linear-regression" id="toc-problem-1-linear-regression" class="nav-link" data-scroll-target="#problem-1-linear-regression">Problem 1 (Linear Regression)</a></li>
+  <li><a href="#problem-2-logistic-regression" id="toc-problem-2-logistic-regression" class="nav-link" data-scroll-target="#problem-2-logistic-regression">Problem 2 (Logistic Regression)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ps_3.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -324,9 +384,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Please check back later!</p>
+<p>The National Health and Nutrition Examination Survey (NHANES) is a survey conducted annually by the US Centers for Disease Control and Prevention (CDC) involving about 10,000 Americans aged 21 and older. In this problem set, you will use a data set obtained by randomly sampling 500 cases from the 10,000 NHANES survey participants. This new data set is called <strong>nhanes_samp_adult_500</strong> and is available online at <a href="https://www.openintro.org/data/csv/nhanes.samp.adult.500.csv" class="uri">https://www.openintro.org/data/csv/nhanes.samp.adult.500.csv</a>.</p>
+<section id="importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-the-data">Importing the Data</h2>
+<p>Up to this point in this course we have been using data frames that we either created in R or loaded from some package. In this problem set, you will use data from an online source. You will import this data in your workspace as a tibble. Tibbles are same as data frames but with several advantages such as</p>
+<ul>
+<li><p>They load faster than data frames.</p></li>
+<li><p>Allow use of non-standard variable names (i.e., variables can have sapces and can start with a number)</p></li>
+<li><p>Allow you to have columns as lists.</p></li>
+</ul>
+<p>To import the data set into your work space, use the command <code>read_csv()</code> which imports the data as a tibble. So you know, the command <code>read.csv()</code> loads data as a data frame. As noted earlier, the data is stored on a website and we have the link (URL). Use the command below to load the data into your workspace. Note that we are naming the data <strong>nhanes_samp_adult_500</strong>.</p>
+<p>If you data loads properly, it is highly recommended that you take some time to study it so you understand its context and variables. Doing this will make your analyses easier and interpretations will be meaningful.</p>
+</section>
+<section id="problem-1-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-linear-regression">Problem 1 (Linear Regression)</h2>
+<p>Several studies point out that maintaining a healthy weight is an important part of well being. The goal in this problem is to identify, via linear regression, the most important factors that can determine someone’s weight. Here is a list of the variables you will consider in this problem:</p>
+<p><strong>PhysActive</strong>: A categorical variable coded as <strong>Yes</strong> if the participant does moderate or vigorous-intensity sports, fitness, or recreational activities, and <strong>No</strong> if otherwise.</p>
+<p><strong><code>Height</code></strong>: A numerical variable measuring height in cm.</p>
+<p><strong><code>SleepHrsNight</code></strong>: A numerical variable representing the average sleep time per night in hours.</p>
+<p><strong><code>AgeMonths</code></strong>: A numerical variable giving someone’s age in months.</p>
+<p><strong><code>MaritalStatus</code></strong>: A categorical variable with levels Divorced, LivePartner, Married, NeverMarried, Separated, and Widowed.</p>
+<p><strong><code>Education</code></strong>: A categorical variable with levels 8th Grade 9 - 11th Grade, High School, Some College, and College Grad.</p>
+<p><strong><code>Gender</code></strong>: a categorical variable with levels female, male.</p>
+<p>As we have learned in this course, having a lot of predictors does not necessarily mean you have a great model. You are going to start by fitting a model with all predictors listed above and then perform model selection (backward elimination) to come up with the ‘’best model’’ for predicting weight.</p>
+<ol type="a">
+<li><p>Create a model for predicting weight based on all variables in the list above. Based on this model, what factor has the most influence on weight? What factor has the least influence?</p></li>
+<li><p>What is the R-squared value of the model in part (a) above? Interpret the value in the context of the data.</p></li>
+<li><p>Perform model selection (backward elimination) to come up with the ‘’best model’’ for predicting weight. Write down the equation of the model. You do not need to show all the steps of the backward elimination process but you should explain these steps here in brief.</p></li>
+<li><p>Interpret the intercept and all slopes in the final model from part (c).</p></li>
+<li><p>Examine the first case in the data set. Does your model underestimate or overestimate the weight of the individual? By how much?</p></li>
+</ol>
+</section>
+<section id="problem-2-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-logistic-regression">Problem 2 (Logistic Regression)</h2>
+<p>Many studies show that being overweight increases one’s risk of heart disease, stroke, type 2 diabetes, and other conditions. A common measure for determining whether someone is overweight is the Body Mass Index (BMI). BMI is a measure that accounts for both weight and height of an individual and is computed as follows:</p>
+<p><span class="math display">\[BMI=\frac{Weight}{(Height)^2}\]</span></p>
+<p>Where <code>weight</code> is measured in <strong>Kilograms</strong> and <code>Height</code> is measured in <strong>meters</strong>.</p>
+<p>In this problem, you will use the same data set used in problem 1 to run a model for the likelihood of diabetes based on <code>BMI</code>, <code>Age</code>, and <code>Gender</code>. Note that the variable <code>Diabetes</code> is categorical with levels <strong>Yes</strong> and <strong>No</strong>.</p>
+<ol type="a">
+<li><p>Create a regression model (name it <code>Diabetes_Model</code>) for predicting whether someone has diabetes or not based on their BMI, Age, and Gender. (Note: You may have to first mutate the Diabetes variable to use 1’s and 0’s. Check out the labs.</p></li>
+<li><p>Write down the equation of the model and interpret the coefficient for <code>Gender</code> and <code>BMI</code>.</p></li>
+<li><p>James (male) is 57 years old, weighs 87.9 Kg, and is 156 cm tall. How would the <code>Diabetes_Model</code> classify this individual (Diabetes or No diabetes)?</p></li>
+<li><p>Create a confusion matrix to determine the accuracy of the <code>Diabetes_Model</code>.</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -913,7 +1016,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/problem-sets/ps_3.html</loc>
-    <lastmod>2024-08-19T17:30:12.548Z</lastmod>
+    <lastmod>2024-08-22T00:59:42.806Z</lastmod>
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/problem-sets/ps-5.html</loc>
@@ -10,15 +10,15 @@
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/problem-sets/ps-1.html</loc>
-    <lastmod>2024-08-19T00:26:34.362Z</lastmod>
+    <lastmod>2024-08-20T17:01:35.799Z</lastmod>
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/course-syllabus.html</loc>
-    <lastmod>2024-08-18T15:58:28.640Z</lastmod>
+    <lastmod>2024-08-22T00:36:18.161Z</lastmod>
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/course-faq.html</loc>
-    <lastmod>2024-08-15T13:50:19.708Z</lastmod>
+    <lastmod>2024-08-20T01:30:45.934Z</lastmod>
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/project/tips-resources.html</loc>
@@ -57,6 +57,10 @@
     <lastmod>2024-08-15T16:01:48.975Z</lastmod>
   </url>
   <url>
+    <loc>https://jmochogi.github.io/intermediate-stats/course-downloads/templates.html</loc>
+    <lastmod>2024-08-20T01:44:29.132Z</lastmod>
+  </url>
+  <url>
     <loc>https://jmochogi.github.io/intermediate-stats/labs/Lab_4.html</loc>
     <lastmod>2024-08-19T01:22:11.887Z</lastmod>
   </url>
@@ -83,6 +87,10 @@
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/course-links.html</loc>
     <lastmod>2024-08-16T01:50:12.994Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jmochogi.github.io/intermediate-stats/course-downloads/datasets.html</loc>
+    <lastmod>2024-08-20T01:37:07.584Z</lastmod>
   </url>
   <url>
     <loc>https://jmochogi.github.io/intermediate-stats/index.html</loc>

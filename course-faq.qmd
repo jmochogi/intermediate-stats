@@ -42,6 +42,16 @@ Go to your *Files* tab, check the box next to the file you want to download, the
 ```{=html}
 <iframe width="700" height="394" src="https://www.youtube.com/embed/cAHCMpPJx3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+## How do I upload a quarto file (.qmd) to RStudio cloud?
+
+Easy! Just go to your *Files* tab, click on the blue *Upload* button, and select the file you want to upload. RStudio will upload the file and you can then open it by clicking on it. 
+Watch the following video for a demonstration.
+
+
+
+
+
+
 ## How can I submit my assignment to Canvas?
 
 The instructions for submitting your assignment to Canvas can be found [here](https://community.canvaslms.com/t5/Student-Guide/How-do-I-submit-an-online-assignment/ta-p/503). Please preview your submission to make sure it is the correct file before submitting.

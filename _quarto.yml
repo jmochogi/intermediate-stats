@@ -112,7 +112,12 @@ website:
           - href: exam-review/exam-2-review.qmd
             text: Exam 2
       
-            
+      - section: "Downloads"
+        contents:
+          - href: course-downloads/datasets.qmd
+            text: Datasets
+          - href: course-downloads/templates.qmd
+            text: Templates
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
     left: "&copy; Copyright 2024, Joash Geteregechi"

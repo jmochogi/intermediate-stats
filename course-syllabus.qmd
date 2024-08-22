@@ -37,9 +37,9 @@ This is a 3 credits course. Credit is earned at Ithaca College in credit hours a
 
 | Day       | Room/Hall         | Time               |
 |-----------|-------------------|--------------------|
-| Monday    | Williams Hall 202 | 11:45 am - 1:00 pm |
-| Wednesday | Williams Hall 202 | 8:30 - 9:45 am     |
-| Friday    | Williams Hall 202 | 10:05 - 11:20 am   |
+| Monday    | Williams Hall 317 | 02:00 am - 2:50 pm |
+| Wednesday | Williams Hall 317 | 02:00 am - 2:50 pm |
+| Friday    | Williams Hall 317 | 02:00 am - 2:50 pm |
 
 ### Student Learning Objectives
 

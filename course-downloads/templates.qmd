@@ -1,0 +1,21 @@
+---
+title: "Datasets"
+---
+
+On this page, you will find the templates for problem sets, projects, exams, and other assignments. Each template includes the instructions for the assignment and the datasets you will need to complete the assignment.
+
+## Problem Sets
+
+-   [problem set 1]()
+-   [problem set 2]()
+-   [problem set 3]()
+
+## Projects
+
+- [project 1]()
+- [project 2]()
+
+## Exams
+
+- [exam 1]()
+- [exam 2]()

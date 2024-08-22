@@ -4,7 +4,40 @@
     "href": "problem-sets/ps_3.html",
     "title": "Problem Set 3: Linear & Logistic Regression",
     "section": "",
-    "text": "Please check back later!",
+    "text": "The National Health and Nutrition Examination Survey (NHANES) is a survey conducted annually by the US Centers for Disease Control and Prevention (CDC) involving about 10,000 Americans aged 21 and older. In this problem set, you will use a data set obtained by randomly sampling 500 cases from the 10,000 NHANES survey participants. This new data set is called nhanes_samp_adult_500 and is available online at https://www.openintro.org/data/csv/nhanes.samp.adult.500.csv.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 3"
+    ]
+  },
+  {
+    "objectID": "problem-sets/ps_3.html#importing-the-data",
+    "href": "problem-sets/ps_3.html#importing-the-data",
+    "title": "Problem Set 3: Linear & Logistic Regression",
+    "section": "Importing the Data",
+    "text": "Importing the Data\nUp to this point in this course we have been using data frames that we either created in R or loaded from some package. In this problem set, you will use data from an online source. You will import this data in your workspace as a tibble. Tibbles are same as data frames but with several advantages such as\n\nThey load faster than data frames.\nAllow use of non-standard variable names (i.e., variables can have sapces and can start with a number)\nAllow you to have columns as lists.\n\nTo import the data set into your work space, use the command read_csv() which imports the data as a tibble. So you know, the command read.csv() loads data as a data frame. As noted earlier, the data is stored on a website and we have the link (URL). Use the command below to load the data into your workspace. Note that we are naming the data nhanes_samp_adult_500.\nIf you data loads properly, it is highly recommended that you take some time to study it so you understand its context and variables. Doing this will make your analyses easier and interpretations will be meaningful.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 3"
+    ]
+  },
+  {
+    "objectID": "problem-sets/ps_3.html#problem-1-linear-regression",
+    "href": "problem-sets/ps_3.html#problem-1-linear-regression",
+    "title": "Problem Set 3: Linear & Logistic Regression",
+    "section": "Problem 1 (Linear Regression)",
+    "text": "Problem 1 (Linear Regression)\nSeveral studies point out that maintaining a healthy weight is an important part of well being. The goal in this problem is to identify, via linear regression, the most important factors that can determine someone’s weight. Here is a list of the variables you will consider in this problem:\nPhysActive: A categorical variable coded as Yes if the participant does moderate or vigorous-intensity sports, fitness, or recreational activities, and No if otherwise.\nHeight: A numerical variable measuring height in cm.\nSleepHrsNight: A numerical variable representing the average sleep time per night in hours.\nAgeMonths: A numerical variable giving someone’s age in months.\nMaritalStatus: A categorical variable with levels Divorced, LivePartner, Married, NeverMarried, Separated, and Widowed.\nEducation: A categorical variable with levels 8th Grade 9 - 11th Grade, High School, Some College, and College Grad.\nGender: a categorical variable with levels female, male.\nAs we have learned in this course, having a lot of predictors does not necessarily mean you have a great model. You are going to start by fitting a model with all predictors listed above and then perform model selection (backward elimination) to come up with the ‘’best model’’ for predicting weight.\n\nCreate a model for predicting weight based on all variables in the list above. Based on this model, what factor has the most influence on weight? What factor has the least influence?\nWhat is the R-squared value of the model in part (a) above? Interpret the value in the context of the data.\nPerform model selection (backward elimination) to come up with the ‘’best model’’ for predicting weight. Write down the equation of the model. You do not need to show all the steps of the backward elimination process but you should explain these steps here in brief.\nInterpret the intercept and all slopes in the final model from part (c).\nExamine the first case in the data set. Does your model underestimate or overestimate the weight of the individual? By how much?",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 3"
+    ]
+  },
+  {
+    "objectID": "problem-sets/ps_3.html#problem-2-logistic-regression",
+    "href": "problem-sets/ps_3.html#problem-2-logistic-regression",
+    "title": "Problem Set 3: Linear & Logistic Regression",
+    "section": "Problem 2 (Logistic Regression)",
+    "text": "Problem 2 (Logistic Regression)\nMany studies show that being overweight increases one’s risk of heart disease, stroke, type 2 diabetes, and other conditions. A common measure for determining whether someone is overweight is the Body Mass Index (BMI). BMI is a measure that accounts for both weight and height of an individual and is computed as follows:\n\\[BMI=\\frac{Weight}{(Height)^2}\\]\nWhere weight is measured in Kilograms and Height is measured in meters.\nIn this problem, you will use the same data set used in problem 1 to run a model for the likelihood of diabetes based on BMI, Age, and Gender. Note that the variable Diabetes is categorical with levels Yes and No.\n\nCreate a regression model (name it Diabetes_Model) for predicting whether someone has diabetes or not based on their BMI, Age, and Gender. (Note: You may have to first mutate the Diabetes variable to use 1’s and 0’s. Check out the labs.\nWrite down the equation of the model and interpret the coefficient for Gender and BMI.\nJames (male) is 57 years old, weighs 87.9 Kg, and is 156 cm tall. How would the Diabetes_Model classify this individual (Diabetes or No diabetes)?\nCreate a confusion matrix to determine the accuracy of the Diabetes_Model.",
     "crumbs": [
       "Problem Sets",
       "Problem Set 3"
@@ -55,7 +88,7 @@
     "href": "course-syllabus.html",
     "title": "MATH 246 - Intermediate Statistics",
     "section": "",
-    "text": "This class will mostly be taught using a Flipped Model. A flipped classroom is aimed at increasing your engagement and learning by having you complete some activities (readings and/or videos) ahead of class. At the end of each pre-class activity, you will complete a short quiz that we will call class preparation assignment (CPA). In most cases, these CPAs will be graded only for effort and completion. When doing CPAs, you should write down your notes and any questions that you have so we can address it in class or during open hours. More information about the CPA is provided under Assessment section of this syllabus. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning: In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up: If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier.\n\n\n\n\nFlipped Classroom Model\n\n\n\n\n\nCovers statistical methods not typically covered in introductory statistics courses. Topics include multivariate analysis and nonparametric techniques, bootstrapping and jackknife methods, and two-way ANOVA. Emphasis will be placed on working with data sets from a broad variety of disciplines with an exploratory data analysis approach. The statistical software environment R will be used in analyzing data.\n\n\n\nMATH 14400, MATH 14500, MATH 21600, or PSYC 20700 with a grade of C- or better. (S,Y) Attributes: NS, QL  Number of Credits: 3 Credits\nWorkload Expectation:\nThis is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).\n\n\n\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 202\n11:45 am - 1:00 pm\n\n\nWednesday\nWilliams Hall 202\n8:30 - 9:45 am\n\n\nFriday\nWilliams Hall 202\n10:05 - 11:20 am\n\n\n\n\n\n\nUpon successful completion of this course, students will be able to:\n\nImplement the model-simulate-evaluate process to address data-driven questions on real-world topics.\nChoose and use various statistical analysis techniques (exploratory and inferential) in a variety of “real life” contexts including study design.\nCritically analyze the use of statistics in research, in the media, and in various day-to-day life situations.\nCommunicate statistical ideas effectively and in context without relying on statistical jargon.\nUse technology (e.g., R) to perform statistical explorations and manipulations.\nEffectively collaborate with peers on projects and presentations.",
+    "text": "This class will mostly be taught using a Flipped Model. A flipped classroom is aimed at increasing your engagement and learning by having you complete some activities (readings and/or videos) ahead of class. At the end of each pre-class activity, you will complete a short quiz that we will call class preparation assignment (CPA). In most cases, these CPAs will be graded only for effort and completion. When doing CPAs, you should write down your notes and any questions that you have so we can address it in class or during open hours. More information about the CPA is provided under Assessment section of this syllabus. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning: In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up: If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier.\n\n\n\n\nFlipped Classroom Model\n\n\n\n\n\nCovers statistical methods not typically covered in introductory statistics courses. Topics include multivariate analysis and nonparametric techniques, bootstrapping and jackknife methods, and two-way ANOVA. Emphasis will be placed on working with data sets from a broad variety of disciplines with an exploratory data analysis approach. The statistical software environment R will be used in analyzing data.\n\n\n\nMATH 14400, MATH 14500, MATH 21600, or PSYC 20700 with a grade of C- or better. (S,Y) Attributes: NS, QL  Number of Credits: 3 Credits\nWorkload Expectation:\nThis is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).\n\n\n\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\nWednesday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\nFriday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\n\n\n\n\nUpon successful completion of this course, students will be able to:\n\nImplement the model-simulate-evaluate process to address data-driven questions on real-world topics.\nChoose and use various statistical analysis techniques (exploratory and inferential) in a variety of “real life” contexts including study design.\nCritically analyze the use of statistics in research, in the media, and in various day-to-day life situations.\nCommunicate statistical ideas effectively and in context without relying on statistical jargon.\nUse technology (e.g., R) to perform statistical explorations and manipulations.\nEffectively collaborate with peers on projects and presentations.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -66,7 +99,7 @@
     "href": "course-syllabus.html#about-the-course",
     "title": "MATH 246 - Intermediate Statistics",
     "section": "",
-    "text": "This class will mostly be taught using a Flipped Model. A flipped classroom is aimed at increasing your engagement and learning by having you complete some activities (readings and/or videos) ahead of class. At the end of each pre-class activity, you will complete a short quiz that we will call class preparation assignment (CPA). In most cases, these CPAs will be graded only for effort and completion. When doing CPAs, you should write down your notes and any questions that you have so we can address it in class or during open hours. More information about the CPA is provided under Assessment section of this syllabus. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning: In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up: If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier.\n\n\n\n\nFlipped Classroom Model\n\n\n\n\n\nCovers statistical methods not typically covered in introductory statistics courses. Topics include multivariate analysis and nonparametric techniques, bootstrapping and jackknife methods, and two-way ANOVA. Emphasis will be placed on working with data sets from a broad variety of disciplines with an exploratory data analysis approach. The statistical software environment R will be used in analyzing data.\n\n\n\nMATH 14400, MATH 14500, MATH 21600, or PSYC 20700 with a grade of C- or better. (S,Y) Attributes: NS, QL  Number of Credits: 3 Credits\nWorkload Expectation:\nThis is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).\n\n\n\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 202\n11:45 am - 1:00 pm\n\n\nWednesday\nWilliams Hall 202\n8:30 - 9:45 am\n\n\nFriday\nWilliams Hall 202\n10:05 - 11:20 am\n\n\n\n\n\n\nUpon successful completion of this course, students will be able to:\n\nImplement the model-simulate-evaluate process to address data-driven questions on real-world topics.\nChoose and use various statistical analysis techniques (exploratory and inferential) in a variety of “real life” contexts including study design.\nCritically analyze the use of statistics in research, in the media, and in various day-to-day life situations.\nCommunicate statistical ideas effectively and in context without relying on statistical jargon.\nUse technology (e.g., R) to perform statistical explorations and manipulations.\nEffectively collaborate with peers on projects and presentations.",
+    "text": "This class will mostly be taught using a Flipped Model. A flipped classroom is aimed at increasing your engagement and learning by having you complete some activities (readings and/or videos) ahead of class. At the end of each pre-class activity, you will complete a short quiz that we will call class preparation assignment (CPA). In most cases, these CPAs will be graded only for effort and completion. When doing CPAs, you should write down your notes and any questions that you have so we can address it in class or during open hours. More information about the CPA is provided under Assessment section of this syllabus. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning: In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up: If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier.\n\n\n\n\nFlipped Classroom Model\n\n\n\n\n\nCovers statistical methods not typically covered in introductory statistics courses. Topics include multivariate analysis and nonparametric techniques, bootstrapping and jackknife methods, and two-way ANOVA. Emphasis will be placed on working with data sets from a broad variety of disciplines with an exploratory data analysis approach. The statistical software environment R will be used in analyzing data.\n\n\n\nMATH 14400, MATH 14500, MATH 21600, or PSYC 20700 with a grade of C- or better. (S,Y) Attributes: NS, QL  Number of Credits: 3 Credits\nWorkload Expectation:\nThis is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).\n\n\n\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\nWednesday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\nFriday\nWilliams Hall 317\n02:00 am - 2:50 pm\n\n\n\n\n\n\nUpon successful completion of this course, students will be able to:\n\nImplement the model-simulate-evaluate process to address data-driven questions on real-world topics.\nChoose and use various statistical analysis techniques (exploratory and inferential) in a variety of “real life” contexts including study design.\nCritically analyze the use of statistics in research, in the media, and in various day-to-day life situations.\nCommunicate statistical ideas effectively and in context without relying on statistical jargon.\nUse technology (e.g., R) to perform statistical explorations and manipulations.\nEffectively collaborate with peers on projects and presentations.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -177,6 +210,17 @@
     "title": "FAQ",
     "section": "How do I export my assignment PDF from RStudio to upload to Canvas?",
     "text": "How do I export my assignment PDF from RStudio to upload to Canvas?\nGo to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-do-i-upload-a-quarto-file-.qmd-to-rstudio-cloud",
+    "href": "course-faq.html#how-do-i-upload-a-quarto-file-.qmd-to-rstudio-cloud",
+    "title": "FAQ",
+    "section": "How do I upload a quarto file (.qmd) to RStudio cloud?",
+    "text": "How do I upload a quarto file (.qmd) to RStudio cloud?\nEasy! Just go to your Files tab, click on the blue Upload button, and select the file you want to upload. RStudio will upload the file and you can then open it by clicking on it. Watch the following video for a demonstration.",
     "crumbs": [
       "Course information",
       "FAQ"
@@ -661,6 +705,50 @@
     ]
   },
   {
+    "objectID": "course-downloads/templates.html",
+    "href": "course-downloads/templates.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "On this page, you will find the templates for problem sets, projects, exams, and other assignments. Each template includes the instructions for the assignment and the datasets you will need to complete the assignment.",
+    "crumbs": [
+      "Downloads",
+      "Templates"
+    ]
+  },
+  {
+    "objectID": "course-downloads/templates.html#problem-sets",
+    "href": "course-downloads/templates.html#problem-sets",
+    "title": "Datasets",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nproblem set 1\nproblem set 2\nproblem set 3",
+    "crumbs": [
+      "Downloads",
+      "Templates"
+    ]
+  },
+  {
+    "objectID": "course-downloads/templates.html#projects",
+    "href": "course-downloads/templates.html#projects",
+    "title": "Datasets",
+    "section": "Projects",
+    "text": "Projects\n\nproject 1\nproject 2",
+    "crumbs": [
+      "Downloads",
+      "Templates"
+    ]
+  },
+  {
+    "objectID": "course-downloads/templates.html#exams",
+    "href": "course-downloads/templates.html#exams",
+    "title": "Datasets",
+    "section": "Exams",
+    "text": "Exams\n\nexam 1\nexam 2",
+    "crumbs": [
+      "Downloads",
+      "Templates"
+    ]
+  },
+  {
     "objectID": "labs/Lab_4.html",
     "href": "labs/Lab_4.html",
     "title": "MATH 246",
@@ -1135,6 +1223,17 @@
     "crumbs": [
       "Course information",
       "Useful links"
+    ]
+  },
+  {
+    "objectID": "course-downloads/datasets.html",
+    "href": "course-downloads/datasets.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "The datasets to used in this course are from many sources but some will be available here for your download and upload to your workspace. Here are some of the datasets:\n\nDataset 1\nDataset 2\nDataset 3",
+    "crumbs": [
+      "Downloads",
+      "Datasets"
     ]
   },
   {

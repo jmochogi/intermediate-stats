@@ -1,0 +1,9 @@
+---
+title: "Datasets"
+---
+
+The datasets to used in this course are from many sources but some will be available here for your download and upload to your workspace. Here are some of the datasets:
+
+- [Dataset 1]()
+- [Dataset 2]()
+- [Dataset 3]()
