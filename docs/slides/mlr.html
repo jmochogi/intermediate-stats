@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.43">
 
   <meta name="author" content="Dr.&nbsp;Joash Geteregechi">
-  <meta name="dcterms.date" content="2024-10-02">
-  <title>MATH 246 – Logistic Regression Modelling</title>
+  <meta name="dcterms.date" content="2024-09-18">
+  <title>MATH 246 – Multiple Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -323,11 +323,11 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="MATH 246 - Logistic Regression Modelling">
-<meta property="og:description" content="Chapter 9">
+<meta property="og:title" content="MATH 246 - Multiple Linear Regression">
+<meta property="og:description" content="Chapter 8">
 <meta property="og:site_name" content="MATH 246">
-<meta name="twitter:title" content="MATH 246 - Logistic Regression Modelling">
-<meta name="twitter:description" content="Chapter 9">
+<meta name="twitter:title" content="MATH 246 - Multiple Linear Regression">
+<meta name="twitter:description" content="Chapter 8">
 <meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/slides/img/twitter-card.png">
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
@@ -337,8 +337,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Logistic Regression Modelling</h1>
-  <p class="subtitle">Chapter 9</p>
+  <h1 class="title">Multiple Linear Regression</h1>
+  <p class="subtitle">Chapter 8</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -351,253 +351,178 @@ Dr.&nbsp;Joash Geteregechi
     </div>
 </div>
 
-  <p class="date">2024-10-02</p>
+  <p class="date">2024-09-18</p>
 </section>
 <section>
-<section id="logistic-regression-modelling-lrm" class="title-slide slide level1 center">
-<h1>Logistic Regression Modelling (LRM)</h1>
-
+<section id="multiple-linear-linear-regression-mlr" class="title-slide slide level1 center">
+<h1>Multiple Linear Linear Regression (MLR)</h1>
+<p>Introducing Multiple Linear Regression (MLR)!</p>
 </section>
-<section id="but-why-lrm" class="slide level2 smaller">
-<h2>But, why LRM??</h2>
+<section id="but-why-mlr" class="slide level2 smaller">
+<h2>But, why MLR??</h2>
 <ul>
-<li><p>You learned about linear regression with a single predictor (slr) and linear regression with multiple predictors (mlr). Common features between slr and mlr are:</p>
-<ul>
-<li>Both model a numerical outcome variable.</li>
-<li>Both take both numerical and categorical variables as predictors.</li>
-</ul></li>
-<li><p>Question: What if you have a categorical binary outcome? This is precisely what logistic regression does.</p></li>
-<li><p>Logistic regression is a special case of what is known as generalized linear models (GLM).</p></li>
+<li>In the previous chapter, we learned about the techniques for modeling the relationship between two variables (a predictor and an outcome variable).</li>
+<li>Specifically, we saw that linear regression provides powerful tools for predicting the values of an outcome variable given one predictor variable (numerical or categorical).</li>
+<li>In real life situations, however, variables are related in a much more complex manner.</li>
+<li>For example, assuming that the price of a house depends on the school district only may mask the influence of other variables such as the size of the house, the number of bedrooms, the location, and the year it was built, among others.</li>
 </ul>
 </section>
-<section id="structure-of-logistic-regression-models" class="slide level2 smaller">
-<h2>Structure of Logistic Regression models</h2>
+<section id="structure-of-mlr-models" class="slide level2 smaller">
+<h2>Structure of MLR models</h2>
 <ul>
-<li>In short, logistic regression is used in situations such as:
+<li><p>When you are modelling connection between one predictor variable and one outcome variable, the equation takes the form of a line: <span class="math inline">\(\widehat{Outcome} = \beta_0 + \beta_1\times predictor\)</span>.</p></li>
+<li><p>This can also be written as <span class="math inline">\(\widehat{y} = \beta_0 + \beta_1x\)</span>.</p></li>
+<li><p>In MLR, the equation takes the form of a plane: <span class="math display">\[\widehat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2+ ... \beta_n x_n.\]</span></p></li>
+<li><p>Unlike the SLR model (single predictor variable), this one has <span class="math inline">\(n\)</span> variables and <span class="math inline">\(n\)</span> slopes (<span class="math inline">\(n\)</span> can be any whole number greater than 1). Each of these slopes represent the weights of the corresponding variables.</p></li>
+<li><p>While it was possible to draw a scatterplot to visualize the relationship in the case of a single variable, doing so for multiple regression is often complicated due to the many variables (requires 3 or more dimensions).</p></li>
+<li><p>Like the SLR models, MLR models have one intercept.</p></li>
+</ul>
+</section>
+<section id="example" class="slide level2 smaller">
+<h2>Example</h2>
+<p>When you apply for a loan, the bank determines your interest rate based on several factors such as credit score, loan_type, credit checks previous default rate, credit utility, bankruptcy records, income, length of the loan, among others. You can think of these factors as predictor variables and the interest rate as an outcome variable.</p>
 <ul>
-<li>Predicting whether a student will pass or fail an exam based on the number of hours they study.</li>
-<li>Predicting whether a patient will develop a disease based on their age, weight, and other factors.</li>
-<li>Predicting whether a customer will buy a product based on their race, age, income, and other factors.</li>
-<li>Classifying students into two groups like “admitted” or “not admitted” based on a predictor variable such as sex or GPA.</li>
-</ul></li>
-<li>Can you think of other scenarios that can be modelled using logistic regression?</li>
+<li><p>Note that in MLR, the outcome variable must be numerical but the predictor variables do not have to be. In fact, you can have a mix of numerical and categorical variables in the same multiple regression model.</p></li>
+<li><p>For simplicity, let’s consider a model with two predictor variables- default rate, and credit score.</p></li>
+<li><p>Given data from several individuals on the above variables, we can use software to generate the multiple regression model (the equation) &gt;&gt;</p></li>
 </ul>
 </section>
 <section id="cont" class="slide level2 smaller">
 <h2>Cont…</h2>
+<p>Suppose we come up with the following model:</p>
+<p><span class="math display">\[ \widehat{Rate} = 12.1+2.34\times \text{default_Rate}-.00013\times\text{Credit_Score}\]</span></p>
+<p><strong>Interpretation</strong></p>
 <ul>
-<li>We denote the response variable as <span class="math inline">\(Y_i\)</span> with possible values 0 (for failure) and 1 (for success).</li>
-<li>In the above example, let is say that the response variable is <span class="math inline">\(Y_i\)</span> = <code>admission_status</code>, then, when <span class="math inline">\(Y_i\)</span> = 1, the student is admitted and when <span class="math inline">\(Y_i\)</span> = 0, the student is not admitted.</li>
-<li>However, we cannot get these values (0 and 1) directly from the logistic regression model. Rather, logistic regression outputs the probability of getting admitted. - Supposing we have k predictors, the equation takes the form: <span class="math display">\[ p_i= b_0+b_1x_{1,i}+b_{2}x_{2,i}+ ...+b_{k}x_{k,i}\]</span></li>
-<li>This is probability of student <span class="math inline">\(i\)</span> getting accepted. <span class="math inline">\(x_{1,i}, x_{2,i}, ... x_{k,i}\)</span> are the predictor variables for student <span class="math inline">\(i\)</span>.</li>
+<li><p>The intercept (12.1) represents the base interest rate. On average, individuals with no default rate and no credit score would get an interest rate of 12.1%.</p></li>
+<li><p>The slope for <code>Credit_Score</code>(-0.00013) indicates that for individuals with the same default rate (i.e., default rate kept constant), interest rate <strong><em>decreases</em></strong> by 0.00013% on average for every additional unit in default rate.</p></li>
+<li><p>The slope for <code>Default_Rate</code> (2.34) indicates that for individuals with the same credit score (i.e., credit score kept constant), interest rate <strong><em>increases</em></strong> by 2.34% on average for every additional unit in default rate.</p></li>
 </ul>
-</section>
-<section id="but-we-have-a-problem" class="slide level2 smaller">
-<h2>But, we have a problem</h2>
-<ul>
-<li>The quantity on the right side of the equation can take any value, including negative ones.</li>
-<li>Yet, probabilities must be between 0 and 1. So, what do we do? - We apply a transformation on the equation (right side) to obtain a value between 0 and 1. The function commonly used for doing this is called a logit function. The logit function is defined as:</li>
-</ul>
-<p><span class="math display">\[logit(p_i) = log_e\left(\frac{p_i}{1-p_i}\right)\]</span> Where, <span class="math inline">\(log_e\)</span> is the natural logarithm (also written as <span class="math inline">\(ln\)</span>.</p>
-<p>The new equation becomes.</p>
-<p><span class="math display">\[ logit(p_i) = log_e\left(\frac{p_i}{1-p_i}\right) = b_0+b_1x_{1,i}+b_{2}x_{2,i}+ ...+b_{k}x_{k,i}\]</span></p>
 </section>
 <section id="cont-1" class="slide level2 smaller">
 <h2>Cont…</h2>
+<p>We want to use the above model to predict the interest rate for an individual with a default rate of 0.5 and a credit score of 714.</p>
 <ul>
-<li>If the RHS results in -5, then, we have that, <span class="math display">\[
-ln\left(\frac{p_i}{1-p_i}\right) = -5
-\]</span></li>
-<li>To solve this equation for <span class="math inline">\(p_i\)</span>, we exponentiate both sides to obtain:</li>
+<li>Plug in the values of the predictor variables into the equation and solve for the outcome variable (interest rate).</li>
 </ul>
-<p><span class="math display">\[
-\left(\frac{p_i}{1-p_i}\right) = e^{-5}
-\]</span></p>
-<ul>
-<li>Then, solve algebraically for <span class="math inline">\(p_i\)</span> to get the probability of student <span class="math inline">\(i\)</span> getting admitted.</li>
-</ul>
-<p><span class="math display">\[
-p_i= \frac{e^{-5}}{1+e^{-5}} \approx 0.0068
-\]</span></p>
+<span class="math display">\[\begin{aligned}
+\widehat{Rate} &amp;= 12.1 - (.00013\times 714)+(2.34\times 0.5)\\
+               &amp;= 12.1+ .09282 - 1.17\\
+               &amp;= 13.18\%
+\end{aligned}\]</span>
 </section>
-<section id="example" class="slide level2 smaller">
+<section id="categorical-variables-in-mlr" class="slide level2 smaller">
+<h2>Categorical Variables in MLR</h2>
+<ul>
+<li>We saw in the case of regression with a single predictor that when you have a categorical variable with two levels (e.g., yes and no) we convert the variable into indicator variable by assigning one level a 1 and the other a 0. These numerical values are then used to compute the regression model.</li>
+<li>In the case of a categorical variable with, say, 3 levels, one of the levels is chosen and is assigned zero while the other two are treated as separate predictor variables.</li>
+<li>The level that is assigned a zero is called the reference level.</li>
+<li>Generally, if a categorical variable has p levels, the model shows p−1 indicator variables.</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2 smaller">
 <h2>Example</h2>
-<p>Suppose we are trying to determine whether employees who have any type of honors listed on their resume are more likely to receive a call back for an interview. Here, the response variable is received_callback (yes or no) while the predictor variable is honors. Suppose that upon fitting a logistic regression model, we come up with the following:</p>
-<p><span class="math display">\[ logit(p_i) = -2.4998+0.8668 × 3\times honors\]</span></p>
-<ol type="a">
-<li><p>If a resume is randomly selected from the study and it does not have any honors listed, what is the probability it resulted in a callback?</p></li>
-<li><p>What would be the probability if the resume did list some honors?</p></li>
-</ol>
-<ul>
-<li>Solution on the next slide &gt;&gt;</li>
-</ul>
-</section>
-<section id="solution" class="slide level2 smaller">
-<h2>Solution</h2>
-<ol type="a">
-<li>If a resume does not mention any honors, then the value of the predictor variable is 0, resulting in <span class="math inline">\(logit(p_i)=-2.4998+0.8668\times 0=-2.4998\)</span></li>
-</ol>
-<p>To find <span class="math inline">\(p_i\)</span>, we exponentiate both sides of the following equation: <span class="math display">\[
-ln\left(\frac{p_i}{1-p_i}\right)=-2.4998
-\]</span></p>
-<p>We get <span class="math display">\[p_i=\frac{e^{-2.4998}}{1+e^{-2.4998}}\approx 0.076\]</span></p>
-<p><strong>Interpretation</strong></p>
-<ul>
-<li>The probability of this resume resulting in a callback is 0.076 or 7.6%. Try part b on your own.</li>
-</ul>
-</section>
-<section id="lest-we-forget" class="slide level2 smaller">
-<h2>Lest we forget</h2>
-<ul>
-<li><p>Recall that the goal in logistic regression is to classify the response variable into two categories (e.g., pass/fail, admitted/not admitted, etc.). How do we do this?</p></li>
-<li><p>Using the modeled probabilities, we can classify the response variable into two categories by setting a <strong><em>threshold value</em></strong>.</p></li>
-<li><p>The threshold value is usually set at 0.5. If the probability is at least 0.5, we classify the response variable as 1 (success) and if it is less than 0.5, we classify it as 0 (failure).</p></li>
-</ul>
+<p>Suppose we decide to add the categorical variable loan_type into our model in the previous example. Suppose also that loan_type has three levels (i.e., personal, auto, home). If the level “personal” is chosen as the reference level, the new model would look something like this:</p>
+<span class="math display">\[\begin{aligned}
+\widehat{Rate} &amp;= 11.2 - .00019\times \text{Credit_Score}\\
+                  &amp; +(2.09\times \text{Default_Rate})\\
+                  &amp; + 0.511\times \text{Loan_type}\hspace{.1cm}_{Auto}\\
+                  &amp; + 2.3\times \text{Loan_type}\hspace{.1cm}_{Home}\\
+\end{aligned}\]</span>
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>The threshold value can be set at any value between 0 and 1. The choice of the threshold value depends on the context of the problem.</p>
+<ul>
+<li>The intercept and the slope in the SLR model may change upon adding a new variable(s) to get a MLR model. This should be expected!<br></li>
+<li>The level “personal” is not included in the model.</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<section id="illustration-of-the-logit-tranformation" class="slide level2 smaller">
-<h2>Illustration of the logit tranformation</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
+<section id="interpreting-categorical-variables" class="slide level2 smaller">
+<h2>Interpreting categorical variables</h2>
 <ul>
-<li>The logit transformation is used to transform the probabilities into a form that can be used in the logistic regression model.</li>
-</ul>
-</div><div class="column" style="width:65%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/logit.jpeg" class="quarto-figure quarto-figure-center" alt="HS grad vs poverty rate"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>If the threshold is 0.5, the probabilities that fall bellow 0.5 result in a classification of 0 (Failure) while 0.5 and above result in a classification of 1 (Success).</li>
+<li>The model intercept and slopes for the numerical variables are interpreted as before.</li>
+<li>The slope for <code>loan_type_auto</code> means that when all other variables are held constant, the average interest rate for <strong><em>auto loans</em></strong> is 0.511% higher on average than the interest rate for personal loans.</li>
+<li>The slope for <code>loan_type_home</code> means that when all other variables are held constant, the interest rate for an <strong><em>home loans</em></strong> is 2.34% lower on average than the interest rate for personal loans.</li>
 </ul>
 </section>
-<section id="many-predictors" class="slide level2 smaller">
-<h2>Many Predictors</h2>
+<section id="describing-the-strength-of-fit-in-mlr" class="slide level2 smaller">
+<h2>Describing the Strength of Fit in MLR</h2>
 <ul>
-<li>Like in the case on linear multiple regression, we can fit a logistic model using several predictor variables. In the above example, suppose we add the following variables.</li>
+<li><p>In SLR, we used the coefficient of determination (<span class="math inline">\(R^2\)</span>) to describe the strength of the relationship between the predictor and the outcome variable.</p></li>
+<li><p>In MLR, we use the adjusted <span class="math inline">\(R^2\)</span> which is a modified version of <span class="math inline">\(R^2\)</span> that has been adjusted for the number of predictors in the model. We use the formula:</p></li>
 </ul>
-<table class="caption-top">
-<tbody>
-<tr class="odd">
-<td>received_callback</td>
-<td>Specifies whether candidate received a call back</td>
-</tr>
-<tr class="even">
-<td>job_city</td>
-<td>Job city: Chicago or Boston</td>
-</tr>
-<tr class="odd">
-<td>college_degree</td>
-<td>Whether candidate has college degree</td>
-</tr>
-<tr class="even">
-<td>years_experience</td>
-<td>Candidate experience in years</td>
-</tr>
-<tr class="odd">
-<td>millitay</td>
-<td>Whether candidate served in the military</td>
-</tr>
-<tr class="even">
-<td>has_email_address</td>
-<td>Whether candidate has email address</td>
-</tr>
-<tr class="odd">
-<td>race</td>
-<td>Implied candidate race</td>
-</tr>
-<tr class="even">
-<td>sex</td>
-<td>Implied sex based on name</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="cont-2" class="slide level2 smaller">
-<h2>Cont…</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>Using software, we come up with the output on the right:</p>
-</div><div class="column" style="width:55%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/logistmodel.jpeg" class="quarto-figure quarto-figure-center" alt="HS grad vs poverty rate"></p>
-</figure>
+<p><span class="math display">\[Adjusted\hspace{.1cm}R^2 = 1 - \frac{s^2_{residuals}}{s^2_{outcome}}\times\frac{n-1}{n-k}\]</span></p>
+<p>Where <span class="math inline">\(n\)</span> is the number of observations and <span class="math inline">\(k\)</span> is the number of predictor variables <strong><em>in the model</em></strong>.</p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution!!</strong></p>
+</div>
+<div class="callout-content">
+<p>Recall that a categorical variable with <span class="math inline">\(p\)</span> levels is represented by <span class="math inline">\(p-1\)</span> indicator variables. - A deeper discussion of the reasoning behind the formula will be done in class.</p>
 </div>
 </div>
 </div>
-<ol type="a">
-<li>Write down the equation of the model. Interpret the coefficient for <code>job_city</code>.</li>
-<li>Using the model in part (a), estimate the probability of receiving a callback for a job in Chicago where the candidate lists 14 years experience, no honors, no military experience, includes an email address, has no college degree, and has a first name that implies they are a White male.</li>
-</ol>
 </section>
-<section id="solution-1" class="slide level2 smaller">
-<h2>Solution</h2>
-<ol type="a">
-<li>The equation of the model is given by:</li>
-</ol>
-<span class="math display">\[\begin{aligned}
-logit(p_i) &amp;= -2.66 - 0.44\times job\_city_{Chicago}\\
-                  &amp;+ 0.07college\_degree_1\\
-                  &amp; + 0.02\times years\_experience\\
-                  &amp; + 0.77\times honors_1\\
-                  &amp; - 0.34\times military_1\\
-                  &amp; + 0.22\times has\_email\_address_1\\
-                  &amp; + 0.44\times raceWhite\\
-                  &amp; - 0.18\times sexman
-\end{aligned}\]</span>
-<p><strong>Interpretation:</strong> Job City: All else held constant, the log <strong><em>odds ratio</em></strong> of getting a callback for a job in Chicago is .44 lower than one located in Boston. Part (b) &gt;&gt;</p>
-</section>
-<section id="solution-cont" class="slide level2 smaller">
-<h2>Solution cont…</h2>
-<ol start="2" type="a">
-<li>Using the model in part (a), we set up the predictor values in the model as follows:</li>
-</ol>
-<span class="math display">\[\begin{aligned}
-logit(p_i) &amp;= -2.66 - 0.44\times 1
-                   + 0.07\times 0
-                   + 0.02\times 14
-                   + 0.77\times 1\\
-                  &amp; - 0.34\times 0
-                   + 0.22\times 1
-                   + 0.44\times 1
-                   - 0.18\times 1\\
-                  &amp;= -2.78\\
-\end{aligned}\]</span>
-<p>Next, solve for the probability as before,</p>
-<p><span class="math display">\[
-p_i = \frac{e^{-2.78}}{1+e^{-2.78}} \approx 0.066
-\]</span></p>
-<p>The probability of receiving a callback for the resume is about 0.066 or 6.6%.</p>
-</section>
-<section id="model-selection" class="slide level2 smaller">
-<h2>Model Selection</h2>
+<section id="model-selection-in-mlr" class="slide level2 smaller">
+<h2>Model Selection in MLR</h2>
 <ul>
-<li>Like in linear regression, we can use the AIC, BIC, and other model selection criteria to select the best model.</li>
-<li>AIC selects a “best” model by ranking models from best to worst according to their AIC values. In the calculation of a model’s AIC, a penalty is given for including additional variables.</li>
-<li>This penalty for added model complexity attempts to strike a balance between underfitting (too few variables in the model) and overfitting (too many variables in the model).</li>
-<li>The model with the smallest AIC value is considered the best model.</li>
+<li><p>The best model is not always the most complicated. Sometimes including variables that are <strong><em>not evidently important</em></strong> can actually reduce the accuracy of predictions.</p></li>
+<li><p>A model with all potential predictors of a given outcome variable is called a <strong><em>full model</em></strong>.</p></li>
+<li><p>A <strong><em>parsimonious model</em></strong> is one that has undergone a “screening” process (model selection) that drops unimportant predictors.</p></li>
+<li><p>There are two main types of model screening to obtain a parsimonious model. These are:</p>
+<ul>
+<li>Forward selection</li>
+<li>Backward elimination</li>
+</ul></li>
+</ul>
+</section>
+<section id="cont-.-.-." class="slide level2 smaller">
+<h2>Cont . . .</h2>
+<ul>
+<li><p><strong>Backward elimination:</strong> starts with the full model (the model that includes all potential predictor variables and then eliminates predictors one-at-a-time from the model until we cannot improve the model any further.</p></li>
+<li><p><strong>Forward selection:</strong> the opposite of the backward elimination. It starts with the model that includes no predictors and then adds predictors one-at-a-time to the model until we cannot improve the model any further.</p></li>
 </ul>
 <blockquote>
 <blockquote>
-<p>We will do this practically during a lab session using software!</p>
+<p>If your goal for model selection is to find a model with the best fit, you may want to choose a model with the highest adjusted <span class="math inline">\(R^2\)</span>.<br> Other criteria that are commonly used include relying on expert opinion or using P-values (will be discussd in later sections).</p>
 </blockquote>
 </blockquote>
+</section>
+<section id="conditionsassumptions-for-mlr" class="slide level2 smaller">
+<h2>Conditions/Assumptions for MLR</h2>
+<ul>
+<li><p>Before running an analysis to create a multiple regression model, certain conditions and assumptions need to be met. We often use computer software to run most of these checks. These checks are the same as those fro SLR but with a few additions.</p></li>
+<li><p>The assumptions are:</p>
+<ul>
+<li><strong><em>Linearity:</em></strong> The relationship between the predictor variables and the outcome variable is linear.</li>
+<li><strong><em>Independence:</em></strong> of observations (usually a matter of study design)</li>
+<li><strong><em>Normality</em></strong> of residuals</li>
+<li><strong><em>Equal Variance:</em></strong> aka homoscedasticity - the variance of the residuals is constant across all levels of the predictor variables.</li>
+<li><strong><em>Multicollinearity:</em></strong> The predictor variables should not be highly correlated with each other.</li>
+</ul></li>
+</ul>
+</section>
+<section id="cont-.-.-.-1" class="slide level2 smaller">
+<h2>Cont . . .</h2>
+<p>Some of these conditions (e.g., multicollinearity) are often difficult to prevent in practice especially when doing observational studies. It is possible, however, to control these when doing an experimental study.</p>
+<ul>
+<li>To check for nearly normal residuals, we usually create a histogram of the residuals.</li>
+<li>To check for homoscedasticity, we create plot for residual vs fitted/predicted values. A plot of residuals vs one variable doesn’t give a full picture.</li>
+<li>To check normality of residuals, we may use residuals vs each predictor variable.</li>
+<li>To check for multicollinearity, we may use a scatterplot/correlation matrix.</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/logo.png" class="slide-logo"></p>
@@ -764,7 +689,7 @@ p_i = \frac{e^{-2.78}}{1+e^{-2.78}} \approx 0.066
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'fade',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

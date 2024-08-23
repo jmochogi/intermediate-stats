@@ -2,7 +2,11 @@
 title: "Logistic Regression Modelling"
 subtitle: "Chapter 9"
 date: "Oct 02, 2024"
-format: revealjs
+format: 
+  revealjs: 
+    #slideNumber: c/t
+    #theme: serif
+    transition: slide
 ---
 
 # Logistic Regression Modelling (LRM)

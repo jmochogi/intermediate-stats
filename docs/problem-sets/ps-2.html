@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name">
 
-<title>MATH 246 – Exam 1 Review</title>
+<title>MATH 246 – Problem Set 2: Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../exam-review/exam-2-review.html" rel="next">
-<link href="../problem-sets/ps-4.html" rel="prev">
+<link href="../problem-sets/ps_3.html" rel="next">
+<link href="../problem-sets/ps-1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,12 +74,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="MATH 246 - Exam 1 Review">
+<meta property="og:title" content="MATH 246 - Problem Set 2: Linear Regression">
 <meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta property="og:site_name" content="MATH 246">
-<meta name="twitter:title" content="MATH 246 - Exam 1 Review">
+<meta name="twitter:title" content="MATH 246 - Problem Set 2: Linear Regression">
 <meta name="twitter:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
-<meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/exam-review/img/twitter-card.png">
+<meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/problem-sets/img/twitter-card.png">
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/exam-1-review.html">Exam review</a></li><li class="breadcrumb-item"><a href="../exam-review/exam-1-review.html">Exam 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/ps-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/ps-2.html">Problem Set 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -238,13 +239,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problem-sets/ps-1.html" class="sidebar-item-text sidebar-link">
@@ -253,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../problem-sets/ps-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/ps-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 2</span></a>
   </div>
 </li>
@@ -273,16 +274,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Exam review</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam 1</span></a>
   </div>
 </li>
@@ -323,20 +324,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exam-1-review.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#importing-the-data" id="toc-importing-the-data" class="nav-link active" data-scroll-target="#importing-the-data">Importing the Data</a></li>
+  <li><a href="#problem-1-data-visualization-summary-stats" id="toc-problem-1-data-visualization-summary-stats" class="nav-link" data-scroll-target="#problem-1-data-visualization-summary-stats">Problem 1 (data visualization &amp; summary stats)</a></li>
+  <li><a href="#problem-2-linear-regression" id="toc-problem-2-linear-regression" class="nav-link" data-scroll-target="#problem-2-linear-regression">Problem 2 (linear regression)</a></li>
+  <li><a href="#problem-3-model-diagnostics" id="toc-problem-3-model-diagnostics" class="nav-link" data-scroll-target="#problem-3-model-diagnostics">Problem 3 (model diagnostics)</a></li>
+  <li><a href="#problem-4-categorical-predictor" id="toc-problem-4-categorical-predictor" class="nav-link" data-scroll-target="#problem-4-categorical-predictor">Problem 4 (categorical predictor)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ps-2.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/exam-1-review.html">Exam review</a></li><li class="breadcrumb-item"><a href="../exam-review/exam-1-review.html">Exam 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/ps-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/ps-2.html">Problem Set 2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exam 1 Review</h1>
+<h1 class="title">Problem Set 2: Linear Regression</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name </p>
+          </div>
+  </div>
     
   
     
@@ -347,718 +364,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Come back later! <!--
-
-
-
-
-
-::: {.cell}
-
-:::
-
-::: {.cell}
-
-:::
-
-
-
-
-
-
-::: callout-note
-Suggested answers can be found [here](/exam-review/exam-1-review-A.qmd), but resist the urge to peek before you go through it yourself.
-:::
-
-In 2020, employees of Blizzard Entertainment circulated a spreadsheet to anonymously share salaries and recent pay increases amidst rising tension in the video game industry over wage disparities and executive compensation. (Source: [Blizzard Workers Share Salaries in Revolt Over Pay](https://www.bloomberg.com/news/articles/2020-08-03/blizzard-workers-share-salaries-in-revolt-over-wage-disparities))
-
-The name of the data frame used for this analysis is `blizzard_salary` and the variables are:
-
--   `percent_incr`: Raise given in July 2020, as percent increase with values ranging from 1 (1% increase to 21.5 (21.5% increase)
-
--   `salary_type`: Type of salary, with levels `Hourly` and `Salaried`
-
--   `annual_salary`: Annual salary, in USD, with values ranging from \$50,939 to \$216,856.
-
--   `performance_rating`: Most recent review performance rating, with levels `Poor`, `Successful`, `High`, and `Top`. The `Poor` level is the lowest rating and the `Top` level is the highest rating.
-
-The top ten rows of `blizzard_salary` are shown below:
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 409 × 4
-   percent_incr salary_type annual_salary performance_rating
-          <dbl> <chr>               <dbl> <chr>             
- 1          1   Salaried               1  High              
- 2          1   Salaried               1  Successful        
- 3          1   Salaried               1  High              
- 4          1   Hourly             33987. Successful        
- 5         NA   Hourly             34798. High              
- 6         NA   Hourly             35360  <NA>              
- 7         NA   Hourly             37440  <NA>              
- 8          0   Hourly             37814. <NA>              
- 9          4   Hourly             41101. Top               
-10          1.2 Hourly             42328  <NA>              
-# ℹ 399 more rows
-```
-
-
-:::
-:::
-
-
-
-
-
-
-## Question 1
-
-Which of the following is [**correct**]{.underline}? Choose all that apply.
-
-a.  The `blizzard_salary` dataset has 399 rows.
-
-b.  The `blizzard_salary` dataset has 4 columns.
-
-c.  Each row represents a Blizzard Entertainment worker who filled out the spreadsheet.
-
-d.  The `percent_incr` variable is numerical and discrete.
-
-e.  The `salary_type` variable is numerical.
-
-f.  The `annual_salary` variable is numerical.
-
-g.  The `performance_rating` variable is categorical and ordinal.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
-
-## Question 2
-
-@fig-blizzard-hist-1 and @fig-blizzard-hist-2 show the distributions of annual salaries of hourly and salaried workers. The two figures show the same data, with the facets organized across rows and across columns. Which of the two figures is better for comparing the median annual salaries of hourly and salaried workers. Explain your reasoning.
-
-::: {#fig-blizzard-hist}
-
-
-
-
-
-::: {.cell}
-::: {.cell-output-display}
-![Option 1](exam-1-review_files/figure-html/fig-blizzard-hist-1-1.png){#fig-blizzard-hist-1 width=768}
-:::
-:::
-
-::: {.cell}
-::: {.cell-output-display}
-![Option 2](exam-1-review_files/figure-html/fig-blizzard-hist-2-1.png){#fig-blizzard-hist-2 width=768}
-:::
-:::
-
-
-
-
-
-
-Distribution of annual salaries of Blizzard employees
-:::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Question 3
-
-Suppose your teammate wrote the following code as part of their analysis of the data.
-
-
-
-
-
-
-::: {.cell}
-
-:::
-
-
-
-
-
-
-They then printed out the results shown below. Unfortunately one of the numbers got erased from the printout. It's indicated with `_____` below.
-
-```         
-# A tibble: 2 × 3
-  salary_type mean_annual_salary median_annual_salary
-  <chr>                    <dbl>                <dbl>
-1 Hourly                  63003.               54246.
-2 Salaried                90183.               _____
-```
-
-Which of the following is the best estimate for that erased value?
-
-a.  30,000
-
-b.  50,000
-
-c.  80,000
-
-d.  100,000
-
-## Question 4
-
-Which distribution of annual salaries has a higher standard deviation?
-
-a.  Hourly workers
-
-b.  Salaried workers
-
-c.  Roughly the same
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Question 5
-
-Which of the following alternate plots would also be useful for visualizing the distributions of annual salaries of hourly and salaried workers? Choose all that apply.
-
-a\. Box plots
-
-b\. Density plots
-
-c\. Pie charts
-
-d\. Waffle charts
-
-e\. Histograms
-
-f\. Scatterplots
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Questions 6 and 7
-
-Suppose you made the bar plot shown in @fig-performance-rating-1 to visualize the distribution of `performance_rating` and your teammate made the bar plot shown in @fig-performance-rating-2.
-
-
-
-
-
-
-::: {#fig-performance-rating .cell layout-ncol="2"}
-::: {.cell-output-display}
-![Option 1](exam-1-review_files/figure-html/fig-performance-rating-1.png){#fig-performance-rating-1 width=480}
-:::
-
-::: {.cell-output-display}
-![Option 2](exam-1-review_files/figure-html/fig-performance-rating-2.png){#fig-performance-rating-2 width=480}
-:::
-
-Distribution of performance rating
-:::
-
-
-
-
-
-
-You made your bar plot without transforming the data in any way, while your friend did first transform the data with code like the following:
-
-
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-blizzard_salary <- blizzard_salary |>
-  _(1)_(performance_rating = fct_relevel(performance_rating, _(2)_))
-```
-:::
-
-
-
-
-
-
-**Question 6:** What goes in the blank (1)?
-
-a.  `arrange()`
-
-b.  `filter()`
-
-c.  `mutate()`
-
-d.  `summarize()`
-
-**Question 7:** What goes in the blank (2)?
-
-a.  `"Poor", "Successful", "High", "Top"`
-
-b.  `"Successful", "High", "Top"`
-
-c.  `"Top", "High", "Successful", "Poor"`
-
-d.  `Poor, Successful, High, Top`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Questions 8 - 10
-
-Finally, another teammate creates the following two plots.
-
-
-
-
-
-
-::: {#fig-salary-performance-rating .cell layout-ncol="2"}
-::: {.cell-output-display}
-![Option 1](exam-1-review_files/figure-html/fig-salary-performance-rating-1.png){#fig-salary-performance-rating-1 width=480}
-:::
-
-::: {.cell-output-display}
-![Option 2](exam-1-review_files/figure-html/fig-salary-performance-rating-2.png){#fig-salary-performance-rating-2 width=480}
-:::
-
-Distribution of salary type by performance rating
-:::
-
-
-
-
-
-
-**Question 8:** Your teammate asks you for help deciding which one to use in the final report for visualizing the relationship between performance rating and salary type. In 1-3 sentences, can you help them make a decision, justify your choice, and write the narrative that should go with the plot?
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
-**Question 9:** A friend with a keen eye points out that the number of observations in @fig-salary-performance-rating-1 seems lower than the total number of observations in `blizzard_salary`. What might be going on here? Explain your reasoning.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:::
-
-**Question 10:** Below are the proportions of performance ratings for hourly and salaried workers. Place these values in the corresponding segments in @fig-salary-performance-rating-2.
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 4 × 3
-  performance_rating Hourly Salaried
-  <chr>               <dbl>    <dbl>
-1 High                0.2     0.384 
-2 Successful          0.686   0.521 
-3 Top                 0.114   0.0760
-4 Poor                0       0.0190
-```
-
-
-:::
-:::
-
-
-
-
-
-
-::: {.content-visible when-format="pdf"}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:::
-
-## Questions 11 and 12
-
-The table below shows the distribution of `salary_type` and `performance_rating`.
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 2 × 6
-  salary_type  Poor Successful  High   Top  `NA`
-  <chr>       <int>      <int> <int> <int> <int>
-1 Hourly         NA         24     7     4    28
-2 Salaried        5        137   101    20    83
-```
-
-
-:::
-:::
-
-
-
-
-
-
-The pipeline below produces a data frame with a fewer number of rows than `blizzard_salary`.
-
-
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-blizzard_salary |>
-  filter(salary_type _(1)_ "Hourly" _(2)_ performance_rating == "Poor") |>
-  _(3)_(annual_salary)
-```
-:::
-
-::: {.cell}
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 5 × 4
-  percent_incr salary_type annual_salary performance_rating
-         <dbl> <chr>               <dbl> <chr>             
-1            0 Salaried            80000 Poor              
-2            3 Salaried            83000 Poor              
-3            0 Salaried           116000 Poor              
-4            0 Salaried           135219 Poor              
-5            0 Salaried           147500 Poor              
-```
-
-
-:::
-:::
-
-
-
-
-
-
-**Question 11:** Which of the following goes in blanks (1) and (2)?
-
-|     | \(1\) | \(2\) |
-|-----|:-----:|:-----:|
-| a\. | `!=`  |  `|`  |
-| b\. | `==`  |  `&`  |
-| c\. | `!=`  |  `&`  |
-| d\. | `==`  |  `|`  |
-
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
-
-**Question 12:** Which function or functions go into blank (3)?
-
-a.  `arrange()`
-
-b.  `mutate()`
-
-c.  `order()`
-
-d.  `sort()`
-
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
-
-## Question 13
-
-You're reviewing another team's work and they made the following visualization:
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output-display}
-![](exam-1-review_files/figure-html/unnamed-chunk-14-1.png){width=960}
-:::
-:::
-
-
-
-
-
-
-And they wrote the following interpretation for the relationship between annual salary and percent increase for Top performers:
-
-> The relationship is positive, having a higher salary results in a higher percent increase. There is one clear outlier.
-
-Which of the following is/are the most accurate and helpful) peer review note for this interpretation. Choose all that apply.
-
-a.  The interpretation is complete and perfect, no changes needed!
-
-b.  The interpretation doesn't mention the direction of the relationship.
-
-c.  The interpretation doesn't mention the form of the relationship, which is linear.
-
-d.  The interpretation doesn't mention the strength of the relationship, which is somewhat strong.
-
-e.  There isn't a clear outlier in the plot. If any points stand out as potential outliers, more guidance should be given to the reader to identify them (e.g., salary and/or percent increase amount).
-
-f.  The interpretation is causal – we don't know if the cause of the high percent increase is higher annual salary based on observational data. The causal direction might be the other way around, or there may be other factors contributing to the apparent relationship.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:::
-
-## Question 14
-
-Below is some code and its output.
-
-```njhnu
-# label=plot blizzard
-
-ggplot(blizzard_salary,aes(x=performance_rating,y=percent_incr))+geom_boxplot()
-labs(x="Performance rating", y = "Percent increase")
-```
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output .cell-output-stderr}
-
-```
-Warning: Removed 39 rows containing non-finite outside the scale range
-(`stat_boxplot()`).
-```
-
-
-:::
-
-::: {.cell-output-display}
-![](exam-1-review_files/figure-html/unnamed-chunk-15-1.png){width=768}
-:::
-
-::: {.cell-output .cell-output-stdout}
-
-```
-$x
-[1] "Performance rating"
-
-$y
-[1] "Percent increase"
-
-attr(,"class")
-[1] "labels"
-```
-
-
-:::
-:::
-
-
-
-
-
-
-Part 1: List at least 5 things that should be fixed or improved in the code.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{5cm}$
-:::
-
-Part 2: What is the cause of the warning and what does it mean?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Question 15
-
-You're working on a data analysis on salaries of Blizzard employees in a Quarto document in a project version controlled by Git. You create a plot and write up a paragraph describing any patterns in it. Then, your teammate says "render, commit, and push".
-
-Part 1: What do they mean by each of these three steps. In 1-2 sentences for each, explain in your own words what they mean.
-
-1.  Render:
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
-2.  Commit:
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
-3.  Push:
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
-Part 2: Your teammate is getting impatient and they interrupt you after you rendered and committed and say "I still can't see your changes in our shared GitHub repo when I look at it in my web browser." Which of the following answers is the most accurate?
-
-a.  I rendered my document, you should be seeing my changes on GitHub when you look at it in your web browser.
-
-b.  I committed my changes, you should be seeing my changes on GitHub when you look at it in your web browser.
-
-c.  I didn't yet push my changes, it's expected that you are not seeing them on GitHub when you look at it in your web browser. Wait until I push, and check again.
-
-d.  You need to pull to see my changes on GitHub in the web browser.
-
-## Bonus
-
-Pick a concept we introduced in class so far that you've been struggling with and explain it in your own words.
---></p>
-
-
+<p>Due to COVID-19 pandemic, many states made alternatives in voting, such as voting by mail, more widely available for the 2020 U.S. election. The general consensus was that voters who were more Democratic leaning would be more likely to vote by mail, while more Republican leaning voters would largely vote in-person. This was supported by multiple surveys, including this survey conducted by Pew Research.</p>
+<p>The goal of this analysis is to use regression analysis to explore the relationship between a county’s political leanings and the proportion of votes cast in-person in 2020. The ultimate question we want to answer is <strong>Did counties with more Republican leanings have a larger proportion of votes cast in-person in the 2020 election?</strong></p>
+<p>We will use the proportion of votes cast for Donald Trump in 2016 (pctTrump_2016) as a measure of a county’s political leaning. Counties with a higher proportion of votes for Trump in 2016 are considered to have more Republican leanings.</p>
+<p>We will focus on the following variables for this analysis:</p>
+<ul>
+<li><p><strong><code>inperson_pct</code></strong>: The proportion of votes cast in-person in the 2020 election in a given county.</p></li>
+<li><p><strong><code>pctTrump_2016</code></strong>: The proportion of a given county’s votes cast for Donald Trump in the 2016 election.</p></li>
+</ul>
+<section id="importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-the-data">Importing the Data</h2>
+<p>Up to this point in this course we have been using data frames that we either created in R or loaded from some package. In this problem set, you will import a dataset in csv format into your RStudio cloud and into your quarto work space before you proceed. The data set is available on <a href="https://drive.google.com/file/d/1sL4UfIjimVcmSt46iAjfHTjkX477yBEp/view?usp=sharing.">this link</a></p>
+<!--If you data loads properly, it is highly recommended that you take some time to study it so you understand its context and variables. Doing this will make your analyses easier and interpretations will be meaningful.-->
+</section>
+<section id="problem-1-data-visualization-summary-stats" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-data-visualization-summary-stats">Problem 1 (data visualization &amp; summary stats)</h2>
+<ol type="a">
+<li><p>Create a visualization for the variable <code>inperson_pct</code> and calculate at least two summary statistics to measure the central tendency, as well as one summary statistic to measure the spread. Then, interpret both the visualization and the summary statistics in context of the data.</p></li>
+<li><p>Create a visualization of the relationship between <code>inperson_pct</code> and <code>pctTrump_2016</code>. Based on the visualization, how would you describe the relationship?</p></li>
+<li><p>Compute the correlation coefficient between <code>inperson_pct</code> and <code>pctTrump_2016</code>. Interpret the value in the context of the data.</p></li>
+</ol>
+</section>
+<section id="problem-2-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-linear-regression">Problem 2 (linear regression)</h2>
+<ol type="a">
+<li><p>Fit the linear model to understand variability in the percent of in-person votes based on the percent of votes for Trump in the 2016 election. Write down the equation of the model.</p></li>
+<li><p>Interpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.</p></li>
+<li><p>Does it make sense to interpret the intercept of the model? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.</p></li>
+<li><p>Calculate the R-squared value for the model. Interpret the value of the R-squared in the context of the data.</p></li>
+<li><p>Use the linear model to predict the proportion of in-person votes in a county where 60% of the votes were cast for Trump in 2016.</p></li>
+</ol>
+</section>
+<section id="problem-3-model-diagnostics" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-model-diagnostics">Problem 3 (model diagnostics)</h2>
+<ol type="a">
+<li><p>Calculate the residuals for the linear model. Create a histogram of the residuals and describe the distribution of the residuals.</p></li>
+<li><p>Create a residual plot - scatterplot of the residuals against the fitted values. Describe the relationship between the residuals and the fitted values.</p></li>
+<li><p>Assuming that the cases (counties) in the dataset are independent, explain whether the assumptions of the linear regression model are met.</p></li>
+</ol>
+</section>
+<section id="problem-4-categorical-predictor" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-categorical-predictor">Problem 4 (categorical predictor)</h2>
+<ol type="a">
+<li><p>Create a binary variable called<code>pctTrump_2016_high</code> with levels <code>pro_trump</code> and <code>anti_trump</code> that indicates whether the proportion of votes for Trump in 2016 was above 50% in a county.</p></li>
+<li><p>Fit a linear regression model to predict the proportion of in-person votes based on the binary variable <code>pctTrump_2016_high</code>. Write down the equation of the model.</p></li>
+<li><p>Interpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.</p></li>
+<li><p>Which model (the one in Problem 2 or the one in Problem 4) is more ‘’appropriate’’ for predicting the proportion of in-person votes in the 2020 election? Justify your answer.</p></li>
+</ol>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1627,13 +982,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../problem-sets/ps-4.html" class="pagination-link" aria-label="Problem Set 4">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 4</span>
+      <a href="../problem-sets/ps-1.html" class="pagination-link" aria-label="Problem Set 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../exam-review/exam-2-review.html" class="pagination-link" aria-label="Exam 2">
-        <span class="nav-page-text">Exam 2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../problem-sets/ps_3.html" class="pagination-link" aria-label="Problem Set 3">
+        <span class="nav-page-text">Problem Set 3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1645,7 +1000,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/exam-review/exam-1-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

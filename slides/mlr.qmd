@@ -2,7 +2,11 @@
 title: "Multiple Linear Regression"
 subtitle: "Chapter 8"
 date: "Sep 18, 2024"
-format: revealjs
+format: 
+  revealjs: 
+    #slideNumber: c/t
+    #theme: serif
+    transition: slide
 ---
 
 # Multiple Linear Linear Regression (MLR)

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.43">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.5.43" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MATH 246 – Problem Set 1: Review basic Concepts</title>
+<title>MATH 246 – Problem Set 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +22,28 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../exam-review/exam-1-review.html" rel="next">
+<link href="../problem-sets/ps_3.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -54,24 +73,27 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<meta property="og:title" content="MATH 246 - Problem Set 4">
+<meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
+<meta property="og:site_name" content="MATH 246">
+<meta name="twitter:title" content="MATH 246 - Problem Set 4">
+<meta name="twitter:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
+<meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/problem-sets/img/twitter-card.png">
+<meta name="twitter:creator" content="@jmochogi">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body>
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/ps-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/ps-4.html">Problem Set 4</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -84,15 +106,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="/index.html" class="sidebar-logo-link">
-      <img src="/img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"/>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/jmochogi/intermediate-stats"  title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
-    <a href="https://calendly.com/jmochogi/20min"  title="Office hours" class="quarto-navigation-tool px-1" aria-label="Office hours"><i class="bi bi-life-preserver"></i></a>
-    <a href="https://canvas.ithaca.edu/"  title="Canvas Discussions" class="quarto-navigation-tool px-1" aria-label="Canvas Discussions"><i class="bi bi-chat-dots-fill"></i></a>
-    <a href="https://ithaca.zoom.us/j/3364817575?pwd=WlA1S3hJWWZNTTFoWUVaZlA1clhtdz09"  title="Zoom link" class="quarto-navigation-tool px-1" aria-label="Zoom link"><i class="bi bi-camera-reels-fill"></i></a>
-    <a href="https://canvas.ithaca.edu/"  title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-check-square-fill"></i></a>
+    <a href="https://github.com/jmochogi/intermediate-stats" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+    <a href="https://calendly.com/jmochogi/20min" title="Office hours" class="quarto-navigation-tool px-1" aria-label="Office hours"><i class="bi bi-life-preserver"></i></a>
+    <a href="https://canvas.ithaca.edu/" title="Canvas Discussions" class="quarto-navigation-tool px-1" aria-label="Canvas Discussions"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://ithaca.zoom.us/j/3364817575?pwd=WlA1S3hJWWZNTTFoWUVaZlA1clhtdz09" title="Zoom link" class="quarto-navigation-tool px-1" aria-label="Zoom link"><i class="bi bi-camera-reels-fill"></i></a>
+    <a href="https://canvas.ithaca.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-check-square-fill"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -105,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1"  role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -114,37 +136,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful links</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
@@ -152,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2"  role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -161,31 +183,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs/Lab_0.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs/Lab_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs/Lab_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs/Lab_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs/Lab_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 4</span></a>
   </div>
 </li>
@@ -193,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3"  role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Projects</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -202,13 +224,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/project/first_project.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/first_project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/project/final_project.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/final_project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 2</span></a>
   </div>
 </li>
@@ -216,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -225,25 +247,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/problem-sets/ps-1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../problem-sets/ps-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/problem-sets/ps-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/ps-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/problem-sets/ps_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/ps_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/problem-sets/ps-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/ps-4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 4</span></a>
   </div>
 </li>
@@ -251,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5"  role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Exam review</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -260,13 +282,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/exam-review/exam-2-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../exam-review/exam-2-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam 2</span></a>
   </div>
 </li>
@@ -274,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6"  role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Downloads</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -283,13 +305,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/course-downloads/templates.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-downloads/templates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Templates</span></a>
   </div>
 </li>
@@ -298,17 +320,17 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/ps-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/ps-4.html">Problem Set 4</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Problem Set 1: Review basic Concepts</h1>
+<h1 class="title">Problem Set 4</h1>
 </div>
 
 
@@ -324,124 +346,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#problem-1" id="toc-problem-1">Problem 1</a></li>
-  <li><a href="#problem-2" id="toc-problem-2">Problem 2</a></li>
-  <li><a href="#problem-3" id="toc-problem-3">Problem 3</a></li>
-  </ul>
-</nav>
-<p>This problem set is meant to refresh some basic ideas and concepts you might have learned previously in statistics. For every question, I have indicated the relevant section in the textbook for your reference. Some of these questions are open-ended and may not have one right/wrong answer.</p>
-<section id="problem-1" class="level2">
-<h2>Problem 1</h2>
-<p>A study was conducted about the smoking habits of some UK residents. Below is a data frame displaying a portion of the data collected in this study. A blank cell indicates that data for that variable was not available for a given respondent. <br> <img src="images/im1.jpeg" class="img-fluid" style="width:70.0%" alt="A centered image" /><br></p>
-<ol type="a">
-<li><p>How many variables (list them) and how many observations/cases are in the data frame? (see <a href="https://openintro-ims.netlify.app/data-hello#sec-data-basics">section 1.2</a>)<br><br><br><br><br><br></p></li>
-<li><p>For each variable identified in (a) above, state whether it is numerical or categorical. If numerical, state whether it is continuous or discrete. If categorical, state whether it is nominal or ordinal. (see <a href="https://openintro-ims.netlify.app/data-hello#sec-variable-types">section 1.2.2</a>)<br><br><br><br><br><br></p></li>
-<li><p>Assuming that someone’s <strong>age</strong> affects the <strong>amount</strong> of cigarettes they smoke per day, which variable is the explanatory variable and which is the response variable? (see <a href="https://openintro-ims.netlify.app/data-hello#explanatory-and-response-variables">section 1.2.3</a>)<br><br><br><br><br><br></p></li>
-<li><p>What visualizations would you use to display the relationship between <strong>age</strong> and <strong>amount</strong> of cigarettes smoked per day? Which variable would you place on the y-axis and which one on the x-axis? Does it matter what axis you place the variables? (see <a href="https://openintro-ims.netlify.app/data-hello#sec-variable-relations">section 1.3.1</a>)</p></li>
-</ol>
-</section>
-<section id="problem-2" class="level2">
-<h2>Problem 2</h2>
-<p>The first step in conducting research is to identify topics or questions that are to be investigated. A clearly laid out research question is helpful in identifying what subjects or cases should be studied and what variables are important. It is also important to consider how data are collected so that the data are reliable and help achieve the research goals. Suppose you are conducting a study trying to answer the following research question: <br> <br> <strong><em>Does a new drug (call it drug X) reduce the number of deaths in patients with severe heart disease?</em></strong></p>
-<ol type="a">
-<li><p>What type of study (experimental or observational) would you conduct? Explain why? (see <a href="https://openintro-ims.netlify.app/data-hello#observational-studies-and-experiments">section 1.4</a>) <br><br><br><br><br><br></p></li>
-<li><p>Briefly describe how you would set up your study and the data you would collect to answer the above question. In your description describe the variables and their types (i.e., categorical or numerical). (see <a href="https://openintro-ims.netlify.app/data-hello#sec-data-basics">sections 1.2.1 - 1.2.2</a> and <a href="https://openintro-ims.netlify.app/data-design#sec-experiments">section 2.2</a>)<br><br><br><br><br><br></p></li>
-<li><p>Suppose you wanted to conduct your study in Tompkins County. Explain what your population of interest? What would be your sample and what sampling strategies would you use to obtain it? (see <a href="https://openintro-ims.netlify.app/data-design">section 2.1 and 2.2</a>)<br><br><br><br><br><br></p></li>
-<li><p>What are some potential ethical concerns you would need to consider before conducting your study?</p></li>
-</ol>
-</section>
-<section id="problem-3" class="level2">
-<h2>Problem 3</h2>
-<p>Gamification is the application of game- design elements and game principles in non-game contexts. In educational settings, gamification is often implemented as educational activities to solve problems by using characteristics of game elements. Researchers investigating the effects of gamification on learning statistics conducted a study where they split college students in a statistics class into four groups: (1) no reading exercises and no gamification, (2) reading exercises but no gamification, (3) gamification but no reading exercises, and (4) gamification and reading exercises. Students in all groups also attended lectures. Students in the class were from two majors: Electrical and Computer Engineering (n = 279) and Business Administration (n = 86). After their assigned learning experience, each student took a final evaluation comprised of 30 multiple choice question and their score was measured as the number of questions they answered correctly. The researchers considered students’ gender, level of studies (first through fourth year) and academic major. Other variables considered were expertise in the English language and use of personal computers and games, both of which were measured on a scale of 1 (beginner) to 5 (proficient). The study found that gamification had a positive effect on student learning compared to traditional teaching methods involving lectures and reading exercises. They also found that the effect was larger for females and Engineering students. (Legaki et al., 2020).</p>
-<ol type="a">
-<li><p>Assuming the data from this study were recorded in a single data frame, how many cases and how many variables would be in this data frame? (see <a href="https://openintro-ims.netlify.app/data-hello#explanatory-and-response-variables">section 1.2.3</a>)<br><br><br><br><br><br></p></li>
-<li><p>List all variables in the study and identify their type by putting a check mark in the relevant column in the table below:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Variable Name</th>
-<th>Categorical</th>
-<th>Numerical</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Was the study experimental or observational? Identify a suitable explanatory and response variable(s).</p></li>
-<li><p>Name a variable for which we could use a histogram as a visualization tool.</p></li>
-<li><p>Name a variable for which we could use a simple bar plot for visualization.</p></li>
-<li><p>Name a variable set for which we could use a scatter plot for visualization.</p></li>
-</ol>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">MATH 246</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">MATH 246</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-next">Problem Set 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-prev">Project 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">Course information</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-overview.htmlOverview">Overview</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-syllabus.htmlSyllabus">Syllabus</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-support.htmlSupport">Support</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/index.htmlSchedule">Schedule</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-links.htmlUseful-links">Useful links</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-faq.htmlFAQ">FAQ</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">Labs</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs/Lab_0.htmlLab-0">Lab 0</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs/Lab_1.htmlLab-1">Lab 1</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs/Lab_2.htmlLab-2">Lab 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs/Lab_3.htmlLab-3">Lab 3</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs/Lab_4.htmlLab-4">Lab 4</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-3">Projects</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/project/first_project.htmlProject-1">Project 1</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/project/final_project.htmlProject-2">Project 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-4">Problem Sets</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/problem-sets/ps-1.htmlProblem-Set-1">Problem Set 1</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/problem-sets/ps-2.htmlProblem-Set-2">Problem Set 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/problem-sets/ps_3.htmlProblem-Set-3">Problem Set 3</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/problem-sets/ps-4.htmlProblem-Set-4">Problem Set 4</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-5">Exam review</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/exam-review/exam-1-review.htmlExam-1">Exam 1</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/exam-review/exam-2-review.htmlExam-2">Exam 2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-6">Downloads</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-downloads/datasets.htmlDatasets">Datasets</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/course-downloads/templates.htmlTemplates">Templates</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-Problem-Sets">Problem Sets</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-Problem-Set-1">Problem Set 1</span></p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="footer-left">
-<p>© Copyright 2024, Joash Geteregechi</p>
-</div>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="footer-right">
-<p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">MATH 246 - Problem Set 1: Review basic Concepts</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">MATH 246 - Problem Set 1: Review basic Concepts</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">MATH 246 - Problem Set 1: Review basic Concepts</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">MATH 246</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc">Homepage for MATH 246 - Intermediate Statistics, Fall 2024.</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc">Homepage for MATH 246 - Intermediate Statistics, Fall 2024.</span></p>
-</div>
-</section>
+
+<p>Please come back later!</p>
+
+
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1007,13 +918,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/project/final_project.html" class="pagination-link" aria-label="Project 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 2</span>
+      <a href="../problem-sets/ps_3.html" class="pagination-link" aria-label="Problem Set 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/problem-sets/ps-2.html" class="pagination-link" aria-label="Problem Set 2">
-        <span class="nav-page-text">Problem Set 2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../exam-review/exam-1-review.html" class="pagination-link" aria-label="Exam 1">
+        <span class="nav-page-text">Exam 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1021,17 +932,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class='footer-contents'>&copy; Copyright 2024, Joash Geteregechi</div>  
-    </div>   
+<p>© Copyright 2024, Joash Geteregechi</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/problem-sets/ps-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-      <div class='footer-contents'>This page is built with []{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).</div>  
-    </div>
+<p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
 
-</body>
 
-</html>
+
+
+</body></html>
