@@ -1,23 +1,32 @@
 ---
-title: "Problem Set 1: Review basic Concepts"
+title: "Problem Set 1: A Review of Basic Concepts"
 format:
   html: default
   pdf: default
 ---
 
-This problem set is meant to refresh some basic ideas and concepts you ought to have learned in your previous statistics classes. For every question, I have indicated the relevant section in the textbook for your reference. Some of these questions are very open-ended and you may want to be creative. There may be no one right/wrong answer.
+This problem set is meant to refresh some basic ideas and concepts you might have learned previously in statistics. For every question, I have indicated the relevant section in the textbook for your reference. Some of these questions are open-ended and may not have one right/wrong answer.
 
 ## Problem 1
 
-A study was conducted about the smoking habits of some UK residents. Below is a data frame displaying a portion of the data collected in this study. A blank cell indicates that data for that variable was not available for a given respondent. <br> ![A centered image](images/im1.jpeg){width="70%"}<br>
+A professor has a sample of 30 student scores with a mean of 10, a variance of 9, and a standard deviation of 3. 
 
-a.  How many variables (list them) and how many observations/cases are in the data frame? (see [section 1.2](https://openintro-ims.netlify.app/data-hello#sec-data-basics))<br><br><br><br><br><br>
+a.  Realizing that the student scores are very low, the professor decides to multiply each student’s score by 3 (how generous!). Explain whether (and why) the mean of the new scores would change. (see [section 1.2](https://openintro-ims.netlify.app/explore-numerical#sec-dotplots))<br><br><br><br><br><br>
 
-b.  For each variable identified in (a) above, state whether it is numerical or categorical. If numerical, state whether it is continuous or discrete. If categorical, state whether it is nominal or ordinal. (see [section 1.2.2](https://openintro-ims.netlify.app/data-hello#sec-variable-types))<br><br><br><br><br><br>
+b.  Would the variance increase, decrease, or stay the same? Why? (see [section 1.2.2](https://openintro-ims.netlify.app/explore-numerical#sec-variance-sd))<br><br><br><br><br><br>
 
-c.  Assuming that someone's **age** affects the **amount** of cigarettes they smoke per day, which variable is the explanatory variable and which is the response variable? (see [section 1.2.3](https://openintro-ims.netlify.app/data-hello#explanatory-and-response-variables))<br><br><br><br><br><br>
+c. Suppose the professor realizes that she had erroneously entered the highest score as 19 instead of 29 in the original scores (before multiplying by 3). basing on this new scenario, answer the following questions:
 
-d.  What visualizations would you use to display the relationship between **age** and **amount** of cigarettes smoked per day? Which variable would you place on the y-axis and which one on the x-axis? Does it matter what axis you place the variables? (see [section 1.3.1](https://openintro-ims.netlify.app/data-hello#sec-variable-relations))
+    i.  Would the mean of the new scores change? Why? (see [section 1.2](https://openintro-ims.netlify.app/explore-numerical#sec-dotplots))<br><br><br><br><br><br>
+    
+    ii. Would the median of the new scores change? Why? (see [section 1.2.1](https://openintro-ims.netlify.app/explore-numerical#sec-boxplots))<br><br><br><br><br><br>
+    
+    iii.  Would the variance increase, decrease, or stay the same? Why? (see [section 1.2.2](https://openintro-ims.netlify.app/explore-numerical#sec-variance-sd))<br><br><br><br><br><br>
+    
+    iv. Would the range increase, decrease, or stay the same? Why? See ([Defintion of range](https://www.mathsisfun.com/data/range.html))<br><br><br><br><br><br>
+    
+    v. Would the interquartile range (IQR) of the new scores increase, decrease, or stay the same? Why? (see [section 1.2.1](https://openintro-ims.netlify.app/explore-numerical#sec-boxplots))<br><br><br><br><br><br>
+
 
 ## Problem 2
 
@@ -27,6 +36,35 @@ a.  What type of study (experimental or observational) would you conduct? Explai
 
 b.  Briefly describe how you would set up your study and the data you would collect to answer the above question. In your description describe the variables and their types (i.e., categorical or numerical). (see [sections 1.2.1 - 1.2.2](https://openintro-ims.netlify.app/data-hello#sec-data-basics) and [section 2.2](https://openintro-ims.netlify.app/data-design#sec-experiments))<br><br><br><br><br><br>
 
-c.  Suppose you wanted to conduct your study in Tompkins County. Explain what your population of interest? What would be your sample and how would you obtain it? (see [section 2.1 and 2.2](https://openintro-ims.netlify.app/data-design))<br><br><br><br><br><br>
+c.  Suppose you wanted to conduct your study in Tompkins County. Explain what your population of interest? What would be your sample and what sampling strategies would you use to obtain it? (see [section 2.1 and 2.2](https://openintro-ims.netlify.app/data-design))<br><br><br><br><br><br>
 
 d.  What are some potential ethical concerns you would need to consider before conducting your study?
+
+## Problem 3
+
+Gamification is the application of game- design elements and game principles in non-game contexts. In educational settings, gamification is often implemented as educational activities to solve problems by using characteristics of game elements. Researchers investigating the effects of gamification on learning statistics conducted a study where they split college students in a statistics class into four groups: (1) no reading exercises and no gamification, (2) reading exercises but no gamification, (3) gamification but no reading exercises, and (4) gamification and reading exercises. Students in all groups also attended lectures. Students in the class were from two majors: Electrical and Computer Engineering (n = 279) and Business Administration (n = 86). After their assigned learning experience, each student took a final evaluation comprised of 30 multiple choice question and their score was measured as the number of questions they answered correctly. The researchers considered students’ gender, level of studies (first through fourth year) and academic major. Other variables considered were expertise in the English language and use of personal computers and games, both of which were measured on a scale of 1 (beginner) to 5 (proficient). The study found that gamification had a positive effect on student learning compared to traditional teaching methods involving lectures and reading exercises. They also found that the effect was larger for females and Engineering students. (see [Legaki et al., 2020](https://www.sciencedirect.com/science/article/pii/S1071581920300987)).
+
+a.  Assuming the data from this study were recorded in a single data frame, how many cases and how many variables would be in this data frame? (see [section 1.2.3](https://openintro-ims.netlify.app/data-hello#explanatory-and-response-variables))<br><br><br><br><br><br>
+
+b.  List all variables in the study and identify their type by putting a check mark in the relevant column in the table below:
+
+    | Variable Name | Categorical | Numerical |
+    |---------------|-------------|-----------|
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+    |               |             |           |
+
+c.  Was the study experimental or observational? Identify a suitable explanatory and response variable(s). <br><br><br><br><br><br>
+
+d.  Name a variable for which we could use a histogram as a visualization tool.(see [chapter 5](https://openintro-ims.netlify.app/explore-numerical))<br><br><br><br><br><br>
+
+e.  Name a variable for which we could use a simple bar plot for visualization. (see [chapter 5](https://openintro-ims.netlify.app/explore-numerical))<br><br><br><br><br><br>
+
+f.  Name a variable set for which we could use a scatter plot for visualization.(see [chapter 5](https://openintro-ims.netlify.app/explore-numerical))<br><br><br><br><br><br> 

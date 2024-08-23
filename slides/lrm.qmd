@@ -1,0 +1,202 @@
+---
+title: "Logistic Regression Modelling"
+subtitle: "Chapter 9"
+date: "Oct 02, 2024"
+format: revealjs
+---
+
+# Logistic Regression Modelling (LRM)
+
+## But, why LRM?? {.smaller}
+
+-   You learned about linear regression with a single predictor (slr) and linear regression with multiple predictors (mlr). Common features between slr and mlr are:
+  
+    - Both model a numerical outcome variable.
+    - Both take both numerical and categorical variables as predictors.
+  
+-   Question: What if you have a categorical binary outcome? This is precisely what logistic regression does.
+-   Logistic regression is a special case of what is known as generalized linear models (GLM).
+
+## Structure of Logistic Regression models {.smaller}
+
+-   In short, logistic regression is used in situations such as:
+    -   Predicting whether a student will pass or fail an exam based on the number of hours they study.
+    -   Predicting whether a patient will develop a disease based on their age, weight, and other factors.
+    -   Predicting whether a customer will buy a product based on their race, age, income, and other factors.
+    -   Classifying students into two groups like "admitted" or "not admitted" based on a predictor variable such as sex or GPA.
+-   Can you think of other scenarios that can be modelled using logistic regression?
+
+## Cont... {.smaller}
+
+-   We denote the response variable as $Y_i$ with possible values 0 (for failure) and 1 (for success).
+-   In the above example, let is say that the response variable is $Y_i$ = `admission_status`, then, when $Y_i$ = 1, the student is admitted and when $Y_i$ = 0, the student is not admitted.
+-   However, we cannot get these values (0 and 1) directly from the logistic regression model. Rather, logistic regression outputs the probability of getting admitted. - Supposing we have k predictors, the equation takes the form: $$ p_i= b_0+b_1x_{1,i}+b_{2}x_{2,i}+ ...+b_{k}x_{k,i}$$
+-   This is probability of student $i$ getting accepted. $x_{1,i}, x_{2,i}, ... x_{k,i}$ are the predictor variables for student $i$.
+
+## But, we have a problem {.smaller}
+
+-   The quantity on the right side of the equation can take any value, including negative ones.
+-   Yet, probabilities must be between 0 and 1. So, what do we do? - We apply a transformation on the equation (right side) to obtain a value between 0 and 1. The function commonly used for doing this is called a logit function. The logit function is defined as:
+
+$$logit(p_i) = log_e\left(\frac{p_i}{1-p_i}\right)$$ Where, $log_e$ is the natural logarithm (also written as $ln$.
+
+The new equation becomes.
+
+$$ logit(p_i) = log_e\left(\frac{p_i}{1-p_i}\right) = b_0+b_1x_{1,i}+b_{2}x_{2,i}+ ...+b_{k}x_{k,i}$$
+
+## Cont... {.smaller}
+
+-   If the RHS results in -5, then, we have that, $$
+    ln\left(\frac{p_i}{1-p_i}\right) = -5
+    $$
+-   To solve this equation for $p_i$, we exponentiate both sides to obtain:
+
+$$
+\left(\frac{p_i}{1-p_i}\right) = e^{-5}
+$$
+
+-   Then, solve algebraically for $p_i$ to get the probability of student $i$ getting admitted.
+
+$$
+p_i= \frac{e^{-5}}{1+e^{-5}} \approx 0.0068
+$$
+
+## Example {.smaller}
+
+Suppose we are trying to determine whether employees who have any type of honors listed on their resume are more likely to receive a call back for an interview. Here, the response variable is received_callback (yes or no) while the predictor variable is honors. Suppose that upon fitting a logistic regression model, we come up with the following:
+
+$$ logit(p_i) = -2.4998+0.8668 × 3\times honors$$
+
+a.  If a resume is randomly selected from the study and it does not have any honors listed, what is the probability it resulted in a callback?
+
+b.  What would be the probability if the resume did list some honors?
+
+-   Solution on the next slide \>\>
+
+## Solution {.smaller}
+
+a.  If a resume does not mention any honors, then the value of the predictor variable is 0, resulting in $logit(p_i)=-2.4998+0.8668\times 0=-2.4998$
+
+To find $p_i$, we exponentiate both sides of the following equation: $$
+ln\left(\frac{p_i}{1-p_i}\right)=-2.4998
+$$
+
+We get $$p_i=\frac{e^{-2.4998}}{1+e^{-2.4998}}\approx 0.076$$
+
+**Interpretation**
+
+-   The probability of this resume resulting in a callback is 0.076 or 7.6%. Try part b on your own.
+
+## Lest we forget {.smaller}
+
+-   Recall that the goal in logistic regression is to classify the response variable into two categories (e.g., pass/fail, admitted/not admitted, etc.). How do we do this?
+
+-   Using the modeled probabilities, we can classify the response variable into two categories by setting a ***threshold value***.
+
+-   The threshold value is usually set at 0.5. If the probability is at least 0.5, we classify the response variable as 1 (success) and if it is less than 0.5, we classify it as 0 (failure).
+
+::: callout-caution
+## Note
+
+The threshold value can be set at any value between 0 and 1. The choice of the threshold value depends on the context of the problem.
+:::
+
+## Illustration of the logit tranformation {.smaller}
+
+::: columns
+::: {.column width="35%"}
+-   The logit transformation is used to transform the probabilities into a form that can be used in the logistic regression model.
+:::
+
+::: {.column width="65%"}
+![](images/logit.jpeg){fig-alt="HS grad vs poverty rate" fig-align="center"}
+:::
+:::
+
+-   If the threshold is 0.5, the probabilities that fall bellow 0.5 result in a classification of 0 (Failure) while 0.5 and above result in a classification of 1 (Success).
+
+## Many Predictors  {.smaller}
+
+-   Like in the case on linear multiple regression, we can fit a logistic model using several predictor variables. In the above example, suppose we add the following variables.
+
+|                   |                                 |
+|-------------------|----------------------------------|
+| received_callback | Specifies whether candidate received a call back |
+| job_city          | Job city: Chicago or Boston            |
+| college_degree    | Whether candidate has college degree    |
+| years_experience  | Candidate experience in years           |
+| millitay          | Whether candidate served in the military|
+| has_email_address | Whether candidate has email address      |
+| race              | Implied candidate race                  |
+| sex               | Implied sex based on name             |
+
+
+## Cont... {.smaller}
+
+::: columns
+::: {.column width="45%"}
+Using software, we come up with the output on the right:
+:::
+
+::: {.column width="55%"}
+![](images/logistmodel.jpeg){fig-alt="HS grad vs poverty rate" fig-align="center"}
+:::
+:::
+a. Write down the equation of the model. Interpret the coefficient for `job_city`.
+b. Using the model in part (a), estimate the probability of receiving a callback for a job in Chicago where the candidate lists 14 years experience, no honors, no military experience, includes an email address, has no college degree, and has a first name that implies they are a White male.
+
+## Solution {.smaller}
+
+a. The equation of the model is given by: 
+
+```{=tex}
+\begin{aligned}
+logit(p_i) &= -2.66 - 0.44\times job\_city_{Chicago}\\
+                  &+ 0.07college\_degree_1\\
+                  & + 0.02\times years\_experience\\
+                  & + 0.77\times honors_1\\
+                  & - 0.34\times military_1\\
+                  & + 0.22\times has\_email\_address_1\\
+                  & + 0.44\times raceWhite\\
+                  & - 0.18\times sexman
+\end{aligned}
+```
+**Interpretation:** Job City: All else held constant, the log ***odds ratio*** of getting a callback for a job in Chicago is .44 lower than one located in Boston. Part (b) >> 
+
+## Solution cont... {.smaller}
+
+b. Using the model in part (a), we set up the predictor values in the model as follows:
+
+```{=tex}
+\begin{aligned}
+logit(p_i) &= -2.66 - 0.44\times 1
+                   + 0.07\times 0
+                   + 0.02\times 14
+                   + 0.77\times 1\\
+                  & - 0.34\times 0
+                   + 0.22\times 1
+                   + 0.44\times 1
+                   - 0.18\times 1\\
+                  &= -2.78\\
+\end{aligned}
+```
+Next, solve for the probability as before,
+
+$$
+p_i = \frac{e^{-2.78}}{1+e^{-2.78}} \approx 0.066
+$$
+
+The probability of receiving a callback for the resume is about 0.066 or 6.6%.
+
+## Model Selection {.smaller}
+
+-   Like in linear regression, we can use the AIC, BIC, and other model selection criteria to select the best model.
+- AIC selects a “best” model by ranking models from best to worst according to their AIC values. In the calculation of a model’s AIC, a penalty is given for including additional variables.
+- This penalty for added model complexity attempts to strike a balance between underfitting (too few variables in the model) and overfitting (too many variables in the model).
+- The model with the smallest AIC value is considered the best model.
+
+>> We will do this practically during a lab session using software!
+
+
+
+
