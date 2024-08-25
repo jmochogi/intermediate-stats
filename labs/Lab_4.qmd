@@ -1,15 +1,553 @@
 ---
+title: "Lab 3 - Multiple Linear Regression"
 categories: "Lab"
-execute:
-  eval: true
-format:
-  html:
-    code-link: true #Supposed to create a link to documentation but its not, for some reason.
-   # code-block-bg: true # "lightblue" Does not work well with dark mode.
-    code-block-border-left: "#31BAE9"
-    code-fold: show #also try true OR false and decide if you like it.
-    code-tools: false
-    code-copy: true
 ---
 
-Coming soon!
+```{r, include=FALSE}
+library(openintro)
+library(tidyverse)
+library(broom)
+library(statsr)
+library(GGally)
+```
+
+## [Introduction]{style="color:#4166f5;"}
+
+Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, “Beauty in the classroom: instructors’ pulchritude and putative pedagogical productivity” by Hamermesh and Parker found that instructors who are viewed to be better looking receive higher instructional ratings. In this lab, you will analyze the data from this study in order to learn what goes into a positive professor evaluation. You will also use the GGally package for visualization relationships between many variables pairs at once and the broom package to tidy your regression outputs. We will start by a brief revisiting of the simple linear regression and then extend it to multiple regression (adding more predictor variables to the model)
+
+## [Creating a quarto file]{style="color:#4166f5;"}
+
+-   Create a new Quarto document with the title **Multiple Linear Regression**. Change the output format to **pdf** (note that it is set to html by default). Refer to lab_00_Guide if you don't remember how to create a new quarto file. Save the file as `lab_03`.
+
+-   Note that if you created the file correctly, it should appear under files with a `.qmd` extension(i.e., `lab_03.qmd`). If you do not have this file exactly as described, please **STOP** and make sure you have it done correctly before you proceed.
+
+-   After correctly creating the file, click on `Render` to see the output in pdf format. Note that it may pop up in a new window. This step is just for ensuring that your document created properly and that you are able to generate a `pdf`, the format in which you will submit the your lab.
+
+## [Packages]{style="color:#4166f5;"}
+
+You will need the following packages for this lab: `openintro`, `tidyverse`, `statsr`, `GGally`, and `broom`. Recall that we have previously installed all these packages. All we need to do is load them into our workspace. Use code below:
+
+``` toml
+library(openintro)
+library(tidyverse)
+library(statsr)
+library(broom)
+library(GGally)
+```
+
+Be sure to run the packages code chunk above to ensure that they are all loaded correctly. Remember to use `include=F` option (i.e., `{r, include=F}`) to prevent the code output for loading packages from showing up in your rendered report.
+
+## [Loading (and viewing) Data]{style="color:#4166f5;"}
+
+We will use a data frame called `evals` contained in the **openintro** package. The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors’ physical appearance (`bty`). The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.
+
+Since we have already activated `openintro`, we can load the data by running the `data` command. See below:
+
+```{r}
+data(evals)
+```
+
+Once you run the chunk above, you should be able to see a new object called **evals** in the environment area. Click on it to examine the data.
+
+You can learn more about the data by running the following command in the **console**:
+
+``` toml
+?evals
+```
+
+## [Multiple Linear Regression Modeling]{style="color:#4166f5;"}
+
+Let us start by creating a full model (we can name it `m_full`) that predicts professor `score` based on the following predictors: `rank`, `gender`, `ethnicity`, `language` (language of the university where they got their degree), `age`, `cls_perc_eval` (proportion of students that filled out evaluations), `cls_students` (number of students in class), `cls_level` (course level), `cls_profs` (number of professors), `cls_credits` (number of credits), and `bty_avg` (average beauty rating). Note that some of these variables are categorical and others are numerical. You can learn more about these variables including how they were measured by checking the documentation (you can run `?evals` in the console).
+
+Before running the code below, answer the following question:
+
+How many variables do you expect to be in the multiple regression model? How do you know?
+
+```{r}
+m_full <- lm(score ~ rank
+                  + gender 
+                  + ethnicity 
+                  + language 
+                  + age 
+                  + cls_perc_eval 
+                  + cls_students 
+                  + cls_level 
+                  + cls_profs 
+                  + cls_credits 
+                  + bty_avg, data = evals)
+tidy(m_full)
+```
+
+**Questions:**
+
+-   How many variables are in the model? Is this what you expected?
+
+-   Interpret the coefficient associated with the `ethnicity` variable.
+
+## [Model Prunning]{style="color:#4166f5;"}
+
+The above model is called a **full model** because it contains all predictors. The full model is not always the best. We can improve on this model by dropping certain predictors that are not ***adding value*** to the model. We are going to use one of the **step-wise selection** methods (backward elimination) to prune the above model in order to improve it. We are trying to increase the adjusted $R^2$.
+
+### [Step 1]{style="color:#4166f5;"}
+
+We will start with the **full model** (`m_full`) and its adjusted $R^2$. Run the `glance` function to check the adjusted $R^2$ of the model above (m_full). Interpret the value in context.
+
+```{r}
+glance(m_full)
+```
+
+The output shows that the adjusted $R^2$ is $14.12\%$. We use this number as our baseline and drop predictors **one at a time**, each time checking on the improvement in the adjusted $R^2$. Our new model will be one that leads to the highest improvement in the adjusted $R^2$.
+
+Let us start by dropping `rank` (we can call the model without rank `rm_rank` (meaning remove rank). We also `tidy` and `glance` the model. See the code below:
+
+```{r}
+rm_rank <- lm(score ~ gender 
+                    + ethnicity 
+                    + language 
+                    + age 
+                    + cls_perc_eval 
+                    + cls_students 
+                    + cls_level 
+                    + cls_profs 
+                    + cls_credits 
+                    + bty_avg, data = evals)
+#tidy(rm_rank)
+glance(rm_rank)
+```
+
+Does dropping rank lead to a significant improvement in the adjusted $R^2$?
+
+Next, we want to drop `gender`. See below:
+
+```{r}
+rm_gender <- lm(score ~ rank 
+                      + ethnicity 
+                      + language 
+                      + age 
+                      + cls_perc_eval 
+                      + cls_students 
+                      + cls_level 
+                      + cls_profs 
+                      + cls_credits 
+                      + bty_avg, data = evals)
+#tidy(rm_gender)
+glance(rm_gender)
+```
+
+Comment about the effect of dropping gender from the model? Is it a good idea?
+
+Next, let us drop `ethnicity`:
+
+```{r}
+rm_ethnicity <- lm(score ~ rank
+                          + gender 
+                          + language 
+                          + age 
+                          + cls_perc_eval 
+                          + cls_students 
+                          + cls_level 
+                          + cls_profs 
+                          + cls_credits 
+                          + bty_avg, data = evals)
+#tidy(rm_ethnicity)
+glance(rm_ethnicity)
+```
+
+What can you comment about the effect of dropping `ethnicity`?
+
+Next, drop `language`:
+
+```{r}
+rm_language <- lm(score ~ rank
+                        + ethnicity
+                        + gender 
+                        + age 
+                        + cls_perc_eval 
+                        + cls_students 
+                        + cls_level 
+                        + cls_profs 
+                        + cls_credits 
+                        + bty_avg, data = evals)
+#tidy(rm_language)
+glance(rm_language)
+```
+
+What is the effect of dropping language?
+
+Next, drop `age`:
+
+```{r}
+rm_age <- lm(score ~ rank
+                  + ethnicity
+                  + gender
+                  + language
+                  + cls_perc_eval 
+                  + cls_students 
+                  + cls_level 
+                  + cls_profs 
+                  + cls_credits 
+                  + bty_avg, data = evals)
+glance(rm_age)
+```
+
+Comment on the effect of dropping `age`:
+
+Next, drop `cls_perc_eval` (i.e., proportion of students that filled out evaluations):
+
+```{r}
+rm_cls_perc_eval <- lm(score ~ rank
+                              + ethnicity
+                              + age
+                              + gender
+                              + language
+                              + cls_students 
+                              + cls_level 
+                              + cls_profs 
+                              + cls_credits 
+                              + bty_avg, data = evals)
+glance(rm_cls_perc_eval)
+```
+
+Comment appropriately.
+
+Next, drop `cls_students` (class size):
+
+```{r}
+rm_cls_students <- lm(score ~ rank
+                            + ethnicity
+                            + age
+                            + gender
+                            + cls_perc_eval
+                            + language
+                            + cls_level 
+                            + cls_profs 
+                            + cls_credits 
+                            + bty_avg, data = evals)
+glance(rm_cls_students)
+```
+
+Comment on the effect of dropping class size.
+
+Next, drop `cls_level` (course level):
+
+```{r}
+rm_cls_level <- lm(score ~ rank
+                          + ethnicity
+                          + age
+                          + gender
+                          + cls_students
+                          + cls_perc_eval
+                          + language
+                          + cls_profs 
+                          + cls_credits 
+                          + bty_avg, data = evals)
+glance(rm_cls_level)
+```
+
+Does dropping course level lead to an increase in the adjusted $R^2$. if so, by how much?
+
+<!-- 14.29-14.12=.17-->
+
+We are almost done. Next, drop `cls_profs` (number of professors):
+
+```{r}
+rm_cls_profs <- lm(score ~ rank
+                          + ethnicity
+                          + age
+                          + gender
+                          + cls_students
+                          + cls_level
+                          + cls_perc_eval
+                          + language
+                          + cls_credits 
+                          + bty_avg, data = evals)
+glance(rm_cls_profs)
+```
+
+Does dropping `cls_profs` lead to an increase in adjusted $R^2$? By how much?
+
+<!-- 14.3-14.12=.18-->
+
+Next, drop `cls_credits` (i.e., number of credits):
+
+```{r}
+rm_cls_credits <- lm(score ~ rank
+                          + ethnicity
+                          + age
+                          + gender
+                          + cls_students
+                          + cls_level
+                          + cls_perc_eval
+                          + language
+                          + cls_profs
+                          + bty_avg, data = evals)
+glance(rm_cls_credits)
+```
+
+Comment on the effect of dropping `cls_credits`.
+
+Finally, drop `bty_avg` (i.e., average beauty score):
+
+```{r}
+rm_bty_avg <- lm(score ~ rank
+                        + ethnicity
+                        + age
+                        + gender
+                        + cls_students
+                        + cls_level
+                        + cls_perc_eval
+                        +cls_credits
+                        + language
+                        + cls_profs, data = evals)
+glance(rm_bty_avg)
+```
+
+As you have seen, dropping `class_profs` leads to the most improvement to the model. So, we create a new model (call it `m_prunned_1`) without `cls_profs` and check its adjusted $R^2$. Below is our new model:
+
+```{r}
+m_prunned_1 <- lm(score ~ rank 
+                        + gender 
+                        + ethnicity 
+                        + language 
+                        + age 
+                        + cls_perc_eval 
+                        + cls_students 
+                        + cls_level 
+                        + cls_credits 
+                        + bty_avg, data = evals)
+tidy(m_prunned_1)
+glance(m_prunned_1)
+```
+
+The new adjusted $R^2$ is $14.3\%$ and we will use it in step two:
+
+### [Step 2]{style="color:#4166f5;"}
+
+We repeat the process above using `m_prunned_1` as the baseline. Remember, its adjusted $R^2$ is $14.3\%$.
+
+First, drop gender:
+
+```{r}
+rm_gender <- lm(score ~ rank 
+                      + ethnicity 
+                      + language 
+                      + age 
+                      + cls_perc_eval 
+                      + cls_students 
+                      + cls_level 
+                      + cls_credits 
+                      + bty_avg, data = evals)
+#tidy(rm_gender)
+glance(rm_gender)
+```
+
+Next, remove rank:
+
+```{r}
+rm_rank <- lm(score ~ gender 
+                    + ethnicity 
+                    + language 
+                    + age 
+                    + cls_perc_eval 
+                    + cls_students 
+                    + cls_level 
+                    + cls_credits 
+                    + bty_avg, data = evals)
+#tidy(rm_rank)
+glance(rm_rank)
+```
+
+<!-- Improved> 14.36-14.3=0.06-->
+
+Next, remove ethnicity,
+
+```{r}
+rm_ethnicity <- lm(score ~ rank 
+                        + gender 
+                        + language 
+                        + age 
+                        + cls_perc_eval 
+                        + cls_students 
+                        + cls_level 
+                        + cls_credits 
+                        + bty_avg, data = evals)
+#tidy(rm_ethnicity)
+glance(rm_ethnicity)
+```
+
+Next, remove `language`:
+
+```{r}
+rm_language <- lm(score ~ rank 
+                        + gender 
+                        + ethnicity 
+                        + age 
+                        + cls_perc_eval 
+                        + cls_students 
+                        + cls_level 
+                        + cls_credits 
+                        + bty_avg, data = evals)
+#tidy(rm_language)
+glance(rm_language)
+```
+
+No improvement.
+
+Next, remove age:
+
+```{r}
+rm_age <- lm(score ~ rank 
+                  + gender 
+                  + ethnicity 
+                  + language 
+                  + cls_perc_eval 
+                  + cls_students 
+                  + cls_level 
+                  + cls_credits 
+                  + bty_avg, data = evals)
+#tidy(rm_age)
+glance(rm_age)
+```
+
+No improvement.
+
+Next, remove `cls_perc_eval`:
+
+```{r}
+rm_cls_per_eval <- lm(score ~ rank 
+                            + gender 
+                            + ethnicity 
+                            + language 
+                            + age 
+                            + cls_students 
+                            + cls_level 
+                            + cls_credits 
+                            + bty_avg, data = evals)
+#tidy(rm_cls_per_eval)
+glance(rm_cls_per_eval)
+```
+
+No improvement.
+
+Next, remove `cls_students`
+
+```{r}
+rm_cls_st <- lm(score ~ rank 
+                      + gender 
+                      + ethnicity 
+                      + language 
+                      + age 
+                      + cls_perc_eval 
+                      + cls_level 
+                      + cls_credits 
+                      + bty_avg, data = evals)
+#tidy(rm_cls_st)
+glance(rm_cls_st)
+```
+
+No improvement.
+
+Next, remove `cls_level`
+
+```{r}
+rm_cls_level <- lm(score ~ rank 
+                          + gender 
+                          + ethnicity 
+                          + language 
+                          + age 
+                          + cls_perc_eval 
+                          + cls_students 
+                          + cls_credits 
+                          + bty_avg, data = evals)
+#tidy(rm_cls_level)
+glance(rm_cls_level)
+```
+
+Model improves:
+
+<!--14.47-14.3=.17-->
+
+Next, remove `cls_credits`:
+
+```{r}
+rm_cls_credits <- lm(score ~ rank 
+                          + gender 
+                          + ethnicity 
+                          + language 
+                          + age 
+                          + cls_perc_eval 
+                          + cls_students 
+                          + cls_level 
+                          + bty_avg, data = evals)
+#tidy(rm_cls_credits)
+glance(rm_cls_credits)
+```
+
+No improvement.
+
+Next, we remove `bty_avg`:
+
+```{r}
+rm_bty_avg <- lm(score ~ rank 
+                      + gender 
+                      + ethnicity 
+                      + language 
+                      + age 
+                      + cls_perc_eval 
+                      + cls_students 
+                      + cls_level 
+                      + cls_credits, data = evals)
+#tidy(rm_bty_avg)
+glance(rm_bty_avg)
+```
+
+We notice that removing `cls_level` leads to the most improvement in the adjusted $R^2$ of $14.47-14.3=.17$. So, our new improved model (call it `m_prunned_2`) is:
+
+```{r}
+m_prunned_2 <- lm(score ~ rank 
+                        + gender 
+                        + ethnicity 
+                        + language 
+                        + age 
+                        + cls_perc_eval 
+                        + cls_students 
+                        + cls_credits 
+                        + bty_avg, data = evals)
+#tidy(rm_prunned_2)
+glance(m_prunned_2)
+
+```
+
+### [Step 3]{style="color:#4166f5;"}
+
+We use the model from step 2 above along with its adjusted $R^2$ as the baseline for step 3. The rest of the work is left as an exercise.
+
+## [Exercises]{style="color:#4166f5;"}
+
+1.  ***(8 pts)*** In class, we began the backward elimination method (based on adjusted R-squared) for model selection. Complete the steps to come up with the best model. You do not need to show all steps in your answer, just the output for the final model. Also, write out the linear model for predicting score based on the final model you settle on.
+
+2.  ***(4 pts)*** Based on your final model, describe the characteristics of a professor and course at University of Texas at Austin that would be associated with a high evaluation score.
+
+3.  ***(4 pts)*** Pick one slope for a numerical variable in your model and one for a categorical variable and interpret them in context.
+
+4.  ***(4 pts)*** Would you be comfortable generalizing your conclusions to apply to professors generally (at any university)? Why or why not?
+
+## Submission
+
+Once you are finished with the lab, you will submit your final PDF document to Canvas.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all questions are numbered appropriately. Delete any code chunks that were not used.
+
+You must turn in a PDF file to the Canvas page by the submission deadline to be considered "on time".
+:::
+
+::: callout-important
+## Checklist
+
+Make sure you have:
+
+-   attempted all questions
+-   rendered your Quarto document to PDF
+-   uploaded your PDF to Canvas
+:::

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.43">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>MATH 246 – lab_4</title>
+<title>MATH 246 – Lab 3 - Multiple Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,8 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -29,7 +59,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project/first_project.html" rel="next">
+<link href="../labs/Lab_5.html" rel="next">
 <link href="../labs/Lab_3.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -43,8 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,45 +99,60 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<meta property="og:title" content="MATH 246">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+<meta property="og:title" content="MATH 246 - Lab 3 - Multiple Linear Regression">
 <meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta property="og:site_name" content="MATH 246">
-<meta name="twitter:title" content="MATH 246">
+<meta name="twitter:title" content="MATH 246 - Lab 3 - Multiple Linear Regression">
 <meta name="twitter:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/labs/img/twitter-card.png">
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_0.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_4.html">Lab 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_4.html">Lab 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jmochogi/intermediate-stats" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
     <a href="https://calendly.com/jmochogi/20min" title="Office hours" class="quarto-navigation-tool px-1" aria-label="Office hours"><i class="bi bi-life-preserver"></i></a>
@@ -125,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -133,8 +177,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -171,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -180,14 +224,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../labs/Lab_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 0</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
@@ -211,8 +249,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Lab 4</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Lab_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -221,8 +265,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/first_project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1</span></a>
@@ -235,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -244,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problem-sets/ps-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 1</span></a>
@@ -270,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
@@ -279,8 +323,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam 1</span></a>
@@ -293,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
@@ -302,8 +346,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
@@ -316,20 +360,35 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span style="color:#4166f5;">Introduction</span></a></li>
+  <li><a href="#creating-a-quarto-file" id="toc-creating-a-quarto-file" class="nav-link" data-scroll-target="#creating-a-quarto-file"><span style="color:#4166f5;">Creating a quarto file</span></a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span style="color:#4166f5;">Packages</span></a></li>
+  <li><a href="#loading-and-viewing-data" id="toc-loading-and-viewing-data" class="nav-link" data-scroll-target="#loading-and-viewing-data"><span style="color:#4166f5;">Loading (and viewing) Data</span></a></li>
+  <li><a href="#multiple-linear-regression-modeling" id="toc-multiple-linear-regression-modeling" class="nav-link" data-scroll-target="#multiple-linear-regression-modeling"><span style="color:#4166f5;">Multiple Linear Regression Modeling</span></a></li>
+  <li>
+<a href="#model-prunning" id="toc-model-prunning" class="nav-link" data-scroll-target="#model-prunning"><span style="color:#4166f5;">Model Prunning</span></a>
+  <ul class="collapse">
+<li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1"><span style="color:#4166f5;">Step 1</span></a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2"><span style="color:#4166f5;">Step 2</span></a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3"><span style="color:#4166f5;">Step 3</span></a></li>
+  </ul>
+</li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span style="color:#4166f5;">Exercises</span></a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_0.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_4.html">Lab 4</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_4.html">Lab 4</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Lab 3 - Multiple Linear Regression</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -346,15 +405,455 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction"><span style="color:#4166f5;">Introduction</span></h2>
+<p>Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, “Beauty in the classroom: instructors’ pulchritude and putative pedagogical productivity” by Hamermesh and Parker found that instructors who are viewed to be better looking receive higher instructional ratings. In this lab, you will analyze the data from this study in order to learn what goes into a positive professor evaluation. You will also use the GGally package for visualization relationships between many variables pairs at once and the broom package to tidy your regression outputs. We will start by a brief revisiting of the simple linear regression and then extend it to multiple regression (adding more predictor variables to the model)</p>
+</section><section id="creating-a-quarto-file" class="level2"><h2 class="anchored" data-anchor-id="creating-a-quarto-file"><span style="color:#4166f5;">Creating a quarto file</span></h2>
+<ul>
+<li><p>Create a new Quarto document with the title <strong>Multiple Linear Regression</strong>. Change the output format to <strong>pdf</strong> (note that it is set to html by default). Refer to lab_00_Guide if you don’t remember how to create a new quarto file. Save the file as <code>lab_03</code>.</p></li>
+<li><p>Note that if you created the file correctly, it should appear under files with a <code>.qmd</code> extension(i.e., <code>lab_03.qmd</code>). If you do not have this file exactly as described, please <strong>STOP</strong> and make sure you have it done correctly before you proceed.</p></li>
+<li><p>After correctly creating the file, click on <code>Render</code> to see the output in pdf format. Note that it may pop up in a new window. This step is just for ensuring that your document created properly and that you are able to generate a <code>pdf</code>, the format in which you will submit the your lab.</p></li>
+</ul></section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages"><span style="color:#4166f5;">Packages</span></h2>
+<p>You will need the following packages for this lab: <code>openintro</code>, <code>tidyverse</code>, <code>statsr</code>, <code>GGally</code>, and <code>broom</code>. Recall that we have previously installed all these packages. All we need to do is load them into our workspace. Use code below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">statsr</span><span class="er">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">broom</span><span class="er">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">GGally</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Be sure to run the packages code chunk above to ensure that they are all loaded correctly. Remember to use <code>include=F</code> option (i.e., <code>{r, include=F}</code>) to prevent the code output for loading packages from showing up in your rendered report.</p>
+</section><section id="loading-and-viewing-data" class="level2"><h2 class="anchored" data-anchor-id="loading-and-viewing-data"><span style="color:#4166f5;">Loading (and viewing) Data</span></h2>
+<p>We will use a data frame called <code>evals</code> contained in the <strong>openintro</strong> package. The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors’ physical appearance (<code>bty</code>). The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.</p>
+<p>Since we have already activated <code>openintro</code>, we can load the data by running the <code>data</code> command. See below:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">evals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once you run the chunk above, you should be able to see a new object called <strong>evals</strong> in the environment area. Click on it to examine the data.</p>
+<p>You can learn more about the data by running the following command in the <strong>console</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er">?</span><span class="dt">evals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="multiple-linear-regression-modeling" class="level2"><h2 class="anchored" data-anchor-id="multiple-linear-regression-modeling"><span style="color:#4166f5;">Multiple Linear Regression Modeling</span></h2>
+<p>Let us start by creating a full model (we can name it <code>m_full</code>) that predicts professor <code>score</code> based on the following predictors: <code>rank</code>, <code>gender</code>, <code>ethnicity</code>, <code>language</code> (language of the university where they got their degree), <code>age</code>, <code>cls_perc_eval</code> (proportion of students that filled out evaluations), <code>cls_students</code> (number of students in class), <code>cls_level</code> (course level), <code>cls_profs</code> (number of professors), <code>cls_credits</code> (number of credits), and <code>bty_avg</code> (average beauty rating). Note that some of these variables are categorical and others are numerical. You can learn more about these variables including how they were measured by checking the documentation (you can run <code>?evals</code> in the console).</p>
+<p>Before running the code below, answer the following question:</p>
+<p>How many variables do you expect to be in the multiple regression model? How do you know?</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                  <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                  <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                  <span class="op">+</span> <span class="va">language</span> </span>
+<span>                  <span class="op">+</span> <span class="va">age</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                  <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">m_full</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Questions:</strong></p>
+<ul>
+<li><p>How many variables are in the model? Is this what you expected?</p></li>
+<li><p>Interpret the coefficient associated with the <code>ethnicity</code> variable.</p></li>
+</ul></section><section id="model-prunning" class="level2"><h2 class="anchored" data-anchor-id="model-prunning"><span style="color:#4166f5;">Model Prunning</span></h2>
+<p>The above model is called a <strong>full model</strong> because it contains all predictors. The full model is not always the best. We can improve on this model by dropping certain predictors that are not <strong><em>adding value</em></strong> to the model. We are going to use one of the <strong>step-wise selection</strong> methods (backward elimination) to prune the above model in order to improve it. We are trying to increase the adjusted <span class="math inline">\(R^2\)</span>.</p>
+<section id="step-1" class="level3"><h3 class="anchored" data-anchor-id="step-1"><span style="color:#4166f5;">Step 1</span></h3>
+<p>We will start with the <strong>full model</strong> (<code>m_full</code>) and its adjusted <span class="math inline">\(R^2\)</span>. Run the <code>glance</code> function to check the adjusted <span class="math inline">\(R^2\)</span> of the model above (m_full). Interpret the value in context.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">glance</span><span class="op">(</span><span class="va">m_full</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output shows that the adjusted <span class="math inline">\(R^2\)</span> is <span class="math inline">\(14.12\%\)</span>. We use this number as our baseline and drop predictors <strong>one at a time</strong>, each time checking on the improvement in the adjusted <span class="math inline">\(R^2\)</span>. Our new model will be one that leads to the highest improvement in the adjusted <span class="math inline">\(R^2\)</span>.</p>
+<p>Let us start by dropping <code>rank</code> (we can call the model without rank <code>rm_rank</code> (meaning remove rank). We also <code>tidy</code> and <code>glance</code> the model. See the code below:</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_rank</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">gender</span> </span>
+<span>                    <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                    <span class="op">+</span> <span class="va">language</span> </span>
+<span>                    <span class="op">+</span> <span class="va">age</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                    <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_rank)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_rank</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Does dropping rank lead to a significant improvement in the adjusted <span class="math inline">\(R^2\)</span>?</p>
+<p>Next, we want to drop <code>gender</code>. See below:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_gender</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                      <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                      <span class="op">+</span> <span class="va">language</span> </span>
+<span>                      <span class="op">+</span> <span class="va">age</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                      <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_gender)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_gender</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment about the effect of dropping gender from the model? Is it a good idea?</p>
+<p>Next, let us drop <code>ethnicity</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_ethnicity</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                          <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                          <span class="op">+</span> <span class="va">language</span> </span>
+<span>                          <span class="op">+</span> <span class="va">age</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_ethnicity)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_ethnicity</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What can you comment about the effect of dropping <code>ethnicity</code>?</p>
+<p>Next, drop <code>language</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_language</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                        <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                        <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                        <span class="op">+</span> <span class="va">age</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                        <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_language)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_language</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What is the effect of dropping language?</p>
+<p>Next, drop <code>age</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_age</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                  <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                  <span class="op">+</span> <span class="va">gender</span></span>
+<span>                  <span class="op">+</span> <span class="va">language</span></span>
+<span>                  <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                  <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment on the effect of dropping <code>age</code>:</p>
+<p>Next, drop <code>cls_perc_eval</code> (i.e., proportion of students that filled out evaluations):</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_perc_eval</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                              <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                              <span class="op">+</span> <span class="va">age</span></span>
+<span>                              <span class="op">+</span> <span class="va">gender</span></span>
+<span>                              <span class="op">+</span> <span class="va">language</span></span>
+<span>                              <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                              <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                              <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                              <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                              <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_perc_eval</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment appropriately.</p>
+<p>Next, drop <code>cls_students</code> (class size):</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                            <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                            <span class="op">+</span> <span class="va">age</span></span>
+<span>                            <span class="op">+</span> <span class="va">gender</span></span>
+<span>                            <span class="op">+</span> <span class="va">cls_perc_eval</span></span>
+<span>                            <span class="op">+</span> <span class="va">language</span></span>
+<span>                            <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                            <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                            <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                            <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_students</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment on the effect of dropping class size.</p>
+<p>Next, drop <code>cls_level</code> (course level):</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                          <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                          <span class="op">+</span> <span class="va">age</span></span>
+<span>                          <span class="op">+</span> <span class="va">gender</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span></span>
+<span>                          <span class="op">+</span> <span class="va">language</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_profs</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_level</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Does dropping course level lead to an increase in the adjusted <span class="math inline">\(R^2\)</span>. if so, by how much?</p>
+<!-- 14.29-14.12=.17-->
+<p>We are almost done. Next, drop <code>cls_profs</code> (number of professors):</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_profs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                          <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                          <span class="op">+</span> <span class="va">age</span></span>
+<span>                          <span class="op">+</span> <span class="va">gender</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_level</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span></span>
+<span>                          <span class="op">+</span> <span class="va">language</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_profs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Does dropping <code>cls_profs</code> lead to an increase in adjusted <span class="math inline">\(R^2\)</span>? By how much?</p>
+<!-- 14.3-14.12=.18-->
+<p>Next, drop <code>cls_credits</code> (i.e., number of credits):</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_credits</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                          <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                          <span class="op">+</span> <span class="va">age</span></span>
+<span>                          <span class="op">+</span> <span class="va">gender</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_level</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span></span>
+<span>                          <span class="op">+</span> <span class="va">language</span></span>
+<span>                          <span class="op">+</span> <span class="va">cls_profs</span></span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_credits</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment on the effect of dropping <code>cls_credits</code>.</p>
+<p>Finally, drop <code>bty_avg</code> (i.e., average beauty score):</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_bty_avg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span></span>
+<span>                        <span class="op">+</span> <span class="va">ethnicity</span></span>
+<span>                        <span class="op">+</span> <span class="va">age</span></span>
+<span>                        <span class="op">+</span> <span class="va">gender</span></span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span></span>
+<span>                        <span class="op">+</span> <span class="va">cls_level</span></span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span></span>
+<span>                        <span class="op">+</span><span class="va">cls_credits</span></span>
+<span>                        <span class="op">+</span> <span class="va">language</span></span>
+<span>                        <span class="op">+</span> <span class="va">cls_profs</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_bty_avg</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As you have seen, dropping <code>class_profs</code> leads to the most improvement to the model. So, we create a new model (call it <code>m_prunned_1</code>) without <code>cls_profs</code> and check its adjusted <span class="math inline">\(R^2\)</span>. Below is our new model:</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m_prunned_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                        <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                        <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                        <span class="op">+</span> <span class="va">language</span> </span>
+<span>                        <span class="op">+</span> <span class="va">age</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                        <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">m_prunned_1</span><span class="op">)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">m_prunned_1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The new adjusted <span class="math inline">\(R^2\)</span> is <span class="math inline">\(14.3\%\)</span> and we will use it in step two:</p>
+</section><section id="step-2" class="level3"><h3 class="anchored" data-anchor-id="step-2"><span style="color:#4166f5;">Step 2</span></h3>
+<p>We repeat the process above using <code>m_prunned_1</code> as the baseline. Remember, its adjusted <span class="math inline">\(R^2\)</span> is <span class="math inline">\(14.3\%\)</span>.</p>
+<p>First, drop gender:</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_gender</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                      <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                      <span class="op">+</span> <span class="va">language</span> </span>
+<span>                      <span class="op">+</span> <span class="va">age</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                      <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_gender)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_gender</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, remove rank:</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_rank</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">gender</span> </span>
+<span>                    <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                    <span class="op">+</span> <span class="va">language</span> </span>
+<span>                    <span class="op">+</span> <span class="va">age</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                    <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                    <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_rank)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_rank</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- Improved> 14.36-14.3=0.06-->
+<p>Next, remove ethnicity,</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_ethnicity</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                        <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                        <span class="op">+</span> <span class="va">language</span> </span>
+<span>                        <span class="op">+</span> <span class="va">age</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                        <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_ethnicity)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_ethnicity</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, remove <code>language</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_language</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                        <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                        <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                        <span class="op">+</span> <span class="va">age</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                        <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_language)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_language</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No improvement.</p>
+<p>Next, remove age:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_age</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                  <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                  <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                  <span class="op">+</span> <span class="va">language</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                  <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                  <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_age)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No improvement.</p>
+<p>Next, remove <code>cls_perc_eval</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_per_eval</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                            <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                            <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                            <span class="op">+</span> <span class="va">language</span> </span>
+<span>                            <span class="op">+</span> <span class="va">age</span> </span>
+<span>                            <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                            <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                            <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                            <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_cls_per_eval)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_per_eval</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No improvement.</p>
+<p>Next, remove <code>cls_students</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_st</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                      <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                      <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                      <span class="op">+</span> <span class="va">language</span> </span>
+<span>                      <span class="op">+</span> <span class="va">age</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                      <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_cls_st)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_st</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No improvement.</p>
+<p>Next, remove <code>cls_level</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                          <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                          <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                          <span class="op">+</span> <span class="va">language</span> </span>
+<span>                          <span class="op">+</span> <span class="va">age</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_cls_level)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_level</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Model improves:</p>
+<!--14.47-14.3=.17-->
+<p>Next, remove <code>cls_credits</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_cls_credits</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                          <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                          <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                          <span class="op">+</span> <span class="va">language</span> </span>
+<span>                          <span class="op">+</span> <span class="va">age</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                          <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                          <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_cls_credits)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_cls_credits</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No improvement.</p>
+<p>Next, we remove <code>bty_avg</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rm_bty_avg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                      <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                      <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                      <span class="op">+</span> <span class="va">language</span> </span>
+<span>                      <span class="op">+</span> <span class="va">age</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_level</span> </span>
+<span>                      <span class="op">+</span> <span class="va">cls_credits</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_bty_avg)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">rm_bty_avg</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We notice that removing <code>cls_level</code> leads to the most improvement in the adjusted <span class="math inline">\(R^2\)</span> of <span class="math inline">\(14.47-14.3=.17\)</span>. So, our new improved model (call it <code>m_prunned_2</code>) is:</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m_prunned_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">rank</span> </span>
+<span>                        <span class="op">+</span> <span class="va">gender</span> </span>
+<span>                        <span class="op">+</span> <span class="va">ethnicity</span> </span>
+<span>                        <span class="op">+</span> <span class="va">language</span> </span>
+<span>                        <span class="op">+</span> <span class="va">age</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_perc_eval</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_students</span> </span>
+<span>                        <span class="op">+</span> <span class="va">cls_credits</span> </span>
+<span>                        <span class="op">+</span> <span class="va">bty_avg</span>, data <span class="op">=</span> <span class="va">evals</span><span class="op">)</span></span>
+<span><span class="co">#tidy(rm_prunned_2)</span></span>
+<span><span class="fu">glance</span><span class="op">(</span><span class="va">m_prunned_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="step-3" class="level3"><h3 class="anchored" data-anchor-id="step-3"><span style="color:#4166f5;">Step 3</span></h3>
+<p>We use the model from step 2 above along with its adjusted <span class="math inline">\(R^2\)</span> as the baseline for step 3. The rest of the work is left as an exercise.</p>
+</section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises"><span style="color:#4166f5;">Exercises</span></h2>
+<ol type="1">
+<li><p><strong><em>(8 pts)</em></strong> In class, we began the backward elimination method (based on adjusted R-squared) for model selection. Complete the steps to come up with the best model. You do not need to show all steps in your answer, just the output for the final model. Also, write out the linear model for predicting score based on the final model you settle on.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Based on your final model, describe the characteristics of a professor and course at University of Texas at Austin that would be associated with a high evaluation score.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Pick one slope for a numerical variable in your model and one for a categorical variable and interpret them in context.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Would you be comfortable generalizing your conclusions to apply to professors generally (at any university)? Why or why not?</p></li>
+</ol></section><section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Once you are finished with the lab, you will submit your final PDF document to Canvas.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all questions are numbered appropriately. Delete any code chunks that were not used.</p>
+<p>You must turn in a PDF file to the Canvas page by the submission deadline to be considered “on time”.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Checklist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you have:</p>
+<ul>
+<li>attempted all questions</li>
+<li>rendered your Quarto document to PDF</li>
+<li>uploaded your PDF to Canvas</li>
+</ul>
+</div>
+</div>
 
 
-<p>Coming soon!</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -917,35 +1416,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../labs/Lab_3.html" class="pagination-link" aria-label="Lab 3">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../project/first_project.html" class="pagination-link" aria-label="Project 1">
-        <span class="nav-page-text">Project 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/Lab_5.html" class="pagination-link" aria-label="Lab 5">
+        <span class="nav-page-text">Lab 5</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Joash Geteregechi</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

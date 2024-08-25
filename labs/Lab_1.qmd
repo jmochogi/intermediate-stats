@@ -1,5 +1,5 @@
 ---
-categories: "Lab"
+categories: "Lab 1"
 execute:
   eval: true
 format:
@@ -12,282 +12,188 @@ format:
     code-copy: true
 ---
 
-# Reproducible Reports {.unnumbered}
+# `Hello, World!` {.unnumbered}
 
-```{r, include=FALSE}
-library(openintro)
+It is possible that some of you have heard/seen the phrase, `Hello, World!`, before. That is usually the first thing you learn in programming, i.e., to learn to write a computer program to print this sentence to screen. In this lab, we will not print `Hello, World!` to the screen. Instead, we will learn how to use R (via RStudio) to perform statistical analyses and to write reports in order to communicate the insights learned from data. While the analysis involves writing computer code, it is in no way going to involve writing computer programs. The goal of today's lab is to introduce you to R and RStudio. You will learn to access and use RStudio, as well as perform the basic functions regarding statistical analysis. To clarify which is which: R is the name of the programming language itself and RStudio is a convenient interface (Integrated Development Environment or IDE) for working with R. I like to think about R as the car engine and RStudio as a nice driver dashboard. The engine drives the car, but the dashboard makes it easier for the driver to control the car. Most R users work with RStudio.
+
+![Car Engine and Dashboard](images/r_vs_rstudio.png)
+
+We will work with the cloud (online) version of RStudio. To access RStudio online, click on the link <https://posit.cloud> to create an account or to sign in if you already have an account.
+
+## Creating a new Project
+
+After signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called "MATH 246 Fall 2024". Each lab that you complete will be saved in this project. To create the project, you start by clicking on "New Project" and then change the default name (UNTITLED PROJECT) to "MATH 246 Fall 2024".
+
+Yay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.
+
+## The R studio Interface
+
+Your new R studio project interface will look as follows:
+
+![](images/a1.jpeg)
+
+-   ***Left Panel:*** The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you're running. Below that information is the symbol " \> ". This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.
+
+    ```{r}
+    1+1
+    ```
+
+-   ***Upper Right Panel:*** The panel in the upper right is called "environment". It contains, among other things, the history of the actions or commands that you've previously entered.
+
+-   ***Bottom Right Panel:*** The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.
+
+## R packages
+
+R is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called "Library". For this lab, and many others in the future, we will use the following two packages:
+
+-   The **tidyverse package** is a very popular "umbrella" package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.
+
+-   The **openintro package** for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.
+
+### Installing packages
+
+The command to install a package in R takes the following format:
+
+```         
+install.packages("package name")
+```
+
+To install **tidyverse** and **openintro**, run the following commands:
+
+``` toml
+install.packages("tidyverse")
+install.packages("openintro")
+```
+
+Note: You only need to install packages **once**, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:
+
+``` toml
 library(tidyverse)
-library(palmerpenguins)
-```
-
-## Introduction
-
-In today's lab, we introduce an interface known as quarto that is helpful in creating reproducible reports. One of the most powerful features of quarto is the fact that you can write code (in code chunks) and plain text in the same document. You can generate (render) your work into formats such as pdf, word, html, etc that can be shared easily. If you are using the desktop version of quarto, you need to download quarto from <https://quarto.org/docs/get-started/> before you proceed.
-
-## Installing a new package
-
-We are going to need a package called `palmerpenguins`. Install it before you proceed. To install the package, run the following command [in the console]{style="color:red"}
-
-``` toml
-install.packages("palmerpenguins)
-```
-
-An alternative way to install a package in RStudio is to use the `install` button in the packages tab.
-
-## Creating a quarto file
-
-To create your First Quarto file, follow the following steps:
-
-Go to File\>New File \> Quarto document. See below:
-
-![](images/a2.jpeg){width="90%"}
-
-After clicking Quarto document,a pop up window will appear with fields for the title and author. Enter the title of the document as `Introducing Quarto and Tidyverse` because that is what we are doing today. Write your name under author. The output format can stay as HTML. You can always change these options even after creating the document. The popup window looks as follows:
-
-![](images/a3.jpeg){width="70%"}
-
-Click create to create the document. Note that the document appears with the name Untitled. Click on `file` then navigate to `save` then change the name from untitled to `Lab_01`. Remember, we do not want to use a space for the document name. To tell whether your document saved properly, you will see the document under files with a `.qmd` extension. With this document saved here, you can always return to it any time and continue working.
-
-Now, click on `Render` to see the output of the document you just created. You will note that the document has both plain text and code chunks. We shall use the code chunks for writing code and plain text for interpreting our analyses and writing reports. To add your own code chunk, just click on `code` the go to add new `chunk` or use the keyboard shortcut `cmd+opt+I` on a mac and `control+opt+I` on windows. When doing this, make sure your cursor is at the place where you want to create the new code chunk.
-
-By default, the code chunk that comes is for R code. If you want to write `python` code, just change the `r` to python.
-
-To create a new code chunk, you can copy an already existing code chunk and paste it elsewhere on the document then edit it appropriately. You may also create new code chunks by clicking on Code and navigating to Insert code chunk.
-
-## Using Code Chunks
-
-In a code chunk, you write code that you want to reproduce in your report. There are other operations such as installing packages that should be done only in the `console`. When you render a quarto document, quarto runs all code chunks sequentially from top to bottom in order to output your report (in pdf, html, or word). If any code chunks has code for package installation, it means R will try to re-install the package every time you render the document (we said packages are installed one). Operations such as activating packages, i.e., `library(package name)`, should be included in the first code chunk.
-
-As a start, let us load the `openintro`, `tidyverse`, and `palmerpenguins` packages. Copy and paste the following code in the **first** code chunk:
-
-``` toml
 library(openintro)
-library(tidyverse)
-library(palmerpenguins)
 ```
 
-Run the code chunk with the packages to ensure that they are all working. If any of them is missing, R will prompt you to install them.
+***Why Tidyverse?*** We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.
 
-## Loading (and viewing) Data
+## Creating vectors in R
 
-Remember that the openintro package contains the data that comes with the openintro text. To view a complete list of the data frames, visit <https://www.openintro.org/data/>. Today, we will use a data frame called `penguins` contained in the `palmerpenguins` package. To learn more about this data frame, run the following code in the ***console***:
-
-``` toml
-?penguins
-```
-
-To load the data into your document, run the following command:
+Suppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:
 
 ```{r}
-data("penguins")
+x <- c(23,24,26,19,18,25,21, 39) 
+# We use the symbol <- for assigning elements to an object. 
 ```
 
-When you run the above code, a new object should appear in the environment area. Click on `penguins` to view and study the data.
+Here, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols `<-` is used for assignment. In R, we use a \# to designate a ***comment*** (text that should not be evaluated as code). In above chunk, the text after \# is a comment. Comments are a good way to document your code.
 
-## Some Analyses (with Tidyverse)
-
-Now that you have "imported" the data into R, we want to perform a few analyses. We are going to use the tidyverse package to do this. The tidyverse is `a collection of R packages` for data analysis that are developed with common ideas and norms. According to @Wickham2019,
-
-"At a high level, the tidyverse is a language for solving data science challenges with R code. Its primary goal is to facilitate a conversation between a human and a computer about data. Less abstractly, the tidyverse is a collection of R packages that share a high-level design philosophy and low-level grammar and data structures, so that learning one package makes it easier to learn the next."
-
-### Tidyverse Workflow
-
-In lab_00, we performed the analyses using base R code. We saw that to compute the mean of a given variable in a data frame, you use `data_frame_name$variable_name`. The tidyverse workflow is a bit different and is what we shall use for the most part.
-
-For example, to compute the mean of `bill_length_mm` from the `penguins` data frame, base R code would be
-
-``` toml
-mean(penguins$bill_length_mm)
-```
-
-Try the code to see if it works. If not, what is the problem and how would you fix it?
-
-In the tidyverse, the code for the mean of the bill length would be
-
-``` toml
-penguins %>% summarize(length_mean = mean(bill_length_mm))
-```
-
-The symbol `%>%` is called a pipe and is very common in tidyverse. It takes anything on its left and sends it (pipes it) to the function on the right. Here, we are taking the mtcars data frame and piping it into the summarize function (the function for summary statistics). Inside the function, we specify the variable and the statistic (in this case the ***mean***). We have chosen to name the result as `length_mean` but this could be changed.
-
-You can compute other summary statistics in a similar manner as above and if there is an NA one way to deal with would be to remove it. In some cases, one would replace NA with the average of the other values.
-
-## Visualizing with ggplot2
-
-In this section, we will start by creating scatter plots and then proceed to bar plots. You will learn about more visualization tools in later labs.
-
-### Scatter plots
-
-Suppose we want to answer the following question: Do penguins with longer flippers weigh more or less than penguins with shorter flippers?
-
-We will use a package called `ggplot2` (part of tidyverse) to create a **scatter plot** to visualize the association between flipper length and and body weight.
-
-`ggplot2` is a package (part of the tidyverse umbrella) that is used to create nice-looking graphics. It adopts the **grammar of graphics**, which is a coherent system for describing and building graphs.
-
-You provide the **data**, tell ggplot2 how to **map** variables to aesthetics, what **graphical primitives** to use, and it takes care of the details.
-
-With ggplot2, you begin a plot with the function ggplot(), defining a plot object that you then add layers to sequentially until you get the desired plot. We will do this in steps:
-
--   Step 1: Add the data:
+To find the mean of those numbers, we simply run the command `mean(x)` as shown below.
 
 ```{r}
-  ggplot(data = penguins)
+mean(x)
 ```
 
-This creates an empty canvas
+The general format is `do_this(on_this)`. Here, `do_this` is the function while `x` is the thing on which we want an action taken.
 
--   Step 2: Provide the information about the x-axis and the y-axis (i.e., what variable do you want where?). We call this a **mapping**.
+To find the median of the numbers, we run the command `median(x)` as shown below.
 
 ```{r}
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)
-)  
+median(x)
 ```
 
-The above code adds to our empty canvas the variables specified for the y axis and the x-axis. We still do not have a scatter plot.
-
--   Step 3: Define the geometry (geom) that you want ggplot2 to use. In our case, we want to use points and so we use the function `geom_point()`. Notice that you must have the parentheses because this is a function that can take arguments (you will learn more about this). Use teh code below:
+We can also create a `string object` (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:
 
 ```{r}
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)
-) +
-  geom_point()
+y <- c( "Jane", "John", "Jess", "Jeff", "Joe", "Holli", "Henry", "Han") 
+# We use quotes for strings.
 ```
 
-We finally have our scatter plot. Based on this scatter plot, what can you say about the question we sought to answer?
-
-Remember the steps:
-
--   Give ggplot the `data`,
--   provide a `mapping`, and
--   define a geometry using `geom_`.
-
-***Question:*** Try to change the geometry above to a histogram, i.e.,
-
-``` toml
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)
-) +
-  geom_histogram()
-```
-
-Does it work? If not, why?
-
-### Adding more aesthetics
-
-The scatter plot above is a great tool to visualize the relationship between the **two** variables (flipper length and weight). Suppose we want to add a third (categorical) variable such as species to the scatter plot. We can achieve this by adding a third argument such as color to the aesthetics). See code below:
-
-```{r, warning=FALSE}
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species )
-) +
-  geom_point()
-```
-
-What do you learn from this new scatter plot that you do not from the first?
-
-You can also visualize how the different species are scattered on the same scale by using the face_wrap function. See code below
+Now, try to run the command **mean(y)**:
 
 ```{r}
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)
-) +
-  geom_point()+
-  facet_wrap(~species)
+mean(y)
 ```
 
-You can also add a numerical variable such as `bill_depth_mm`. See code below:
+What do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object `y` does not make sense because the entries of `y` are not numerical.
 
-```{r, warning=FALSE}
-ggplot(
-  data = penguins,
-  mapping = aes(x = flipper_length_mm, y = body_mass_g, color=bill_depth_mm )
-) +
-  geom_point()
-```
-
-What do you learn from this scatter plot that you do not from the first?
-
-### Creating bar plots
-
-You can also create bar plots in a similar manner as above. Remember that bar plots are for categorical variables. For example, we can use a bar plot to visualize the species of the penguins. See code below:
+You can, however, perform other operations on y. For example, you may want to know how many `Jane` entries are in y. To do this, you may simply tabulate the entries in y as shown below:
 
 ```{r}
-ggplot(penguins, aes(x = species)) +
-  geom_bar()
+table(y)
 ```
 
-The above bar plot simply gives us the count for each species. If you wanted to color the bars by species, you can
+We see that there is only one `Jane` entry in y. While you could easily count the number of `Jane` entries in y, the `table` function is useful when you have many entries and you want to know how many times each entry appears.
+
+Before we proceed, delete (or comment out) the `mean(y)` that you had written earlier.
+
+## Creating Data Frames
+
+You can create a `data frame` by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).
 
 ```{r}
-ggplot(penguins, aes(x = species, color=species)) +
-  geom_bar()
+a<-c(3,3,2,2,3,4,1,2)
+
+b<-c("F", "M", "F", "M", "M", "F", "M", "M")
 ```
 
-You can make the colors to fill the bars by using `fill` instead of `color`. See below:
+You can combine the vectors a, b, c, x, and y into a data frame as follows. We store this in an object called practice_data and then print it. Note that we use an underscore to separate the words **practice** and **data** in the name. Do not use a blank space for object or variable names.
 
 ```{r}
-ggplot(penguins, aes(x = species, fill=species)) +
-  geom_bar()
+practice_data <- data.frame(name=y, age=x, sex=b, year=a)
+print (practice_data)
 ```
 
-If you wanted to add another categorical variable such as `island` to visualize the relationship, you can fill by island nstead of by species. See below:
+Notice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the labs, we will learn how to import data from various sources into R.
+
+## Using Data Frames
+
+We can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows `mean(practice_data$age)`.
 
 ```{r}
-ggplot(penguins, aes(x = species, fill = island)) +
-  geom_bar()
+mean(practice_data$age)
 ```
 
-The problem with this bar plot is that it is difficult to interpret. We often prefer to have side-by-side bar plots. To achieve this, we add an argument called **position** inside the **geom_bar** function and set it to `dodge`.
+You can also find other statistics. For median, the command is `median(data$variable)`. For standard deviation, the command is `sd(data$variable)`.
+
+You can also run multiple summary statistics at once using the command `summary(median(data$variable))`. See below:
 
 ```{r}
-ggplot(penguins, aes(x = species, fill = island)) +
-  geom_bar(position = "dodge")
+summary(practice_data$age)
+```
+
+The summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.
+
+## Basic Visualizations
+
+You can create basic plots in base R:
+
+### Scatter plots:
+
+To create a scatter plot to visualize the relationship between age and year, you can use the code below:
+
+```{r}
+plot(practice_data$age, practice_data$year)
+
+```
+
+### Bar plots
+
+To create a bar plot to visualize the distribution of M and F, you can use the command below:
+
+```{r}
+barplot(table((practice_data$sex)))
 ```
 
 ## Exercises
 
-1.  ***(2 pts)*** There is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space. <!--
-                                                data(loan50)
-                                                -->
-2.  ***(2 pts)*** Give a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have? <!--
-                                                ?loan50
-                                                -->
-3.  ***(4 pts)*** Do people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables `emp_length` and `interest_rate`. <!--
-                                                ```{r}
-                                                ggplot(
-                                                data=loan50, aes(x=emp_length, y=interest_rate)) +
-                                                geom_point()
-                                                ```
-                                                -->
-4.  ***(4 pts)*** Recreate the following plot using the loan50 data frame.
+1)  Create an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.
 
-```{r, echo=FALSE, warning=FALSE}
-    ggplot(
-      data = loan50,
-      mapping = aes(x = emp_length, y = interest_rate, color=homeownership )
-    ) +
-      geom_point()
-```
+2)  Find the mean of the values in #1 above.
 
-5.  ***(4 pts)*** Create a bar plot (with differently colored bars) to visualize the distribution of the loans by `homeownership`. What insights can you draw from this bar plot? <!--
-                                                ```{r}
-                                                ggplot(
-                                                data=loan50, aes(x=homeownership, fill=homeownership)) +
-                                                geom_bar()
-                                                ```
-                                                -->
+3)  Create another object with names of your choosing and then combine it with the first object to make a data frame called **my_data**.
 
-6.  ***(4 pts)*** Recreate the following plot using the loan50 data frame.
+4)  Run the summary statistics for the income variable using **my_data** data frame that you created in #3 above.
 
-```{r, warning=F, echo=F}
-    ggplot(
-    data=loan50, aes(x=homeownership, fill=loan_purpose)) +
-    geom_bar(position="dodge")
-```
+5)  R comes with many pre-loaded data frames. One such data frame is called `mtcars`. Run the command `?mtcars` to learn more about this data frame. Next, load this data frame into your work space by running the command `data(mtcars)`.
+
+6)  Use the mtcars data frame to find the median horsepower of the cars.
+
+7)  Create a histogram to visualize the distribution of the variable `hp`. What can you say about the distribution of hp based on the histogram?

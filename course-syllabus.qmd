@@ -114,8 +114,6 @@ Problem sets will be assigned after every three to four weeks or after completio
 
 In labs, you will apply what you’ve learned in during class to complete data analysis tasks. You may discuss lab assignments with other students; however, lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be rendered to pdf format and must be submitted on Canvas by the deadline.
 
-Labs are due at 8 am ET on the indicated due date (generally the Tuesday after the lab).
-
 The lowest lab grade will be dropped at the end of the semester.
 
 ### Quizzes

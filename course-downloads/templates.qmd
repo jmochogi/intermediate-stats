@@ -1,8 +1,16 @@
 ---
-title: "Datasets"
+title: "Downloadable Files"
 ---
 
-On this page, you will find the templates for problem sets, projects, exams, and other assignments. Each template includes the instructions for the assignment and the datasets you will need to complete the assignment.
+On this page, you will find downloadable templates for various assignments such projects, problem sets, exams, and other assignments.
+
+## Labs
+
+-   [lab 1]()
+-   [lab 2]()
+-   [lab 3]()
+-   [lab 4]()
+-   [lab 5]()
 
 ## Problem Sets
 
@@ -12,10 +20,10 @@ On this page, you will find the templates for problem sets, projects, exams, and
 
 ## Projects
 
-- [project 1]()
-- [project 2]()
+-   [project 1]()
+-   [project 2]()
 
 ## Exams
 
-- [exam 1]()
-- [exam 2]()
+-   [exam 1]()
+-   [exam 2]()
