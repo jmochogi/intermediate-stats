@@ -2,7 +2,7 @@
 title: "Problem Set 1: A Review of Basic Concepts"
 subtitle: "Due: Sep 06, 2024"
 format:
-  #html: default
+  html: default
   pdf: default
 ---
 
