@@ -1,5 +1,5 @@
 ---
-title: "Lab 3 - Multiple Linear Regression"
+title: "Lab 4 - Multiple Linear Regression"
 categories: "Lab"
 ---
 
