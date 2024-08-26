@@ -613,47 +613,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>
 <strong><em>(2 pts)</em></strong> There is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space. <!--
-                                                    data(loan50)
-                                                    -->
+                                                        data(loan50)
+                                                        -->
 </li>
 <li>
 <strong><em>(2 pts)</em></strong> Give a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have? <!--
-                                                    ?loan50
-                                                    -->
+                                                        ?loan50
+                                                        -->
 </li>
 <li>
 <strong><em>(4 pts)</em></strong> Do people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables <code>emp_length</code> and <code>interest_rate</code>. <!--
 
 
 
-
-                                                    ::: {.cell}
-                                                    
-                                                    ```{.r .cell-code}
-                                                    ggplot(
-                                                    data=loan50, aes(x=emp_length, y=interest_rate)) +
-                                                    geom_point()
-                                                    ```
-                                                    
-                                                    ::: {.cell-output .cell-output-stderr}
-                                                    
-                                                    ```
-                                                    Warning: Removed 2 rows containing missing values or values outside the scale range
-                                                    (`geom_point()`).
-                                                    ```
-                                                    
-                                                    
-                                                    :::
-                                                    
-                                                    ::: {.cell-output-display}
-                                                    ![](Lab_2_files/figure-html/unnamed-chunk-14-1.png){width=672}
-                                                    :::
-                                                    :::
-
+                                                        ::: {.cell}
+                                                        
+                                                        ```{.r .cell-code}
+                                                        ggplot(
+                                                        data=loan50, aes(x=emp_length, y=interest_rate)) +
+                                                        geom_point()
+                                                        ```
+                                                        
+                                                        ::: {.cell-output .cell-output-stderr}
+                                                        
+                                                        ```
+                                                        Warning: Removed 2 rows containing missing values or values outside the scale range
+                                                        (`geom_point()`).
+                                                        ```
+                                                        
+                                                        
+                                                        :::
+                                                        
+                                                        ::: {.cell-output-display}
+                                                        ![](Lab_2_files/figure-html/unnamed-chunk-14-1.png){width=672}
+                                                        :::
+                                                        :::
 
 
 
-                                                    -->
+                                                        -->
 </li>
 <li>
 <strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</li>
@@ -671,24 +669,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-
-                                                    ::: {.cell}
-                                                    
-                                                    ```{.r .cell-code}
-                                                    ggplot(
-                                                    data=loan50, aes(x=homeownership, fill=homeownership)) +
-                                                    geom_bar()
-                                                    ```
-                                                    
-                                                    ::: {.cell-output-display}
-                                                    ![](Lab_2_files/figure-html/unnamed-chunk-16-1.png){width=672}
-                                                    :::
-                                                    :::
-
+                                                        ::: {.cell}
+                                                        
+                                                        ```{.r .cell-code}
+                                                        ggplot(
+                                                        data=loan50, aes(x=homeownership, fill=homeownership)) +
+                                                        geom_bar()
+                                                        ```
+                                                        
+                                                        ::: {.cell-output-display}
+                                                        ![](Lab_2_files/figure-html/unnamed-chunk-16-1.png){width=672}
+                                                        :::
+                                                        :::
 
 
 
-                                                    --></p></li>
+                                                        --></p></li>
 <li><p><strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</p></li>
 </ol>
 <div class="cell">

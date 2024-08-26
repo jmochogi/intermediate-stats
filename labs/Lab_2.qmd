@@ -254,18 +254,18 @@ ggplot(penguins, aes(x = species, fill = island)) +
 ## Exercises
 
 1.  ***(2 pts)*** There is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space. <!--
-                                                    data(loan50)
-                                                    -->
+                                                        data(loan50)
+                                                        -->
 2.  ***(2 pts)*** Give a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have? <!--
-                                                    ?loan50
-                                                    -->
+                                                        ?loan50
+                                                        -->
 3.  ***(4 pts)*** Do people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables `emp_length` and `interest_rate`. <!--
-                                                    ```{r}
-                                                    ggplot(
-                                                    data=loan50, aes(x=emp_length, y=interest_rate)) +
-                                                    geom_point()
-                                                    ```
-                                                    -->
+                                                        ```{r}
+                                                        ggplot(
+                                                        data=loan50, aes(x=emp_length, y=interest_rate)) +
+                                                        geom_point()
+                                                        ```
+                                                        -->
 4.  ***(4 pts)*** Recreate the following plot using the loan50 data frame.
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -277,12 +277,12 @@ ggplot(penguins, aes(x = species, fill = island)) +
 ```
 
 5.  ***(4 pts)*** Create a bar plot (with differently colored bars) to visualize the distribution of the loans by `homeownership`. What insights can you draw from this bar plot? <!--
-                                                    ```{r}
-                                                    ggplot(
-                                                    data=loan50, aes(x=homeownership, fill=homeownership)) +
-                                                    geom_bar()
-                                                    ```
-                                                    -->
+                                                        ```{r}
+                                                        ggplot(
+                                                        data=loan50, aes(x=homeownership, fill=homeownership)) +
+                                                        geom_bar()
+                                                        ```
+                                                        -->
 
 6.  ***(4 pts)*** Recreate the following plot using the loan50 data frame.
 

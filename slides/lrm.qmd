@@ -14,11 +14,12 @@ format:
 ## But, why LRM?? {.smaller}
 
 -   You learned about linear regression with a single predictor (slr) and linear regression with multiple predictors (mlr). Common features between slr and mlr are:
-  
-    - Both model a numerical outcome variable.
-    - Both take both numerical and categorical variables as predictors.
-  
+
+    -   Both model a numerical outcome variable.
+    -   Both take both numerical and categorical variables as predictors.
+
 -   Question: What if you have a categorical binary outcome? This is precisely what logistic regression does.
+
 -   Logistic regression is a special case of what is known as generalized linear models (GLM).
 
 ## Structure of Logistic Regression models {.smaller}
@@ -119,21 +120,20 @@ The threshold value can be set at any value between 0 and 1. The choice of the t
 
 -   If the threshold is 0.5, the probabilities that fall bellow 0.5 result in a classification of 0 (Failure) while 0.5 and above result in a classification of 1 (Success).
 
-## Many Predictors  {.smaller}
+## Many Predictors {.smaller}
 
 -   Like in the case on linear multiple regression, we can fit a logistic model using several predictor variables. In the above example, suppose we add the following variables.
 
-|                   |                                 |
-|-------------------|----------------------------------|
+|                   |                                                  |
+|-------------------|--------------------------------------------------|
 | received_callback | Specifies whether candidate received a call back |
-| job_city          | Job city: Chicago or Boston            |
-| college_degree    | Whether candidate has college degree    |
-| years_experience  | Candidate experience in years           |
-| millitay          | Whether candidate served in the military|
-| has_email_address | Whether candidate has email address      |
-| race              | Implied candidate race                  |
-| sex               | Implied sex based on name             |
-
+| job_city          | Job city: Chicago or Boston                      |
+| college_degree    | Whether candidate has college degree             |
+| years_experience  | Candidate experience in years                    |
+| millitay          | Whether candidate served in the military         |
+| has_email_address | Whether candidate has email address              |
+| race              | Implied candidate race                           |
+| sex               | Implied sex based on name                        |
 
 ## Cont... {.smaller}
 
@@ -146,12 +146,13 @@ Using software, we come up with the output on the right:
 ![](images/logistmodel.jpeg){fig-alt="HS grad vs poverty rate" fig-align="center"}
 :::
 :::
-a. Write down the equation of the model. Interpret the coefficient for `job_city`.
-b. Using the model in part (a), estimate the probability of receiving a callback for a job in Chicago where the candidate lists 14 years experience, no honors, no military experience, includes an email address, has no college degree, and has a first name that implies they are a White male.
+
+a.  Write down the equation of the model. Interpret the coefficient for `job_city`.
+b.  Using the model in part (a), estimate the probability of receiving a callback for a job in Chicago where the candidate lists 14 years experience, no honors, no military experience, includes an email address, has no college degree, and has a first name that implies they are a White male.
 
 ## Solution {.smaller}
 
-a. The equation of the model is given by: 
+a.  The equation of the model is given by:
 
 ```{=tex}
 \begin{aligned}
@@ -165,11 +166,11 @@ logit(p_i) &= -2.66 - 0.44\times job\_city_{Chicago}\\
                   & - 0.18\times sexman
 \end{aligned}
 ```
-**Interpretation:** Job City: All else held constant, the log ***odds ratio*** of getting a callback for a job in Chicago is .44 lower than one located in Boston. Part (b) >> 
+**Interpretation:** Job City: All else held constant, the log ***odds ratio*** of getting a callback for a job in Chicago is .44 lower than one located in Boston. Part (b) \>\>
 
 ## Solution cont... {.smaller}
 
-b. Using the model in part (a), we set up the predictor values in the model as follows:
+b.  Using the model in part (a), we set up the predictor values in the model as follows:
 
 ```{=tex}
 \begin{aligned}
@@ -195,12 +196,8 @@ The probability of receiving a callback for the resume is about 0.066 or 6.6%.
 ## Model Selection {.smaller}
 
 -   Like in linear regression, we can use the AIC, BIC, and other model selection criteria to select the best model.
-- AIC selects a “best” model by ranking models from best to worst according to their AIC values. In the calculation of a model’s AIC, a penalty is given for including additional variables.
-- This penalty for added model complexity attempts to strike a balance between underfitting (too few variables in the model) and overfitting (too many variables in the model).
-- The model with the smallest AIC value is considered the best model.
+-   AIC selects a “best” model by ranking models from best to worst according to their AIC values. In the calculation of a model’s AIC, a penalty is given for including additional variables.
+-   This penalty for added model complexity attempts to strike a balance between underfitting (too few variables in the model) and overfitting (too many variables in the model).
+-   The model with the smallest AIC value is considered the best model.
 
->> We will do this practically during a lab session using software!
-
-
-
-
+> > We will do this practically during a lab session using software!
