@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.43">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>MATH 246 – lab_2</title>
+<title>MATH 246 – lab_1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/Lab_3.html" rel="next">
-<link href="../labs/Lab_1.html" rel="prev">
+<link href="../labs/Lab_2.html" rel="next">
+<link href="../course-faq.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,8 +101,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <meta property="og:title" content="MATH 246">
+<meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta property="og:site_name" content="MATH 246">
 <meta name="twitter:title" content="MATH 246">
+<meta name="twitter:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta name="twitter:image" content="https://jmochogi.github.io/intermediate-stats/labs/img/twitter-card.png">
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
@@ -114,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_2.html">Lab 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Lab 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -123,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
@@ -200,13 +202,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
@@ -343,36 +345,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#reproducible-reports" id="toc-reproducible-reports" class="nav-link active" data-scroll-target="#reproducible-reports">Reproducible Reports</a>
+<a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world"><code>Hello, World!</code></a>
   <ul class="collapse">
-<li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#installing-a-new-package" id="toc-installing-a-new-package" class="nav-link" data-scroll-target="#installing-a-new-package">Installing a new package</a></li>
-  <li><a href="#creating-a-quarto-file" id="toc-creating-a-quarto-file" class="nav-link" data-scroll-target="#creating-a-quarto-file">Creating a quarto file</a></li>
-  <li><a href="#using-code-chunks" id="toc-using-code-chunks" class="nav-link" data-scroll-target="#using-code-chunks">Using Code Chunks</a></li>
-  <li><a href="#loading-and-viewing-data" id="toc-loading-and-viewing-data" class="nav-link" data-scroll-target="#loading-and-viewing-data">Loading (and viewing) Data</a></li>
+<li><a href="#creating-a-new-project" id="toc-creating-a-new-project" class="nav-link" data-scroll-target="#creating-a-new-project">Creating a new Project</a></li>
+  <li><a href="#the-r-studio-interface" id="toc-the-r-studio-interface" class="nav-link" data-scroll-target="#the-r-studio-interface">The R studio Interface</a></li>
   <li>
-<a href="#some-analyses-with-tidyverse" id="toc-some-analyses-with-tidyverse" class="nav-link" data-scroll-target="#some-analyses-with-tidyverse">Some Analyses (with Tidyverse)</a>
+<a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a>
   <ul class="collapse">
-<li><a href="#tidyverse-workflow" id="toc-tidyverse-workflow" class="nav-link" data-scroll-target="#tidyverse-workflow">Tidyverse Workflow</a></li>
+<li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
   </ul>
 </li>
+  <li><a href="#creating-vectors-in-r" id="toc-creating-vectors-in-r" class="nav-link" data-scroll-target="#creating-vectors-in-r">Creating vectors in R</a></li>
+  <li><a href="#creating-data-frames" id="toc-creating-data-frames" class="nav-link" data-scroll-target="#creating-data-frames">Creating Data Frames</a></li>
+  <li><a href="#using-data-frames" id="toc-using-data-frames" class="nav-link" data-scroll-target="#using-data-frames">Using Data Frames</a></li>
   <li>
-<a href="#visualizing-with-ggplot2" id="toc-visualizing-with-ggplot2" class="nav-link" data-scroll-target="#visualizing-with-ggplot2">Visualizing with ggplot2</a>
+<a href="#basic-visualizations" id="toc-basic-visualizations" class="nav-link" data-scroll-target="#basic-visualizations">Basic Visualizations</a>
   <ul class="collapse">
-<li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots">Scatter plots</a></li>
-  <li><a href="#adding-more-aesthetics" id="toc-adding-more-aesthetics" class="nav-link" data-scroll-target="#adding-more-aesthetics">Adding more aesthetics</a></li>
-  <li><a href="#creating-bar-plots" id="toc-creating-bar-plots" class="nav-link" data-scroll-target="#creating-bar-plots">Creating bar plots</a></li>
+<li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots">Scatter plots:</a></li>
+  <li><a href="#bar-plots" id="toc-bar-plots" class="nav-link" data-scroll-target="#bar-plots">Bar plots</a></li>
   </ul>
 </li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_2.html">Lab 2</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Lab 1</a></li></ol></nav><div class="quarto-title">
   <div class="quarto-categories">
-    <div class="quarto-category">Lab 2</div>
+    <div class="quarto-category">Lab 1</div>
   </div>
   </div>
 
@@ -387,314 +388,175 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="reproducible-reports" class="level1 unnumbered"><h1 class="unnumbered">Reproducible Reports</h1>
-<section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In today’s lab, we introduce an interface known as quarto that is helpful in creating reproducible reports. One of the most powerful features of quarto is the fact that you can write code (in code chunks) and plain text in the same document. You can generate (render) your work into formats such as pdf, word, html, etc that can be shared easily. If you are using the desktop version of quarto, you need to download quarto from <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a> before you proceed.</p>
-</section><section id="installing-a-new-package" class="level2"><h2 class="anchored" data-anchor-id="installing-a-new-package">Installing a new package</h2>
-<p>We are going to need a package called <code>palmerpenguins</code>. Install it before you proceed. To install the package, run the following command <span style="color:red">in the console</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"palmerpenguins)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>An alternative way to install a package in RStudio is to use the <code>install</code> button in the packages tab.</p>
-</section><section id="creating-a-quarto-file" class="level2"><h2 class="anchored" data-anchor-id="creating-a-quarto-file">Creating a quarto file</h2>
-<p>To create your First Quarto file, follow the following steps:</p>
-<p>Go to File&gt;New File &gt; Quarto document. See below:</p>
-<p><img src="images/a2.jpeg" class="img-fluid" style="width:90.0%"></p>
-<p>After clicking Quarto document,a pop up window will appear with fields for the title and author. Enter the title of the document as <code>Introducing Quarto and Tidyverse</code> because that is what we are doing today. Write your name under author. The output format can stay as HTML. You can always change these options even after creating the document. The popup window looks as follows:</p>
-<p><img src="images/a3.jpeg" class="img-fluid" style="width:70.0%"></p>
-<p>Click create to create the document. Note that the document appears with the name Untitled. Click on <code>file</code> then navigate to <code>save</code> then change the name from untitled to <code>Lab_01</code>. Remember, we do not want to use a space for the document name. To tell whether your document saved properly, you will see the document under files with a <code>.qmd</code> extension. With this document saved here, you can always return to it any time and continue working.</p>
-<p>Now, click on <code>Render</code> to see the output of the document you just created. You will note that the document has both plain text and code chunks. We shall use the code chunks for writing code and plain text for interpreting our analyses and writing reports. To add your own code chunk, just click on <code>code</code> the go to add new <code>chunk</code> or use the keyboard shortcut <code>cmd+opt+I</code> on a mac and <code>control+opt+I</code> on windows. When doing this, make sure your cursor is at the place where you want to create the new code chunk.</p>
-<p>By default, the code chunk that comes is for R code. If you want to write <code>python</code> code, just change the <code>r</code> to python.</p>
-<p>To create a new code chunk, you can copy an already existing code chunk and paste it elsewhere on the document then edit it appropriately. You may also create new code chunks by clicking on Code and navigating to Insert code chunk.</p>
-</section><section id="using-code-chunks" class="level2"><h2 class="anchored" data-anchor-id="using-code-chunks">Using Code Chunks</h2>
-<p>In a code chunk, you write code that you want to reproduce in your report. There are other operations such as installing packages that should be done only in the <code>console</code>. When you render a quarto document, quarto runs all code chunks sequentially from top to bottom in order to output your report (in pdf, html, or word). If any code chunks has code for package installation, it means R will try to re-install the package every time you render the document (we said packages are installed one). Operations such as activating packages, i.e., <code>library(package name)</code>, should be included in the first code chunk.</p>
-<p>As a start, let us load the <code>openintro</code>, <code>tidyverse</code>, and <code>palmerpenguins</code> packages. Copy and paste the following code in the <strong>first</strong> code chunk:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">palmerpenguins</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Run the code chunk with the packages to ensure that they are all working. If any of them is missing, R will prompt you to install them.</p>
-</section><section id="loading-and-viewing-data" class="level2"><h2 class="anchored" data-anchor-id="loading-and-viewing-data">Loading (and viewing) Data</h2>
-<p>Remember that the openintro package contains the data that comes with the openintro text. To view a complete list of the data frames, visit <a href="https://www.openintro.org/data/" class="uri">https://www.openintro.org/data/</a>. Today, we will use a data frame called <code>penguins</code> contained in the <code>palmerpenguins</code> package. To learn more about this data frame, run the following code in the <strong><em>console</em></strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er">?</span><span class="dt">penguins</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To load the data into your document, run the following command:</p>
+</header><section id="hello-world" class="level1 unnumbered"><h1 class="unnumbered"><code>Hello, World!</code></h1>
+<p>It is possible that some of you have heard/seen the phrase, <code>Hello, World!</code>, before. That is usually the first thing you learn in programming, i.e., to learn to write a computer program to print this sentence to screen. In this lab, we will not print <code>Hello, World!</code> to the screen. Instead, we will learn how to use R (via RStudio) to perform statistical analyses and to write reports in order to communicate the insights learned from data. While the analysis involves writing computer code, it is in no way going to involve writing computer programs. The goal of today’s lab is to introduce you to R and RStudio. You will learn to access and use RStudio, as well as perform the basic functions regarding statistical analysis. To clarify which is which: R is the name of the programming language itself and RStudio is a convenient interface (Integrated Development Environment or IDE) for working with R. I like to think about R as the car engine and RStudio as a nice driver dashboard. The engine drives the car, but the dashboard makes it easier for the driver to control the car. Most R users work with RStudio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/r_vs_rstudio.png" class="img-fluid figure-img"></p>
+<figcaption>Car Engine and Dashboard</figcaption></figure>
+</div>
+<p>We will work with the cloud (online) version of RStudio. To access RStudio online, click on the link <a href="https://posit.cloud" class="uri">https://posit.cloud</a> to create an account or to sign in if you already have an account.</p>
+<section id="creating-a-new-project" class="level2"><h2 class="anchored" data-anchor-id="creating-a-new-project">Creating a new Project</h2>
+<p>After signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 246 Fall 2024”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 246 Fall 2024”.</p>
+<p>Yay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.</p>
+</section><section id="the-r-studio-interface" class="level2"><h2 class="anchored" data-anchor-id="the-r-studio-interface">The R studio Interface</h2>
+<p>Your new R studio project interface will look as follows:</p>
+<p><img src="images/a1.jpeg" class="img-fluid"></p>
+<ul>
+<li>
+<p><strong><em>Left Panel:</em></strong> The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"penguins"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">+</span><span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</li>
+<li><p><strong><em>Upper Right Panel:</em></strong> The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.</p></li>
+<li><p><strong><em>Bottom Right Panel:</em></strong> The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.</p></li>
+</ul></section><section id="r-packages" class="level2"><h2 class="anchored" data-anchor-id="r-packages">R packages</h2>
+<p>R is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:</p>
+<ul>
+<li><p>The <strong>tidyverse package</strong> is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.</p></li>
+<li><p>The <strong>openintro package</strong> for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.</p></li>
+</ul>
+<section id="installing-packages" class="level3"><h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
+<p>The command to install a package in R takes the following format:</p>
+<pre><code>install.packages("package name")</code></pre>
+<p>To install <strong>tidyverse</strong> and <strong>openintro</strong>, run the following commands:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"tidyverse"</span><span class="er">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"openintro"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: You only need to install packages <strong>once</strong>, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Why Tidyverse?</em></strong> We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.</p>
+</section></section><section id="creating-vectors-in-r" class="level2"><h2 class="anchored" data-anchor-id="creating-vectors-in-r">Creating vectors in R</h2>
+<p>Suppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">23</span>,<span class="fl">24</span>,<span class="fl">26</span>,<span class="fl">19</span>,<span class="fl">18</span>,<span class="fl">25</span>,<span class="fl">21</span>, <span class="fl">39</span><span class="op">)</span> </span>
+<span><span class="co"># We use the symbol &lt;- for assigning elements to an object. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>When you run the above code, a new object should appear in the environment area. Click on <code>penguins</code> to view and study the data.</p>
-</section><section id="some-analyses-with-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="some-analyses-with-tidyverse">Some Analyses (with Tidyverse)</h2>
-<p>Now that you have “imported” the data into R, we want to perform a few analyses. We are going to use the tidyverse package to do this. The tidyverse is <code>a collection of R packages</code> for data analysis that are developed with common ideas and norms. According to <span class="citation" data-cites="Wickham2019">@Wickham2019</span>,</p>
-<p>“At a high level, the tidyverse is a language for solving data science challenges with R code. Its primary goal is to facilitate a conversation between a human and a computer about data. Less abstractly, the tidyverse is a collection of R packages that share a high-level design philosophy and low-level grammar and data structures, so that learning one package makes it easier to learn the next.”</p>
-<section id="tidyverse-workflow" class="level3"><h3 class="anchored" data-anchor-id="tidyverse-workflow">Tidyverse Workflow</h3>
-<p>In lab_00, we performed the analyses using base R code. We saw that to compute the mean of a given variable in a data frame, you use <code>data_frame_name$variable_name</code>. The tidyverse workflow is a bit different and is what we shall use for the most part.</p>
-<p>For example, to compute the mean of <code>bill_length_mm</code> from the <code>penguins</code> data frame, base R code would be</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">mean</span><span class="er">(</span><span class="dt">penguins</span><span class="er">$</span><span class="dt">bill_length_mm</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Try the code to see if it works. If not, what is the problem and how would you fix it?</p>
-<p>In the tidyverse, the code for the mean of the bill length would be</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">penguins</span> <span class="er">%&gt;%</span> <span class="dt">summarize</span><span class="er">(</span><span class="dt">length_mean</span> <span class="op">=</span> <span class="dt">mean</span><span class="er">(</span><span class="dt">bill_length_mm</span><span class="er">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The symbol <code>%&gt;%</code> is called a pipe and is very common in tidyverse. It takes anything on its left and sends it (pipes it) to the function on the right. Here, we are taking the mtcars data frame and piping it into the summarize function (the function for summary statistics). Inside the function, we specify the variable and the statistic (in this case the <strong><em>mean</em></strong>). We have chosen to name the result as <code>length_mean</code> but this could be changed.</p>
-<p>You can compute other summary statistics in a similar manner as above and if there is an NA one way to deal with would be to remove it. In some cases, one would replace NA with the average of the other values.</p>
-</section></section><section id="visualizing-with-ggplot2" class="level2"><h2 class="anchored" data-anchor-id="visualizing-with-ggplot2">Visualizing with ggplot2</h2>
-<p>In this section, we will start by creating scatter plots and then proceed to bar plots. You will learn about more visualization tools in later labs.</p>
-<section id="scatter-plots" class="level3"><h3 class="anchored" data-anchor-id="scatter-plots">Scatter plots</h3>
-<p>Suppose we want to answer the following question: Do penguins with longer flippers weigh more or less than penguins with shorter flippers?</p>
-<p>We will use a package called <code>ggplot2</code> (part of tidyverse) to create a <strong>scatter plot</strong> to visualize the association between flipper length and and body weight.</p>
-<p><code>ggplot2</code> is a package (part of the tidyverse umbrella) that is used to create nice-looking graphics. It adopts the <strong>grammar of graphics</strong>, which is a coherent system for describing and building graphs.</p>
-<p>You provide the <strong>data</strong>, tell ggplot2 how to <strong>map</strong> variables to aesthetics, what <strong>graphical primitives</strong> to use, and it takes care of the details.</p>
-<p>With ggplot2, you begin a plot with the function ggplot(), defining a plot object that you then add layers to sequentially until you get the desired plot. We will do this in steps:</p>
-<ul>
-<li>Step 1: Add the data:</li>
-</ul>
+<p>Here, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols <code>&lt;-</code> is used for assignment. In R, we use a # to designate a <strong><em>comment</em></strong> (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.</p>
+<p>To find the mean of those numbers, we simply run the command <code>mean(x)</code> as shown below.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span>  <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.375</code></pre>
 </div>
 </div>
-</div>
-<p>This creates an empty canvas</p>
-<ul>
-<li>Step 2: Provide the information about the x-axis and the y-axis (i.e., what variable do you want where?). We call this a <strong>mapping</strong>.</li>
-</ul>
+<p>The general format is <code>do_this(on_this)</code>. Here, <code>do_this</code> is the function while <code>x</code> is the thing on which we want an action taken.</p>
+<p>To find the median of the numbers, we run the command <code>median(x)</code> as shown below.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
-<span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span></span>
-<span><span class="op">)</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 23.5</code></pre>
 </div>
 </div>
-</div>
-<p>The above code adds to our empty canvas the variables specified for the y axis and the x-axis. We still do not have a scatter plot.</p>
-<ul>
-<li>Step 3: Define the geometry (geom) that you want ggplot2 to use. In our case, we want to use points and so we use the function <code>geom_point()</code>. Notice that you must have the parentheses because this is a function that can take arguments (you will learn more about this). Use teh code below:</li>
-</ul>
+<p>We can also create a <code>string object</code> (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
-<span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="st">"Jane"</span>, <span class="st">"John"</span>, <span class="st">"Jess"</span>, <span class="st">"Jeff"</span>, <span class="st">"Joe"</span>, <span class="st">"Holli"</span>, <span class="st">"Henry"</span>, <span class="st">"Han"</span><span class="op">)</span> </span>
+<span><span class="co"># We use quotes for strings.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, try to run the command <strong>mean(y)</strong>:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
+<pre><code>Warning in mean.default(y): argument is not numeric or logical: returning NA</code></pre>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
 </div>
 </div>
-</div>
-<p>We finally have our scatter plot. Based on this scatter plot, what can you say about the question we sought to answer?</p>
-<p>Remember the steps:</p>
-<ul>
-<li>Give ggplot the <code>data</code>,</li>
-<li>provide a <code>mapping</code>, and</li>
-<li>define a geometry using <code>geom_</code>.</li>
-</ul>
-<p><strong><em>Question:</em></strong> Try to change the geometry above to a histogram, i.e.,</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">ggplot</span><span class="er">(</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">data</span> <span class="op">=</span> <span class="dt">penguins</span><span class="er">,</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">mapping</span> <span class="op">=</span> <span class="dt">aes</span><span class="er">(</span><span class="dt">x</span> <span class="op">=</span> <span class="dt">flipper_length_mm</span><span class="er">,</span> <span class="dt">y</span> <span class="op">=</span> <span class="dt">body_mass_g</span><span class="er">)</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="er">)</span> <span class="er">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">geom_histogram</span><span class="er">()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Does it work? If not, why?</p>
-</section><section id="adding-more-aesthetics" class="level3"><h3 class="anchored" data-anchor-id="adding-more-aesthetics">Adding more aesthetics</h3>
-<p>The scatter plot above is a great tool to visualize the relationship between the <strong>two</strong> variables (flipper length and weight). Suppose we want to add a third (categorical) variable such as species to the scatter plot. We can achieve this by adding a third argument such as color to the aesthetics). See code below:</p>
+<p>What do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object <code>y</code> does not make sense because the entries of <code>y</code> are not numerical.</p>
+<p>You can, however, perform other operations on y. For example, you may want to know how many <code>Jane</code> entries are in y. To do this, you may simply tabulate the entries in y as shown below:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
-<span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color<span class="op">=</span><span class="va">species</span> <span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>y
+  Han Henry Holli  Jane  Jeff  Jess   Joe  John 
+    1     1     1     1     1     1     1     1 </code></pre>
+</div>
+</div>
+<p>We see that there is only one <code>Jane</code> entry in y. While you could easily count the number of <code>Jane</code> entries in y, the <code>table</code> function is useful when you have many entries and you want to know how many times each entry appears.</p>
+<p>Before we proceed, delete (or comment out) the <code>mean(y)</code> that you had written earlier.</p>
+</section><section id="creating-data-frames" class="level2"><h2 class="anchored" data-anchor-id="creating-data-frames">Creating Data Frames</h2>
+<p>You can create a <code>data frame</code> by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">b</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>You can combine the vectors a, b, c, x, and y into a data frame as follows. We store this in an object called practice_data and then print it. Note that we use an underscore to separate the words <strong>practice</strong> and <strong>data</strong> in the name. Do not use a blank space for object or variable names.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">practice_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>name<span class="op">=</span><span class="va">y</span>, age<span class="op">=</span><span class="va">x</span>, sex<span class="op">=</span><span class="va">b</span>, year<span class="op">=</span><span class="va">a</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span> <span class="op">(</span><span class="va">practice_data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>   name age sex year
+1  Jane  23   F    3
+2  John  24   M    3
+3  Jess  26   F    2
+4  Jeff  19   M    2
+5   Joe  18   M    3
+6 Holli  25   F    4
+7 Henry  21   M    1
+8   Han  39   M    2</code></pre>
+</div>
+</div>
+<p>Notice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the labs, we will learn how to import data from various sources into R.</p>
+</section><section id="using-data-frames" class="level2"><h2 class="anchored" data-anchor-id="using-data-frames">Using Data Frames</h2>
+<p>We can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows <code>mean(practice_data$age)</code>.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">practice_data</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.375</code></pre>
+</div>
+</div>
+<p>You can also find other statistics. For median, the command is <code>median(data$variable)</code>. For standard deviation, the command is <code>sd(data$variable)</code>.</p>
+<p>You can also run multiple summary statistics at once using the command <code>summary(median(data$variable))</code>. See below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">practice_data</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18.00   20.50   23.50   24.38   25.25   39.00 </code></pre>
+</div>
+</div>
+<p>The summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.</p>
+</section><section id="basic-visualizations" class="level2"><h2 class="anchored" data-anchor-id="basic-visualizations">Basic Visualizations</h2>
+<p>You can create basic plots in base R:</p>
+<section id="scatter-plots" class="level3"><h3 class="anchored" data-anchor-id="scatter-plots">Scatter plots:</h3>
+<p>To create a scatter plot to visualize the relationship between age and year, you can use the code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">practice_data</span><span class="op">$</span><span class="va">age</span>, <span class="va">practice_data</span><span class="op">$</span><span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="Lab_1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What do you learn from this new scatter plot that you do not from the first?</p>
-<p>You can also visualize how the different species are scattered on the same scale by using the face_wrap function. See code below</p>
+</section><section id="bar-plots" class="level3"><h3 class="anchored" data-anchor-id="bar-plots">Bar plots</h3>
+<p>To create a bar plot to visualize the distribution of M and F, you can use the command below:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
-<span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">species</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>You can also add a numerical variable such as <code>bill_depth_mm</code>. See code below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
-<span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color<span class="op">=</span><span class="va">bill_depth_mm</span> <span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">(</span><span class="va">practice_data</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What do you learn from this scatter plot that you do not from the first?</p>
-</section><section id="creating-bar-plots" class="level3"><h3 class="anchored" data-anchor-id="creating-bar-plots">Creating bar plots</h3>
-<p>You can also create bar plots in a similar manner as above. Remember that bar plots are for categorical variables. For example, we can use a bar plot to visualize the species of the penguins. See code below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The above bar plot simply gives us the count for each species. If you wanted to color the bars by species, you can</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, color<span class="op">=</span><span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>You can make the colors to fill the bars by using <code>fill</code> instead of <code>color</code>. See below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, fill<span class="op">=</span><span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>If you wanted to add another categorical variable such as <code>island</code> to visualize the relationship, you can fill by <code>island</code>. See below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, fill <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The problem with this bar plot is that it is difficult to interpret. We often prefer to have the bars <em>side-by-side</em>. To achieve this, we add an argument called <code>position</code> inside the <code>geom_bar</code> function and set it to <code>dodge</code>. See code below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, fill <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="Lab_1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <ol type="1">
-<li>
-<strong><em>(2 pts)</em></strong> There is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space. <!--
-                                                                    data(loan50)
-                                                                    -->
-</li>
-<li>
-<strong><em>(2 pts)</em></strong> Give a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have? <!--
-                                                                    ?loan50
-                                                                    -->
-</li>
-<li>
-<strong><em>(4 pts)</em></strong> Do people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables <code>emp_length</code> and <code>interest_rate</code>. <!--
-
-
-
-                                                                    ::: {.cell}
-                                                                    
-                                                                    ```{.r .cell-code}
-                                                                    ggplot(
-                                                                    data=loan50, aes(x=emp_length, y=interest_rate)) +
-                                                                    geom_point()
-                                                                    ```
-                                                                    
-                                                                    ::: {.cell-output .cell-output-stderr}
-                                                                    
-                                                                    ```
-                                                                    Warning: Removed 2 rows containing missing values or values outside the scale range
-                                                                    (`geom_point()`).
-                                                                    ```
-                                                                    
-                                                                    
-                                                                    :::
-                                                                    
-                                                                    ::: {.cell-output-display}
-                                                                    ![](Lab_2_files/figure-html/unnamed-chunk-14-1.png){width=672}
-                                                                    :::
-                                                                    :::
-
-
-
-                                                                    -->
-</li>
-<li>
-<strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</li>
+<li><p>Create an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.</p></li>
+<li><p>Find the mean of the values in #1 above.</p></li>
+<li><p>Create another object with names of your choosing and then combine it with the first object to make a data frame called <strong>my_data</strong>.</p></li>
+<li><p>Run the summary statistics for the income variable using <strong>my_data</strong> data frame that you created in #3 above.</p></li>
+<li><p>R comes with many pre-loaded data frames. One such data frame is called <code>mtcars</code>. Run the command <code><a href="https://rdrr.io/r/datasets/mtcars.html">?mtcars</a></code> to learn more about this data frame. Next, load this data frame into your work space by running the command <code>data(mtcars)</code>.</p></li>
+<li><p>Use the mtcars data frame to find the median horsepower of the cars.</p></li>
+<li><p>Create a histogram to visualize the distribution of the variable <code>hp</code>. What can you say about the distribution of hp based on the histogram?</p></li>
 </ol>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ol start="5" type="1">
-<li><p><strong><em>(4 pts)</em></strong> Create a bar plot (with differently colored bars) to visualize the distribution of the loans by <code>homeownership</code>. What insights can you draw from this bar plot? <!--
-
-
-
-                                                                    ::: {.cell}
-                                                                    
-                                                                    ```{.r .cell-code}
-                                                                    ggplot(
-                                                                    data=loan50, aes(x=homeownership, fill=homeownership)) +
-                                                                    geom_bar()
-                                                                    ```
-                                                                    
-                                                                    ::: {.cell-output-display}
-                                                                    ![](Lab_2_files/figure-html/unnamed-chunk-16-1.png){width=672}
-                                                                    :::
-                                                                    :::
-
-
-
-                                                                    --></p></li>
-<li><p><strong><em>(4 pts)</em></strong> Recreate the following plot using the loan50 data frame.</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -1261,13 +1123,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../labs/Lab_1.html" class="pagination-link" aria-label="Lab 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 1</span>
+      <a href="../course-faq.html" class="pagination-link" aria-label="FAQ">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">FAQ</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/Lab_3.html" class="pagination-link" aria-label="Lab 3">
-        <span class="nav-page-text">Lab 3</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/Lab_2.html" class="pagination-link" aria-label="Lab 2">
+        <span class="nav-page-text">Lab 2</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1278,7 +1140,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

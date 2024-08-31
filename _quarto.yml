@@ -20,7 +20,7 @@ website:
     background: "#3A5883" # Pantone Chambray Blue - Spring 2024, darkened to pass contrast checks
     logo: "img/logo.png"
     pinned: true
-    align: center
+    align: left
     tools:
       - icon: github
         href: https://github.com/jmochogi/intermediate-stats
