@@ -197,3 +197,14 @@ barplot(table((practice_data$sex)))
 6)  Use the mtcars data frame to find the median horsepower of the cars.
 
 7)  Create a histogram to visualize the distribution of the variable `hp`. What can you say about the distribution of hp based on the histogram?
+
+## Submission
+
+::: {.callout-important}
+### Submission Checklist
+- Attempt all questions
+- Copy and past your work into a word document. Be sure to number your work properly.
+- Submit the word document to canvas. 
+:::
+
+

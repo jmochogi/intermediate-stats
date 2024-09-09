@@ -1,0 +1,15 @@
+{
+  "hash": "bbe58fb9e5b700abecabcdf8fa4b0c7e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 2 Solution\"\nauthor: \"Joash Mochogi\"\nformat: pdf\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(openintro)\nlibrary(tidyverse)\n```\n:::\n\n\n\n\n## Problem 1\nThere is a data frame called loan50 that is contained in the openintro package. load the data frame into your work space.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndata(\"loan50\")\n```\n:::\n\n\n\n\n## Problem 2\n\nGive a brief description of this data frame. How many variables does the data frame have? How many cases/observations does it have?\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n?loan50\n# student may or may not run this command\n```\n:::\n\n\n\n\nThe dataset represents a sample of loans made through a lending club platform that allows individuals to lend money to other individuals. \nThe dataset has 50 observations and 18 variables.\n\n\n## Problem 3\n\nDo people that have been employed for long tend to get lower interest rates? To answer this question, create a scatter plot for the variables emp_length and interest_rate.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ng1 <- ggplot(data = loan50, aes(x = emp_length, y = interest_rate)) + \n  geom_point()\nprint(g1)\n```\n:::\n\n\n\nThe scatter plot shows that there is no clear relationship between the length of employment and the interest rate. People who have been employed for long do not necessarily get lower interest rates.\n\n## Problem 4\n\nRecreate the following plot using the loan50 data frame.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(data = loan50, aes(x = emp_length, y = interest_rate, colour = homeownership)) + \n  geom_point()\n```\n:::\n\n\n\n\n## Problem 5\n\nCreate a bar plot (with differently colored bars) to visualize the distribution of the loans by homeownership. What insights can you draw from this bar plot?\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(data = loan50, aes(x = homeownership, fill = homeownership)) + \n  geom_bar()\n```\n:::\n\n\n\n\nThe bar plot shows that most loans are held by people with a mortgage or who rent their home. People who own their homes have the least number of loans.\n\n\n\n## Problem 6\n\nRecreate the following plot using the loan50 data frame.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(data = loan50, aes(x = homeownership, fill = loan_purpose)) + \n  geom_bar(position = \"dodge\")\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(g1)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

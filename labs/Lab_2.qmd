@@ -291,3 +291,18 @@ ggplot(penguins, aes(x = species, fill = island)) +
     data=loan50, aes(x=homeownership, fill=loan_purpose)) +
     geom_bar(position="dodge")
 ```
+
+
+## Submission
+
+::: {.callout-important}
+### Submission Checklist
+- Attempt all questions
+- Render your work to pdf
+- Submit the pdf to Canvas
+:::
+
+
+
+
+

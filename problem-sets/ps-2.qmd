@@ -23,7 +23,7 @@ library(readr)
 library(readxl)
 ```
 
-Due to COVID-19 pandemic, many states made alternatives in voting, such as voting by mail, more widely available for the 2020 U.S. election. The general consensus was that voters who were more Democratic leaning would be more likely to vote by mail, while more Republican leaning voters would largely vote in-person. This was supported by multiple surveys, including this survey conducted by Pew Research.
+Due to COVID-19 pandemic, many states made alternatives in voting, such as voting by mail, more widely available for the 2020 U.S. election. The general consensus was that voters who were more Democratic leaning would be more likely to vote by mail, while more Republican leaning voters would largely vote in-person. This was supported by multiple surveys, including [this survey](https://www.pewresearch.org/short-reads/2020/09/08/americans-expectations-about-voting-in-2020-presidential-election-are-colored-by-partisan-differences/) conducted by Pew Research.
 
 The goal of this analysis is to use regression analysis to explore the relationship between a county’s political leanings and the proportion of votes cast in-person in 2020. The ultimate question we want to answer is **Did counties with more Republican leanings have a larger proportion of votes cast in-person in the 2020 election?**
 
@@ -83,3 +83,8 @@ b)  Fit a linear regression model to predict the proportion of in-person votes b
 c)  Interpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.
 
 d)  Which model (the one in Problem 2 or the one in Problem 4) is more ''appropriate'' for predicting the proportion of in-person votes in the 2020 election? Justify your answer.
+
+
+## Submission
+
+The quarto template for this problem set is available under the downloads section of the course website. You may want to visit the FAQs page to learn how to upload the template to your posit cloud. Once you have completed the problem set, you should render the document to a pdf then submit ***both the pdf and the source file (quarto)*** to Canvas.
