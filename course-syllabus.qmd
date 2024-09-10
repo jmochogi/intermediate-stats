@@ -1,11 +1,17 @@
 ---
 title: "MATH 246 - Intermediate Statistics"
 subtitle: "Fall 2024"
-author: "Dr. Joash Geteregechi <br> Office: Williams Hall 311E <br> Hours: Mon, Fri 12.00 - 01.00 pm, or by appointment."
+#author: "Dr. Joash Geteregechi <br> Office: Williams Hall 311E <br> Hours: Mon, Fri 12.00 - 01.00 pm, or by appointment."
 format:
   html: default
   pdf: default
 ---
+***Instructor:*** Dr. Joash Geteregechi, ***Open Hours:*** Mon, Fri 12.00 - 01.00 pm, or by [appt](https://calendly.com/jmochogi/20min?).
+
+***Room and Time:*** Williams Hall 317, MWF 2:00- 2:50 pm.
+
+***Course Website:*** [Click here](https://jmochogi.github.io/intermediate-stats/).
+
 
 ## About the Course
 
@@ -37,9 +43,9 @@ This is a 3 credits course. Credit is earned at Ithaca College in credit hours a
 
 | Day       | Room/Hall         | Time               |
 |-----------|-------------------|--------------------|
-| Monday    | Williams Hall 317 | 02:00 am - 2:50 pm |
-| Wednesday | Williams Hall 317 | 02:00 am - 2:50 pm |
-| Friday    | Williams Hall 317 | 02:00 am - 2:50 pm |
+| Monday    | Williams Hall 317 |  2:00 pm - 2:50 pm |
+| Wednesday | Williams Hall 317 |  2:00 pm - 2:50 pm |
+| Friday    | Williams Hall 317 |  2:00 pm - 2:50 pm |
 
 ### Student Learning Objectives
 
@@ -312,6 +318,9 @@ Ithaca College values diversity because it enriches our community and the myriad
 
 If you've read this far in the syllabus, please email me a picture of your favorite scene in Ithaca or its environs if you have one. If not, just describe the place. I will include you on my special list of most serious students.
 :::
+
+\newpage
+
 
 ## Important dates
 
