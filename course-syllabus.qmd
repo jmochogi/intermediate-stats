@@ -1,7 +1,6 @@
 ---
 title: "MATH 246 - Intermediate Statistics"
 subtitle: "Fall 2024"
-#author: "Dr. Joash Geteregechi <br> Office: Williams Hall 311E <br> Hours: Mon, Fri 12.00 - 01.00 pm, or by appointment."
 format:
   html: default
   pdf: default
@@ -112,7 +111,7 @@ CPAs are done ***prior*** to class. They involve completing short readings or ac
 
 ***Note:*** CPAs will generally be graded for completion and effort. From time to time, there will be one question on the CPA that will be graded for accuracy. This question is meant to gauge the extent to which you understood the material on your own and answers may be discussed in class.
 
-### Problem sets (PSs)
+### Problem Sets (PSs)
 
 Problem sets will be assigned after every three to four weeks or after completion of a major topic. Unlike the CPAs, the problem sets will be more open-ended, non-routine, and with a heavy emphasis on real life applications of the material learned. You are encouraged to consult with your classmates on the problems but write your own solutions. You may also come in for Student hours for further help if you need it. Do not wait until the deadline day to start your problem set.
 
