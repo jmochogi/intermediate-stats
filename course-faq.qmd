@@ -2,27 +2,36 @@
 title: "FAQ"
 ---
 
-## How do I use my mobile device to scan a document to a pdf?
+## Document Scanning
 
-If you have an iPhone, you can use the Notes app to scan a document to a PDF. To do this, follow the following steps:
+***Question:*** How do I use my mobile device to scan a document to a pdf?
+
+iPhone users:
 
 -   Open the Notes app
 
--   Create a new note and name it.
+-   Create a new note and give it an appropriate name.
 
--   Tap the camera icon and select "Scan Documents". I suggest you use the manual capture option as this allows you to capture only once the camera is in focus.
+-   Tap the camera icon and select "Scan Documents". Use the manual capture option as this allows you to capture only once the camera is in focus.
 
 -   Position your phone over the document and tap the shutter button. Make sure the camera is directly over the document and is in focus.
 
 -   Continue to the next page if there are multiple pages.
 
--   Tap "Save" when you are finished scanning all the pages.
+-   When finished, tap "Save". 
 
-If you have an Android device, you can use the Google Drive app to scan a document to a PDF. To do this, follow the following steps:
+Watch the video below for a demonstration:
+
+```{=html}
+<iframe width="700" height="394" src="https://www.youtube.com/embed/HNCcYtfAtTE" title="How to Scan Documents with your iPhone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
+
+
+iPhone users:
 
 -   Open the Google Drive app
 
--   Tap the "+" icon in the bottom right corner
+-   Tap the "+" icon (may be located at the bottom right corner)
 
 -   Tap "Scan"
 
@@ -30,36 +39,52 @@ If you have an Android device, you can use the Google Drive app to scan a docume
 
 -   Continue to the next page if there are multiple pages.
 
--   Tap the checkmark when you are finished scanning all the pages.
+-   Tap the check mark when you are finished scanning all the pages.
+
+Watch the video below for a demonstration:
 
 ```{=html}
-<iframe width="700" height="394" src="https://www.youtube.com/embed/HNCcYtfAtTE" title="How to Scan Documents with your iPhone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/XIhe93P3_Eg" title="Scanning documents with your Android phone and Google Drive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
-## How do I export my assignment PDF from RStudio to upload to Canvas?
+
+
+
+## Exporting and Importing Documents
+
+***Question:*** How do I export my assignment PDF from RStudio to upload to Canvas?
 
 Go to your *Files* tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select *Export*... If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you've selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).
 
 ```{=html}
 <iframe width="700" height="394" src="https://www.youtube.com/embed/cAHCMpPJx3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-## How do I upload a quarto file (.qmd) to RStudio cloud?
 
-Easy! Just go to your *Files* tab, click on the blue *Upload* button, and select the file you want to upload. RStudio will upload the file and you can then open it by clicking on it. 
-Watch the following video for a demonstration.
+***Question:*** How do I upload a quarto file (.qmd) to RStudio cloud?
+Easy! Just go to your *Files* tab, click on the blue *Upload* button, and select the file you want to upload. RStudio will upload the file and you can then open it by clicking on it. Watch the following video for a demonstration:
 
+```{=html}
+<iframe width="700" height="394" src="https://www.youtube.com/embed/khhuB1aSr34" title="Uploading quarto file (qmd) into RStudio on posit cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
 
+***Question:*** How do I upload a data file into RStudio on posit cloud?
 
+The process involves uploading the file into the RStudio directory (files section)and then creating a path for quarto to access the data. If you don't do this, the analyses may run but the document may not render. Watch the video below:
 
+```{=html}
+<iframe width="700" height="394" src="https://www.youtube.com/embed/av4WlXZ768M" title="Getting a csv data file into a quarto document" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
 
-
-## How can I submit my assignment to Canvas?
+***Question:*** How do I submit my assignment to Canvas?
 
 The instructions for submitting your assignment to Canvas can be found [here](https://community.canvaslms.com/t5/Student-Guide/How-do-I-submit-an-online-assignment/ta-p/503). Please preview your submission to make sure it is the correct file before submitting.
 
 ```{=html}
 <iframe width="700" height="394" src="https://www.youtube.com/embed/zMSIErvJEoA" title="How to Submit an Assignment on Canvas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
-## Can I use a local install of R and RStudio instead of using the RStudio containers?
+
+## Local R Installation vs posit cloud 
+
+***Question:*** Can I use a local install of R and RStudio instead of using the RStudio containers?
 
 The short answer is, I'd rather you didn't, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we're using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the course TA are always happy to provide help with any computational questions when you're working in the posit cloud. If you're working on your local setup, we can't guarantee being able to resolve your issues, though we're happy to try.
 
