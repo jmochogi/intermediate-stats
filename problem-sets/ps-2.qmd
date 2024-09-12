@@ -46,8 +46,6 @@ Up to this point in this course we have been using data frames that we either cr
 
 ```
 
-<!--If you data loads properly, it is highly recommended that you take some time to study it so you understand its context and variables. Doing this will make your analyses easier and interpretations will be meaningful.-->
-
 ## Problem 1 (data visualization & summary stats)
 
 a)  Create a visualization for the variable `inperson_pct` and calculate at least two summary statistics to measure the central tendency, as well as one summary statistic to measure the spread. Then, interpret both the visualization and the summary statistics in context of the data.
