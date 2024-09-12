@@ -5,12 +5,12 @@ format:
   html: default
   pdf: default
 ---
+
 ***Instructor:*** Dr. Joash Geteregechi, ***Open Hours:*** Mon, Fri 12.00 - 01.00 pm, or by [appt](https://calendly.com/jmochogi/20min?).
 
 ***Room and Time:*** Williams Hall 317, MWF 2:00- 2:50 pm.
 
 ***Course Website:*** [Click here](https://jmochogi.github.io/intermediate-stats/).
-
 
 ## About the Course
 
@@ -34,17 +34,18 @@ Covers statistical methods not typically covered in introductory statistics cour
 
 [MATH 14400](https://catalog.ithaca.edu/undergrad/coursesaz/math/), [MATH 14500](https://catalog.ithaca.edu/undergrad/coursesaz/math/), [MATH 21600](https://catalog.ithaca.edu/undergrad/coursesaz/math/), or [PSYC 20700](https://catalog.ithaca.edu/undergrad/coursesaz/psyc/) with a grade of C- or better. (S,Y)<br> **Attributes:** NS, QL <br> **Number of Credits:** 3 Credits
 
+\newpage
 **Workload Expectation:**
 
 This is a 3 credits course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).
 
 ### Meeting Times
 
-| Day       | Room/Hall         | Time               |
-|-----------|-------------------|--------------------|
-| Monday    | Williams Hall 317 |  2:00 pm - 2:50 pm |
-| Wednesday | Williams Hall 317 |  2:00 pm - 2:50 pm |
-| Friday    | Williams Hall 317 |  2:00 pm - 2:50 pm |
+| Day       | Room/Hall         | Time              |
+|-----------|-------------------|-------------------|
+| Monday    | Williams Hall 317 | 2:00 pm - 2:50 pm |
+| Wednesday | Williams Hall 317 | 2:00 pm - 2:50 pm |
+| Friday    | Williams Hall 317 | 2:00 pm - 2:50 pm |
 
 ### Student Learning Objectives
 
@@ -319,7 +320,6 @@ If you've read this far in the syllabus, please email me a picture of your favor
 :::
 
 \newpage
-
 
 ## Important dates
 

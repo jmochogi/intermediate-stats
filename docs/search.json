@@ -2016,7 +2016,7 @@
     "href": "problem-sets/ps-2.html#problem-1-data-visualization-summary-stats",
     "title": "Problem Set 2: Linear Regression",
     "section": "Problem 1 (data visualization & summary stats)",
-    "text": "Problem 1 (data visualization & summary stats)\n\nCreate a visualization for the variable inperson_pct and calculate at least two summary statistics to measure the central tendency, as well as one summary statistic to measure the spread. Then, interpret both the visualization and the summary statistics in context of the data.\nCreate a visualization of the relationship between inperson_pct and pctTrump_2016. Based on the visualization, how would you describe the relationship?\nCompute the correlation coefficient between inperson_pct and pctTrump_2016. Interpret the value in the context of the data.",
+    "text": "Problem 1 (data visualization & summary stats)\n\nCreate a visualization for the variable inperson_pct and calculate at least two summary statistics to measure the central tendency, as well as one summary statistic to measure the spread. Then, interpret both the visualization and the summary statistics in context of the data.\nCreate a visualization of the relationship between inperson_pct and pctTrump_2016. Draw the least squares regression line along the cloud of points. Based on the visualization, how would you describe the relationship?\nCompute the correlation coefficient between inperson_pct and pctTrump_2016. Interpret the value in the context of the data.",
     "crumbs": [
       "Problem Sets",
       "Problem Set 2"
@@ -2027,7 +2027,7 @@
     "href": "problem-sets/ps-2.html#problem-2-linear-regression",
     "title": "Problem Set 2: Linear Regression",
     "section": "Problem 2 (linear regression)",
-    "text": "Problem 2 (linear regression)\n\nFit the linear model to understand variability in the percent of in-person votes based on the percent of votes for Trump in the 2016 election. Write down the equation of the model.\nInterpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.\nDoes it make sense to interpret the intercept of the model? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\nCalculate the R-squared value for the model. Interpret the value of the R-squared in the context of the data.\nUse the linear model to predict the proportion of in-person votes in a county where 60% of the votes were cast for Trump in 2016.",
+    "text": "Problem 2 (linear regression)\n\nFit the linear model to understand variability in the percent of in-person votes based on the percent of votes for Trump in the 2016 election. Write down the equation of the model.\nInterpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.\nDoes it make sense to interpret the intercept of the model? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\nCalculate the R-squared value for the model. Interpret the value of the R-squared in the context of the data.\nUse the linear model to predict the proportion of in-person votes in a county where 75% of the votes were cast for Trump in 2016.",
     "crumbs": [
       "Problem Sets",
       "Problem Set 2"
@@ -2049,7 +2049,7 @@
     "href": "problem-sets/ps-2.html#problem-4-categorical-predictor",
     "title": "Problem Set 2: Linear Regression",
     "section": "Problem 4 (categorical predictor)",
-    "text": "Problem 4 (categorical predictor)\n\nCreate a binary variable calledpctTrump_2016_high with levels pro_trump and anti_trump that indicates whether the proportion of votes for Trump in 2016 was above 50% in a county.\nFit a linear regression model to predict the proportion of in-person votes based on the binary variable pctTrump_2016_high. Write down the equation of the model.\nInterpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.\nWhich model (the one in Problem 2 or the one in Problem 4) is more ‘’appropriate’’ for predicting the proportion of in-person votes in the 2020 election? Justify your answer.",
+    "text": "Problem 4 (categorical predictor)\nIn this problem, we will try to answer the question of whether counties with higher proportions of older voters (65 year plus) tend to lean republican. You will use the variables pct65plus that provides the proportion of voters in every county that were 65 or older and pctTrump_2016, that provides the proportion of votes cast for Trump in 2016 in a given county.\n\nCreate a new data set (name it nc_election_b) by adding a binary variable called senior_voters with levels high and low. A county is considered to have high rates of older voters if the proportion of voters 65 years or older was greater than or equal to 20% (0.2).\nFit a linear regression model to predict the proportion of trump votes in 2016 (pctTrump_2016) based on the binary variable senior_voters. Write down the equation of the model.\nInterpret the slope of the model. The interpretation should be written in a way that is meaningful in the context of the data.",
     "crumbs": [
       "Problem Sets",
       "Problem Set 2"
