@@ -29,18 +29,19 @@ In this lab, we'll be analyzing data from the Human Freedom Index (HFI) reports.
 
 ## [Creating a quarto file]{style="color:#4166f5;"}
 
--   Create a new Quarto document with the title **Data Transformations and Linear Regression**. Change the output format to **pdf** (note that it is set to html by default). Refer to lab_00_Guide if you don't remember how to create a new quarto file. Save the file as `lab_02`.
+-   Create a new Quarto document with the title **Data Transformations and Linear Regression**. Change the output format to **pdf** (note that it is set to html by default). Refer to [lab_02](https://jmochogi.github.io/intermediate-stats/labs/Lab_2.html) if you don't remember how to create a new quarto file. Save the file as `lab_03`.
 
--   Note that if you created the file correctly, it should appear under files with a `.qmd` extension(i.e., `lab_02.qmd`). If you do not have this file exactly as described, please **stop** and make sure you have it done correctly before you proceed.
+-   Note that if you created the file correctly, it should appear under files with a `.qmd` extension(i.e., `lab_03.qmd`). If you do not have this file exactly as described, please **stop** and make sure you have it done correctly before you proceed.
 
 -   After correctly creating the file, click on `Render` to see the output in pdf format. Note that it may pop up in a new window. You may want to delete the content that comes with the quarto template before you proceed.
 
 ## [Packages]{style="color:#4166f5;"}
 
-In this lab, you will need four packages: `openintro`, `tidyverse`, `statsr`, and `broom`. Recall that we have installed the first two but not the last two. So, we start by installing `statsr` and `broom`. Run the following code in the console. Note that we are installing multiple packages on one step:
+In this lab, you will need four packages: `openintro`, `tidyverse`, `statsr`, and `broom`. Recall that we have installed the first two but not the last two. So, we start by installing `statsr` and `broom`. Run the following code in the console:
 
 ``` toml
-install.packages("statsr", "broom")
+install.packages("statsr") 
+install.packages("broom")
 ```
 
 After installing the two packages, open a code chunk within your quarto document and load all packages needed using the following code:
@@ -312,7 +313,7 @@ new_hfi_1%>%
   summarize(mean(ef_score))
 ```
 
-4.  ***(4 pts)*** Reproduce the following scatter plot using the `new_hfi_1` data frame. What can you say about the relationship between `ef_score` and `ef_regulation` for countries in East Asia South Asia?
+4.  ***(4 pts)*** Recreate the following scatter plot using the `new_hfi_1` data frame. What can you say about the relationship between `ef_score` and `ef_regulation` for countries in East Asia and South Asia?
 
 ```{r, echo=F, warning=FALSE}
 ggplot(data=new_hfi_1, aes(x=ef_regulation, y=ef_score, color=region))+
