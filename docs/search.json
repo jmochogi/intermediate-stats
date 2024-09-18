@@ -2240,5 +2240,16 @@
       "Course information",
       "FAQ"
     ]
+  },
+  {
+    "objectID": "project/first_project.html#milestone-4---final-write-up",
+    "href": "project/first_project.html#milestone-4---final-write-up",
+    "title": "First Project",
+    "section": "Milestone 4 - Final Write up",
+    "text": "Milestone 4 - Final Write up\nThe final write-up is the culmination of your project. It should include all the sections of the first draft, but with revisions based on the feedback you received from your peers and the professor. The final write-up should be a polished document that clearly communicates your research topic, questions, data, analyses, and results. The final write-up should be written in a clear, concise, and professional manner. It should be free of grammatical errors and typos. The final write-up should also include a title page with the title of your project, the names of all team members, and the date. A quarto template for the final write-up will be provided.\nInstructions and grading criteria for this milestone are outlined in Milestone 4: Writeup + presentation.",
+    "crumbs": [
+      "Projects",
+      "Project 1"
+    ]
   }
 ]

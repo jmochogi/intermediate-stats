@@ -23,13 +23,31 @@ At least one question should involve multiple predictor variables. Ideally, you 
 
 # The Data
 
-Multiple data sets are available online for you to choose from. If your team decides that you want to collect your own data, please contact me so we can talk about that. The following are possibke sources of datasets:
+Multiple data sets are available online for you to choose from. If your team decides that you want to collect your own data, please contact me so we can talk about that. The following are possible sources of datasets:
 
 -   [Openintro](https://www.openintro.org/data/) website: Most of these data sets can be loaded into your work space as long as the openintro package is installed and running.
 
 -   [Kaggle](https://www.kaggle.com/datasets): This is a platform for predictive modeling and analytics competitions in which companies and researchers post data and statisticians and data miners from all over the world compete to produce the best models.
 
-If your team decides to use existing data set, it important to understand that the data may have been collected for a different purpose and may not be perfect for your research questions. You will need to examine the data to see if it is appropriate for your research questions. If need be, you can modify your research questions appropriately for the purposes of this project.
+If your team decides to use existing data set, it is important to understand that the data may have been collected for a different purpose and may not be perfect for your research questions. You will need to examine the data to see if it is appropriate for your research questions. If need be, you can modify your research questions appropriately for the purposes of this project.
+
+Your chosen data set should meet the following criteria:
+
+-   Must have at least 200 observations (cases) and 8 variables (columns)
+
+-   At least 4 of the variable must be useful and unique predictor variables:
+
+    -   Variables such as Property address, Social security number, name, among others may not be useful predictors.
+
+    -   If you have multiple columns with the same information (e.g. “state abbreviation” and “state name”), then they are not unique predictors.
+
+-   Have both numerical and categorical variables that can be used as predictors.
+
+-   Your data set must have at least one variable that can be identified as a unique response variable. This can be numerical or categorical.
+
+-   You may not use data that has previously been used in any course materials, such as labs or class activities.
+
+If you are unsure whether your chosen data meets the above criteria, please check with me or the course TA.
 
 # Project Timeline
 
@@ -92,7 +110,7 @@ Critically reviewing others' work is a crucial part of the scientific process, a
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 3: Peer review](/project/3-peer-review.html).
 
-## Milestone 4 - Final Writeup
+## Milestone 4 - Final Write up
 
 The final write-up is the culmination of your project. It should include all the sections of the first draft, but with revisions based on the feedback you received from your peers and the professor. The final write-up should be a polished document that clearly communicates your research topic, questions, data, analyses, and results. The final write-up should be written in a clear, concise, and professional manner. It should be free of grammatical errors and typos. The final write-up should also include a title page with the title of your project, the names of all team members, and the date. A quarto template for the final write-up will be provided.
 
