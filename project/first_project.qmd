@@ -80,7 +80,7 @@ The project proposal will be due roughly one week after the project is assigned.
 
 4.  **Analysis plan**: Describe the analyses you plan to conduct. This should include the types of visualizations you plan to create, the numerical summaries you plan to calculate, and the regression models you plan to fit. You should also describe how you plan to link these analyses together to tell a coherent story.
 
-Instructions and grading criteria for this milestone are outlined in the grading rubric for [Milestone 1](/project/2-proposal.html).
+Instructions and grading criteria for this milestone are outlined in the grading rubric for [Milestone 1](https://jmochogi.github.io/intermediate-stats/project/first_project.html#m_1---project-proposal).
 
 ## Milestone 2 - First Draft
 
@@ -145,9 +145,9 @@ The overall grade breakdown by milestone ($M_i$) is as follows:
 
 -   ***Completion (2pts)*** - Did the team complete all parts of the proposal as required?
 -   ***Content (2pts)*** - What is the quality of research and/or policy question and relevancy of data to those questions?
--   ***Correctness (2pts)*** - Are the statistical procedures sound and reasonable for the stated questions?
+-   ***Correctness (2pts)*** - Are the statistical procedures sound/reasonable for the stated questions?
 -   ***Communication & Writing (2pts)*** - What is the quality of the statistical presentation, writing, and explanations?
--   ***Creativity and Critical Thought (2pts)*** - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?
+-   ***Creativity and Critical Thought (2pts)*** - Is the project carefully thought out? Does it appear that time and effort went into the planning of the project?
 
 ### $M_2$ - First Draft
 
