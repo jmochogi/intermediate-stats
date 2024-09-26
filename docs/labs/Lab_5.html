@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.43">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>MATH 246 – lab_5</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,8 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -43,8 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,9 +99,32 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 <meta property="og:title" content="MATH 246">
 <meta property="og:description" content="Homepage for MATH 246 - Intermediate Statistics, Fall 2024.">
 <meta property="og:site_name" content="MATH 246">
@@ -82,13 +134,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -99,16 +148,11 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/jmochogi/intermediate-stats" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
     <a href="https://calendly.com/jmochogi/20min" title="Office hours" class="quarto-navigation-tool px-1" aria-label="Office hours"><i class="bi bi-life-preserver"></i></a>
@@ -125,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -133,8 +177,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -171,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -180,8 +224,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
@@ -212,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -221,8 +265,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/first_project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1</span></a>
@@ -235,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -244,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problem-sets/ps-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 1</span></a>
@@ -270,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
@@ -279,8 +323,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exam-review/exam-1-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam 1</span></a>
@@ -293,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
@@ -302,8 +346,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
@@ -316,20 +360,41 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span style="color:#4166f5;">Introduction</span></a></li>
+  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context"><span style="color:#4166f5;">Context</span></a></li>
+  <li><a href="#creating-a-quarto-file" id="toc-creating-a-quarto-file" class="nav-link" data-scroll-target="#creating-a-quarto-file"><span style="color:#4166f5;">Creating a quarto file</span></a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span style="color:#4166f5;">Packages</span></a></li>
+  <li><a href="#loading-and-viewing-data" id="toc-loading-and-viewing-data" class="nav-link" data-scroll-target="#loading-and-viewing-data"><span style="color:#4166f5;">Loading (and viewing) Data</span></a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration"><span style="color:#4166f5;">Data Exploration</span></a></li>
+  <li><a href="#fitting-a-linear-regression-model" id="toc-fitting-a-linear-regression-model" class="nav-link" data-scroll-target="#fitting-a-linear-regression-model"><span style="color:#4166f5;">Fitting a Linear Regression Model</span></a></li>
+  <li>
+<a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models"><span style="color:#4166f5;">Generalized Linear Models</span></a>
+  <ul class="collapse">
+<li><a href="#fitting-a-glm" id="toc-fitting-a-glm" class="nav-link" data-scroll-target="#fitting-a-glm"><span style="color:#4166f5;">Fitting a GLM</span></a></li>
+  <li><a href="#adding-multiple-predictors" id="toc-adding-multiple-predictors" class="nav-link" data-scroll-target="#adding-multiple-predictors"><span style="color:#4166f5;">Adding multiple predictors</span></a></li>
+  </ul>
+</li>
+  <li>
+<a href="#model-augmentation" id="toc-model-augmentation" class="nav-link" data-scroll-target="#model-augmentation"><span style="color:#4166f5;">Model Augmentation</span></a>
+  <ul class="collapse">
+<li><a href="#generating-binary-predictions" id="toc-generating-binary-predictions" class="nav-link" data-scroll-target="#generating-binary-predictions"><span style="color:#4166f5;">Generating Binary Predictions</span></a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix"><span style="color:#4166f5;">Confusion Matrix</span></a></li>
+  </ul>
+</li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span style="color:#4166f5;">Exercises</span></a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_5.html">Lab 5</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_5.html">Lab 5</a></li></ol></nav><div class="quarto-title">
   <div class="quarto-categories">
     <div class="quarto-category">Lab 5</div>
   </div>
@@ -346,15 +411,206 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction"><span style="color:#4166f5;">Introduction</span></h2>
+<p>In the previous labs, we built regression models with numerical response variables only (linear regression). In this lab, you will learn how to build regression models with a categorical response variable with two levels (i.e., binary outcomes). For example, we may want to model student success(pass of fail) in a given course based on factors such as class attendance, socio-economic background, enrollment type (full time or not), among others. The type of regression used for problems of this kind is called <strong>logistic regression</strong> and is one of the many generalized linear models (GLMs) that exist.</p>
+</section><section id="context" class="level2"><h2 class="anchored" data-anchor-id="context"><span style="color:#4166f5;">Context</span></h2>
+<p>A well-known Stanford University study on heart transplants tracked the five-year survival rate of patients with dire heart ailments. The purpose of the study was to assess the efficacy of heart transplants, but for right now we will simply focus on modeling the survival of the patients - whether the patients were alive or not five years later.</p>
+</section><section id="creating-a-quarto-file" class="level2"><h2 class="anchored" data-anchor-id="creating-a-quarto-file"><span style="color:#4166f5;">Creating a quarto file</span></h2>
+<p>Create a new quarto file with the title <strong>Intro to Logistic Regression</strong> and save the file as <code>lab_04.</code> If you are unsure how to do this, please refer to previous labs (e.g., lab 2).</p>
+</section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages"><span style="color:#4166f5;">Packages</span></h2>
+<p>We will use these packages <code>openintro</code>, <code>tidyverse</code>, <code>statsr</code>, <code>GGally</code>, <code>broom</code>, and <code>Stat2Data</code>. If you are missing any of the packages, R will prompted. Just install them. To install a package, use the command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"package name"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, load the packages:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">statsr</span><span class="er">)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">broom</span><span class="er">)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">GGally</span><span class="er">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">Stat2Data</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Run the packages before you proceed to make sure they loaded properly.</p>
+</section><section id="loading-and-viewing-data" class="level2"><h2 class="anchored" data-anchor-id="loading-and-viewing-data"><span style="color:#4166f5;">Loading (and viewing) Data</span></h2>
+<p>We will use a data frame called <code>heart_transplant</code> that is contained in the <code>openintro</code> package. Since this package is already loaded, you can load the data using the code below. After loading the data, you should view it to understand its structure and the variables it contains.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">heart_transplant</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>To learn more about this data set, you can use the <code>?</code> operator followed by the name of the data set. For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="er">?</span><span class="dt">heart_transplant</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="data-exploration" class="level2"><h2 class="anchored" data-anchor-id="data-exploration"><span style="color:#4166f5;">Data Exploration</span></h2>
+<p>Let us start by creating a scatter plot to visualize the relationship between the variables <code>age</code> and <code>survived</code>. Recall that the variable survived tells us whether someone is still alive or not after five years.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">heart_transplant</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">age</span>, y <span class="op">=</span> <span class="va">survived</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_jitter</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0</span>, height <span class="op">=</span> <span class="fl">0.01</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># We use a jitter to shake up the points a little bit</span></span>
+<span><span class="co"># Notice we have also added more arguments in the jitter.</span></span>
+<span><span class="co"># Try removing the extra arguments in the jitter to see what happens</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Question:</strong> Interpret the plot above. What do you observe?</p>
+<p>In order to create a logistic regression model, we will need to dummy code the variable <code>survived</code> to use 0’s and 1’s. We can set <strong>alive = 0</strong>, and <strong>dead = 1</strong> and save t We can get around this by creating a new variable that is binary (either 0 or 1), based on whether the patient survived to the end of the study. We call this new variable <code>is_alive.</code></p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">heart_transplant</span> <span class="op">&lt;-</span> <span class="va">heart_transplant</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>is_alive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">survived</span> <span class="op">==</span> <span class="st">"alive"</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Below is a new scatter plot with a changed vertical axis. We are saving the object as <code>data_space</code> because we will need it later:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_space</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">heart_transplant</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">age</span>, y <span class="op">=</span> <span class="va">is_alive</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_jitter</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0</span>, height <span class="op">=</span> <span class="fl">0.01</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">data_space</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="fitting-a-linear-regression-model" class="level2"><h2 class="anchored" data-anchor-id="fitting-a-linear-regression-model"><span style="color:#4166f5;">Fitting a Linear Regression Model</span></h2>
+<p>There is nothing preventing us from fitting a simple linear regression model to these data, and in fact, in certain cases this may be an appropriate thing to do.</p>
+<p>But as we discussed in class, it’s not hard to see that the line doesn’t fit very well.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_space</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, color<span class="op">=</span><span class="st">"tomato"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong><em>Limitations of regression of this model (linear)</em></strong></p>
+<ul>
+<li>Could make nonsensical predictions</li>
+<li>Binary response problematic</li>
+</ul>
+<p>What would this model predict as the probability of a 70-year-old patient being alive? It would be a number less than zero, which doesn’t make sense as a probability. Because the regression line always extends to infinity in either direction, it will make predictions that are not between 0 and 1, sometimes even for reasonable values of the explanatory variable.</p>
+<p>Second, the variability in a binary response may violate a number of other assumptions that we make when we do inference in regression. We will learn about those assumptions later when we cover inference for regression.</p>
+</section><section id="generalized-linear-models" class="level2"><h2 class="anchored" data-anchor-id="generalized-linear-models"><span style="color:#4166f5;">Generalized Linear Models</span></h2>
+<p>Thankfully, a modeling framework exists that generalizes regression to include response variables that are non-normally distributed. This family is called generalized linear models or GLMs for short. One member of the family of GLMs is called <strong><em>logistic regression</em></strong>, and this is the one that models a binary response variable.</p>
+<p>A logistic regression model uses the <a href="https://www.theanalysisfactor.com/what-is-logit-function/">logit function</a> to model relationships such as the one above. Here is the logit function with a single predictor variable, <span class="math inline">\(x_1.\)</span>:</p>
+<p><span class="math display">\[
+logit(p)=ln\left(\frac{p}{1-p}\right)= b_0+b_1x_1
+\]</span></p>
+<section id="fitting-a-glm" class="level3"><h3 class="anchored" data-anchor-id="fitting-a-glm"><span style="color:#4166f5;">Fitting a GLM</span></h3>
+<p>The structure for fitting the logistic regression model is slightly different from the one used for linear regression. In the code below, we create the model (saving it as <code>model_1</code>) and then tidy it. Notice that we use the <code>family</code> argument to specify the type of <code>glm</code> that we want (in this case binomial because the response is binary).</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">is_alive</span> <span class="op">~</span> <span class="va">age</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">heart_transplant</span><span class="op">)</span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">model_1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)  -1.56      1.02       -1.54  0.123 
+2 age           0.0585    0.0231      2.54  0.0112</code></pre>
+</div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#Notice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Equation of the Model:</strong></p>
+<p><span class="math display">\[
+\text{logit}(p)=ln\left(\frac{p}{1-p}\right)= -1.56 + 1.02 \times \text{Age}
+\]</span></p>
+<p><strong>Interpretation:</strong> The slope for <code>age</code> is 1.02. This means that for every additional year in age, the <strong><em>log odds</em></strong> of being dead increases by 1.02.</p>
+<p>The raw model we created above models log odds, we can exponentiate the coefficients to get the odds. This makes it easier to interpret the model:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">model_1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)         age 
+  0.2092179   1.0602093 </code></pre>
+</div>
+</div>
+</section><section id="adding-multiple-predictors" class="level3"><h3 class="anchored" data-anchor-id="adding-multiple-predictors"><span style="color:#4166f5;">Adding multiple predictors</span></h3>
+<p>One important reason to build a model is to learn from the coefficients about the underlying random process. For example, in the Stanford heart transplant study, we were able to estimate the effect of age on the five-year survival rate. This simple model shed no light on the obvious purpose of the study, which was to determine whether those patients who received heart transplants were likely to live longer than the control group that received no transplant.</p>
+<p>Let us create a new model by adding the variable <code>transplant</code>, which tells us whether each patient was in the treatment group or in the control group. We will call this new model <code>model_2</code>. See code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">is_alive</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="va">transplant</span>, </span>
+<span>                    data <span class="op">=</span> <span class="va">heart_transplant</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">model_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term                estimate std.error statistic p.value
+  &lt;chr&gt;                  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)          -0.973     1.08      -0.904 0.366  
+2 age                   0.0763    0.0255     2.99  0.00277
+3 transplanttreatment  -1.82      0.668     -2.73  0.00635</code></pre>
+</div>
+</div>
+<p>Write the equation of the model and interpret the slopes for each predictor variable. Use your model to predict the survival status of a 61-year old participant who received a transplant.</p>
+<p><strong>Equation of the Model:</strong> <span class="math display">\[
+ln\left(\frac{p}{1-p}\right)= -0.97 + 0.076 \times \text{Age}-1.82\times transplant\_treatment
+\]</span></p>
+<p><strong><em>Interpretation:</em></strong></p>
+<ul>
+<li><p>The slope for <strong><em>age</em></strong> is 0.076. This means that for every additional year in age, the log odds of being dead increases by 0.076 on average.</p></li>
+<li><p>The slope for <strong><em>transplant_treatment</em></strong> is -1.82. This means that the log odds of being dead for a patient who received a transplant is 1.82 less than the log odds of being dead for a patient who did not receive a transplant.</p></li>
+</ul>
+<p>You can also exponentiate the coefficients as shown:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">is_alive</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="va">transplant</span>, </span>
+<span>                    data <span class="op">=</span> <span class="va">heart_transplant</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">model_2</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>        (Intercept)                 age transplanttreatment 
+          0.3779050           1.0793129           0.1615143 </code></pre>
+</div>
+</div>
+</section></section><section id="model-augmentation" class="level2"><h2 class="anchored" data-anchor-id="model-augmentation"><span style="color:#4166f5;">Model Augmentation</span></h2>
+<p>The <code>augment()</code> function (used in previous labs) returns a data frame containing fitted values (i.e., the log odds) for each observation. Let us run this function and store the data frame as <code>aug_model_2</code>:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aug_model_2</span><span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">model_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Take a look at <code>aug_model_2</code>. The variable/column <code>.fitted</code> are the log odds. However, it is more useful to get probabilities instead of log odds. To achieve this, you can just add the argument <code>type.predict</code> to the <code>augment()</code> and set its value to <code>response</code>. See code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aug_model_2_prob</span><span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">model_2</span>, type.predict <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="generating-binary-predictions" class="level3"><h3 class="anchored" data-anchor-id="generating-binary-predictions"><span style="color:#4166f5;">Generating Binary Predictions</span></h3>
+<p>If our response variable is binary (alive or dead), then why are we making probabilistic predictions? To do this, we have to set a threshold on the probabilities that can be used to determine whether a patient is alive or dead. The most commonly used threshold is 0.5. If the probability of being dead is greater than 0.5, we assign the label <strong>dead</strong>, otherwise, use <strong>alive</strong>. Use the code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_2_plus</span> <span class="op">&lt;-</span> <span class="va">aug_model_2_prob</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>alive_hat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">.fitted</span> <span class="op">&gt;</span> <span class="fl">0.5</span>, <span class="st">"dead"</span>, <span class="st">"alive"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#We round fitted to 0 or 1 and save it as a new column called alive_hat</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="confusion-matrix" class="level3"><h3 class="anchored" data-anchor-id="confusion-matrix"><span style="color:#4166f5;">Confusion Matrix</span></h3>
+<p>So how well did our model perform? One common way of assessing performance of models in logistic regression is to use a <strong>confusion matrix</strong>. This simply cross-tabulates the actual data with what the model predicted. The code below tabulates the predicted outcomes (<code>alive_hat</code>) vs the actual ones (<code>is_alive</code>). we select the two variables of interest and then pipe them into the <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> function as shown below:</p>
+<p>Make the below plot to appear at the center of the page</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_2_plus</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>is_alive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">is_alive</span> <span class="op">==</span> <span class="fl">0</span>, <span class="st">"alive"</span>, <span class="st">"dead"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">is_alive</span>, <span class="va">alive_hat</span><span class="op">)</span><span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>        alive_hat
+is_alive alive dead
+   alive     8   20
+   dead      4   71</code></pre>
+</div>
+</div>
+<p>In this case, the rows represent the model estimates (classification) while the rows represent the actual data. The model predicted that 91 patients would die, and only 12 would be alive. Of those 91, 71 actually did died, while of the 12 that are predicted to live, 8 actually lived. Thus, our overall accuracy is 79 out of 103. We often report this is a percentage, in this case 77%.</p>
+</section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises"><span style="color:#4166f5;">Exercises</span></h2>
+<p>In these exercises, you will use a data frame called <code>MedGPA</code> contained in the <code>Stat2Data</code> package. Be sure to load the data and examine it before you start the lab.</p>
+<ol type="1">
+<li><p><strong><em>(2 pts)</em></strong> Create a scatter plot to visualize the relationship between GPA (x-axis) and Acceptance (y-axis). Describe this relationship.</p></li>
+<li><p><strong><em>(2 pts)</em></strong> Create a new plot by adding a straight line (use <code>lm</code> method) to the plot in number 1 above. Is this line a good fit for the data? Why or why not?</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Create a logistic regression model for predicting <code>Acceptance</code> using <code>GPA</code> as the only predictor variable. Write down the equation of the model below and interpret its parameters (slope and intercept) in context.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Create a new logistic regression model by adding the variables <code>Sex</code> and <code>MCAT</code> to the model in #3 above. Write down the equation of the model and interpret all slopes in context.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> What does the model in #4 above predict for the first case (first row) in the data frame <code>MedGPA</code>? Does the model make the correct prediction? What about the last case (row 55)?</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Create a <strong>confusion matrix</strong> for the model in #4 above. What is the accuracy (give as a percentage) of this model? Suggest some ways to improve the accuracy of the model.</p></li>
+</ol>
 
 
-<p>Coming soon!</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -917,9 +1173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../labs/Lab_4.html" class="pagination-link" aria-label="Lab 4">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 4</span>
       </a>          
@@ -931,21 +1185,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Joash Geteregechi</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/intermediate-stats/edit/main/labs/Lab_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/intermediate-stats/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
