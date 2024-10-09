@@ -1,5 +1,6 @@
 ---
 categories: "Lab 5"
+title: "Lab 5 - Introducing Logistic Regression"
 execute:
   eval: true
 format:
@@ -32,11 +33,11 @@ A well-known Stanford University study on heart transplants tracked the five-yea
 
 ## [Creating a quarto file]{style="color:#4166f5;"}
 
-Create a new quarto file with the title **Intro to Logistic Regression** and save the file as `lab_04.` If you are unsure how to do this, please refer to previous labs (e.g., lab 2).
+Create a new quarto file with the title **Intro to Logistic Regression** and save the file as `lab_05.` If you are unsure how to do this, please refer to previous labs (e.g., lab 2).
 
 ## [Packages]{style="color:#4166f5;"}
 
-We will use these packages `openintro`, `tidyverse`, `statsr`, `GGally`, `broom`, and `Stat2Data`. If you are missing any of the packages, R will prompted. Just install them. To install a package, use the command:
+We will use these packages `openintro`, `tidyverse`, `statsr`, `GGally`, `broom`, and `Stat2Data`. If you are missing any of the packages, R will prompted. Just install them. To install a package, run the following command in the console:
 
 ``` toml
 install.packages("package name")
@@ -166,16 +167,15 @@ tidy(model_2)
 
 Write the equation of the model and interpret the slopes for each predictor variable. Use your model to predict the survival status of a 61-year old participant who received a transplant.
 
-**Equation of the Model:**
-$$
+**Equation of the Model:** $$
 ln\left(\frac{p}{1-p}\right)= -0.97 + 0.076 \times \text{Age}-1.82\times transplant\_treatment
 $$
 
 ***Interpretation:***
 
-- The slope for ***age*** is 0.076. This means that for every additional year in age, the log odds of being dead increases by 0.076 on average. 
+-   The slope for ***age*** is 0.076. This means that for every additional year in age, the log odds of being dead increases by 0.076 on average.
 
-- The slope for ***transplant_treatment*** is -1.82. This means that the log odds of being dead for a patient who received a transplant is 1.82 less than the log odds of being dead for a patient who did not receive a transplant.
+-   The slope for ***transplant_treatment*** is -1.82. This means that the log odds of being dead for a patient who received a transplant is 1.82 less than the log odds of being dead for a patient who did not receive a transplant.
 
 You can also exponentiate the coefficients as shown:
 
